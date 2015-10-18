@@ -1,0 +1,45 @@
+// @import 'compass/css3';
+
+/* component - head */
+
+#header .head-section {
+  position: relative;
+  .head {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #eee;
+    .eyes {
+      position: absolute;
+      top: 35px;
+      left: 30px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #444;
+      box-shadow: 20px 0 0 #444444;
+      animation: eyes 2.5s infinite;
+      -webkit-animation: eyes 2.5s infinite;
+    }
+  }
+}
+
+@keyframes eyes {
+  0 { opacity: 1;}
+  10% { opacity: 0;}
+  20% { opacity: 1;}
+  30% { opacity: 0}
+  70% { opacity: 1}
+  90% { opacity: 0}
+  100% { opacity: 1;}
+}
+
+@-webkit-keyframes eyes {
+  0 { opacity: 1;}
+  10% { opacity: 0;}
+  20% { opacity: 1;}
+  30% { opacity: 0}
+  70% { opacity: 1}
+  90% { opacity: 0}
+  100% { opacity: 1;}
+}
