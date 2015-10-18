@@ -7,3 +7,5 @@ node server & es6, scss, with webpack
 just need npm install & npm start
 
 then it will run node server with port 5000 (or 80 port)
+
+webpack --watch to gen source js/css..
