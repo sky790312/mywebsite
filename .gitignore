@@ -1,2 +1,4 @@
 node_modules
+public/css
+public/js/mywebsite
 .DS_Store
