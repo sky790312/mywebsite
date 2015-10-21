@@ -2,3 +2,17 @@
 
 @import "component/_head";
 @import "component/_title-photo";
+
+body {
+  background: rgba(102,51,153,0.7);
+}
+
+#header {
+	height: 85px;
+	overflow: hidden;
+  .menu {
+  	> div {
+  		float: left;
+  	}
+  }
+}

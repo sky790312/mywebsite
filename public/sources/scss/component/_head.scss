@@ -4,11 +4,19 @@
 
 #header .head-section {
   position: relative;
+  // z-index: -1;
+  top: 20px;
+  left: 50%;
+  width: 85px;
+  transform: translateX(-50%);
+  cursor: pointer;
   .head {
+    position: relative;
     width: 85px;
     height: 85px;
     border-radius: 50%;
     background: #eee;
+    // animation: head 1.2s infinite;
     .eyes {
       position: absolute;
       top: 35px;
@@ -19,9 +27,42 @@
       background: #444;
       box-shadow: 20px 0 0 #444444;
       animation: eyes 2.5s infinite;
-      -webkit-animation: eyes 2.5s infinite;
+      // -webkit-animation: eyes 2.5s infinite;
     }
   }
+  .feets {
+    position: relative;
+    top: -10px;
+
+    &:before {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 25px;
+      z-index: 1;
+      border-radius: 50%;
+      background: #444;
+      content: '';
+      // animation: feets-left 1.2s infinite;
+    }
+    &:after {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 45px;
+      z-index: -1;
+      border-radius: 50%;
+      background: #444;
+      content: '';
+      // animation: feets-right 1.2s infinite;
+    }
+  }
+}
+
+@keyframes head {
+   0% { top: 3px; }
+   50% { top: -3px;}
+  100% { top: 3px; }
 }
 
 @keyframes eyes {
@@ -34,12 +75,23 @@
   100% { opacity: 1;}
 }
 
-@-webkit-keyframes eyes {
-  0 { opacity: 1;}
-  10% { opacity: 0;}
-  20% { opacity: 1;}
-  30% { opacity: 0}
-  70% { opacity: 1}
-  90% { opacity: 0}
-  100% { opacity: 1;}
+// @-webkit-keyframes eyes {
+//   0 { opacity: 1;}
+//   10% { opacity: 0;}
+//   20% { opacity: 1;}
+//   30% { opacity: 0}
+//   70% { opacity: 1}
+//   90% { opacity: 0}
+//   100% { opacity: 1;}
+// }
+
+@keyframes feets-left {
+   0% { z-index: 1;}
+   50% {  z-index: -1;}
+  100% {  /* z-index: 1; */ }
+}
+@keyframes feets-right {
+   0% { z-index: -1; }
+   50% {  z-index: 1;}
+  100% {  /* z-index: -1; */ }
 }
