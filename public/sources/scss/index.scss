@@ -1,18 +1,28 @@
-@import "utils";
+// @import "utils";
+
+@import "utils/_main";
+@import "utils/_layout";
 
 @import "component/_head";
 @import "component/_title-photo";
 
-body {
-  background: rgba(102,51,153,0.7);
-}
-
 #header {
-	height: 85px;
+	position: relative;
+	// height: 85px;
 	overflow: hidden;
   .menu {
+  	position: absolute;
+  	top: 50%;
+  	transform: translateY(-50%);
   	> div {
   		float: left;
+  		padding: 20px;
   	}
+  }
+  .menu-left {
+  	left: 0;
+  }
+  .menu-right {
+  	right: 0;
   }
 }

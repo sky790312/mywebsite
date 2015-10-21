@@ -1,0 +1,28 @@
+@import "utils/_layout";
+
+body {
+  background: rgba(102,51,153,0.7);
+}
+
+.container {
+	padding : 0 15px;
+  @include mediaQuires(S) {
+  	width: 100%;
+  }
+  @include mediaQuires(M) {
+  	width: 750px;
+  	margin: 0 auto;
+  }
+  @include mediaQuires(L) {
+  	width: 990px;
+  	margin: 0 auto;
+  }
+}
+
+// .pull-left {
+//   float: left;
+// }
+
+// .pull-right {
+//   float: right;
+// }
