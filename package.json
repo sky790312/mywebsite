@@ -30,6 +30,7 @@
     "extract-text-webpack-plugin": "^0.8.2",
     "sass-loader": "~0.4.2",
     "style-loader": "~0.12.3",
+    "compass-loader": "~0.0.3",
     "webpack": "~1.12.2"
   }
 }

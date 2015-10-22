@@ -1,4 +1,4 @@
-// @import 'compass/css3';
+@import 'compass/css3';
 
 /* component - menu */
 
@@ -33,8 +33,7 @@
           background: rgba(33, 150, 243, 0.75);
           border-radius: 0 0.12em 0.12em 0;
           cursor: pointer;
-          // @include transition(box-shadow 0.3s ease);
-          transition: box-shadow 0.3s ease;
+          @include transition(box-shadow 0.3s ease);
           // @include display-flex();
           flex: none;
           // -webkit-backface-visibility: hidden;
@@ -44,11 +43,9 @@
 
       .menu-mobile .checkbox-toggle:checked {
         + .icon-menu > div {
-          // @include transform(rotate(135deg));
           transform: rotate(135deg);
           &:before, &:after {
             top: 0;
-            // @include transform(rotate(90deg));
             transform: rotate(90deg);
           }
           &:after {
@@ -63,13 +60,11 @@
             height: 200vw;
             > .menu-list {
               opacity: 1;
-              // @include transition(opacity 0.3s ease 0.3s);
-              transition: opacity 0.3s ease 0.3s;
+              @include transition(opacity 0.3s ease 0.3s);
             }
           }
         }
         &:hover + .icon-menu > div {
-          // @include transform(rotate(225deg));
           transform: rotate(225deg);
         }
       }
@@ -85,10 +80,9 @@
         background: #fefefe;
         // @include flex();
         flex: none;
-        // @include transition(all 0.3s ease);
-        transition: all 0.3s ease;
+        @include transition(all 0.3s ease);
         // @include display-flex();
-        display: flex;
+        // display: flex;
         &:before, &:after {
           content: '';
           position: absolute;
@@ -98,8 +92,7 @@
           width: 100%;
           height: 2px;
           background: inherit;
-          // @include transition(all 0.3s ease);
-          transition: all 0.3s ease;
+          @include transition(all 0.3s ease);
         }
         &:after {
           top: 10px;
@@ -122,8 +115,7 @@
           color: #fefefe;
           background: rgba(41, 98, 255, 0.97);
           border-radius: 50%;
-          // @include transition(all 0.3s ease);
-          transition: all 0.3s ease;
+          @include transition(all 0.3s ease);
           // @include flex();
           flex: none;
           // @include display-flex();
@@ -154,8 +146,7 @@
             position: relative;
             display: inline;
             cursor: pointer;
-            // @include transition(color 0.3s ease);
-            transition: color 0.3s ease;
+            @include transition(color 0.3s ease);
             &:after {
               content: '';
               position: absolute;
@@ -165,8 +156,7 @@
               width: 0;
               height: 2px;
               background: #e5e5e5;
-              // @include transition(width 0.3s ease);
-              transition: width 0.3s ease;
+              @include transition(width 0.3s ease);
             }
             &:hover {
               color: #e5e5e5;
@@ -196,11 +186,5 @@
         padding: 20px;
       }
     }
-    // .menu-left {
-    //  left: 0;
-    // }
-    // .menu-right {
-    //  right: 0;
-    // }
   }
 }

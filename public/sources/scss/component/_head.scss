@@ -1,4 +1,4 @@
-// @import 'compass/css3';
+@import 'compass/css3';
 
 /* component - head */
 
@@ -16,7 +16,8 @@
     height: 85px;
     border-radius: 50%;
     background: #eee;
-    // animation: head 1.2s infinite;
+    animation: head 1.2s infinite;
+    // @include animation(head 1.2s infinite);
     .eyes {
       position: absolute;
       top: 35px;

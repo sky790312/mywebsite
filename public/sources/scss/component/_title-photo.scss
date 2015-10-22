@@ -1,21 +1,20 @@
-// @import 'compass/css3';
+@import 'compass/css3';
 
 /* component - my photo with side title desc */
 
 #title-photo {
   padding: 10em 0;
   background: #07a;
-  background: linear-gradient(to right,#07a, #0aa, #07a);
-
+  @include background(linear-gradient(to right,#07a, #0aa, #07a));
   .title-photo {
     position: relative;
     margin: 0 auto;
     height: 10em;
     width: 10em;
-    border-radius: 50%;
     background: #999 url('/image/mywebsite/me.png') 80% 0%;
     background-size: 10em 10em;
-    box-shadow: 0 0 0 0.8em rgba(255,255,255,0.3);
+    @include border-radius(50%);
+    @include box-shadow(0 0 0 0.8em rgba(255,255,255,0.3));
 
     @include mediaQuires(ML) {
       &:before, &:after {

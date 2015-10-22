@@ -22,7 +22,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader')},
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader') },
+      { test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader!compass-loader') },
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
     ]
   },
