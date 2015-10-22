@@ -21,8 +21,7 @@
     "request": "*",
     "sanitizer": "*",
     "serve-favicon": "*",
-    "supervisor": "*",
-    "webpack-dev-server": "^1.12.1"
+    "supervisor": "*"
   },
   "devDependencies": {
     "babel-loader": "~5.3.2",
