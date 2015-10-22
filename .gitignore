@@ -1,4 +1,5 @@
 node_modules
 public/css
 public/js/mywebsite
+npm-debug.log
 .DS_Store
