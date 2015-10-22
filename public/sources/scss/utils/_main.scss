@@ -7,7 +7,7 @@ body {
 .container {
 	padding : 0 15px;
   @include mediaQuires(S) {
-  	width: 100%;
+  	// width: 100%;
   }
   @include mediaQuires(M) {
   	width: 750px;

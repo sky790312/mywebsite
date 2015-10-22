@@ -3,7 +3,7 @@
 /* component - my photo with side title desc */
 
 #title-photo {
-  padding: 10em;
+  padding: 10em 0;
   background: #07a;
   background: linear-gradient(to right,#07a, #0aa, #07a);
 
@@ -17,19 +17,21 @@
     background-size: 10em 10em;
     box-shadow: 0 0 0 0.8em rgba(255,255,255,0.3);
 
-    &:before, &:after {
-      position: absolute;
-      width: 10em;
-      font-size: 1.7em;
-      top: 2em;
-    };
-    &:before {
-      content: 'FrontEnd Developer';
-      right: 6em;
-    }
-    &:after {
-      content: 'web Developer';
-      left: 7.25em;
+    @include mediaQuires(ML) {
+      &:before, &:after {
+        position: absolute;
+        width: 10em;
+        font-size: 1.7em;
+        top: 2em;
+      };
+      &:before {
+        content: 'FrontEnd Developer';
+        right: 6em;
+      }
+      &:after {
+        content: 'web Developer';
+        left: 7.25em;
+      }
     }
   }
 }

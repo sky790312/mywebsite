@@ -5,17 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Kevin Hu</title>
   <link rel="stylesheet" href="/css/mywebsite.css">
-  <script type="text/javascript" src="/js/modules/jquery-1.10.2.min.js" ></script>
 </head>
 <body id="app">
     <header id="header" class="container">
-      <div class="menu menu-left">
-        <div class="profolio">profolio</div>
-        <div class="aboutme">aboutme</div>
-      </div>
-      <div class="menu menu-right">
-        <div class="profolio">profolio</div>
-        <div class="aboutme">aboutme</div>
+      <div class="menu-section">
+        <div class="menu">
+          <div class="profolio">profolio</div>
+          <div class="aboutme">aboutme</div>
+          <div class="">exp/edu</div>
+          <div class="">skill</div>
+        </div>
+        <div class="menu-mobile">
+          <!-- <div class="mobile-menu"> -->
+              <input class="checkbox-toggle" type="checkbox" />
+              <div class="icon-menu">
+                <div></div>
+              </div>
+              <div class="menu-mobile-in">
+                <div class="menu-background">
+                  <div class="menu-list">
+                    <ul>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Products</a></li>
+                      <li><a href="#">Blog</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            <!-- </div> -->
+        </div>
       </div>
       <div class="head-section">
         <div class="head">
@@ -34,7 +53,7 @@
     </footer>
   <script src="/js/mywebsite/indexBundle.js"></script>
   <script>
-    new index($('#app'));
+    // new index($('#app'));
   </script>
 </body>
 </html>

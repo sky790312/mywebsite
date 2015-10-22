@@ -1,0 +1,206 @@
+// @import 'compass/css3';
+
+/* component - menu */
+
+.menu-section {
+  /* component - menu mobile */
+  @include mediaQuires(S) {
+      .menu-mobile {
+        // position: fixed;
+        // top: 10vh;
+        // left: 0;
+        // z-index: 5;
+
+        .checkbox-toggle {
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 6;
+          cursor: pointer;
+          width: 60px;
+          height: 60px;
+          opacity: 0;
+        }
+
+        .icon-menu {
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 5;
+          width: 60px;
+          height: 60px;
+          padding: .5em 1em;
+          background: rgba(33, 150, 243, 0.75);
+          border-radius: 0 0.12em 0.12em 0;
+          cursor: pointer;
+          // @include transition(box-shadow 0.3s ease);
+          transition: box-shadow 0.3s ease;
+          // @include display-flex();
+          flex: none;
+          // -webkit-backface-visibility: hidden;
+                  // backface-visibility: hidden;
+        }
+      }
+
+      .menu-mobile .checkbox-toggle:checked {
+        + .icon-menu > div {
+          // @include transform(rotate(135deg));
+          transform: rotate(135deg);
+          &:before, &:after {
+            top: 0;
+            // @include transform(rotate(90deg));
+            transform: rotate(90deg);
+          }
+          &:after {
+            opacity: 0;
+          }
+        }
+        ~ .menu-mobile-in {
+          pointer-events: auto;
+
+          > .menu-background {
+            width: 200vw;
+            height: 200vw;
+            > .menu-list {
+              opacity: 1;
+              // @include transition(opacity 0.3s ease 0.3s);
+              transition: opacity 0.3s ease 0.3s;
+            }
+          }
+        }
+        &:hover + .icon-menu > div {
+          // @include transform(rotate(225deg));
+          transform: rotate(225deg);
+        }
+      }
+
+      // .menu-mobile .checkbox-toggle:hover + .icon-menu {
+      //   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+      // }
+
+      .menu-mobile .icon-menu > div {
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background: #fefefe;
+        // @include flex();
+        flex: none;
+        // @include transition(all 0.3s ease);
+        transition: all 0.3s ease;
+        // @include display-flex();
+        display: flex;
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          z-index: 5;
+          top: -10px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: inherit;
+          // @include transition(all 0.3s ease);
+          transition: all 0.3s ease;
+        }
+        &:after {
+          top: 10px;
+        }
+      }
+
+      .menu-mobile .menu-mobile-in {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        // @include display-flex();
+        display: flex;
+
+        .menu-background {
+          width: 0;
+          height: 0;
+          color: #fefefe;
+          background: rgba(41, 98, 255, 0.97);
+          border-radius: 50%;
+          // @include transition(all 0.3s ease);
+          transition: all 0.3s ease;
+          // @include flex();
+          flex: none;
+          // @include display-flex();
+          display: flex;
+        }
+
+        .menu-list {
+          text-align: center;
+          max-width: 90vw;
+          max-height: 100vh;
+          opacity: 0;
+          overflow-y: auto;
+        }
+      }
+
+      .menu-mobile .menu-list > ul {
+        list-style: none;
+        padding: 0 1em;
+        margin: 0;
+        display: block;
+        max-height: 100vh;
+        > li {
+          padding: 0;
+          margin: 1em;
+          font-size: 24px;
+          display: block;
+          > a {
+            position: relative;
+            display: inline;
+            cursor: pointer;
+            // @include transition(color 0.3s ease);
+            transition: color 0.3s ease;
+            &:after {
+              content: '';
+              position: absolute;
+              z-index: 5;
+              bottom: -0.15em;
+              left: 0;
+              width: 0;
+              height: 2px;
+              background: #e5e5e5;
+              // @include transition(width 0.3s ease);
+              transition: width 0.3s ease;
+            }
+            &:hover {
+              color: #e5e5e5;
+            }
+            &:hover:after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    .menu {
+      display: none;
+    }
+  }
+  /* component - menu pad/disk */
+  @include mediaQuires(ML) {
+    .menu-mobile {
+      display: none;
+    }
+    .menu {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      > div {
+        float: left;
+        padding: 20px;
+      }
+    }
+    // .menu-left {
+    //  left: 0;
+    // }
+    // .menu-right {
+    //  right: 0;
+    // }
+  }
+}

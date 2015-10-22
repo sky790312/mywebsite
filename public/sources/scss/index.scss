@@ -3,6 +3,7 @@
 @import "utils/_main";
 @import "utils/_layout";
 
+@import "component/_menu";
 @import "component/_head";
 @import "component/_title-photo";
 
@@ -10,19 +11,4 @@
 	position: relative;
 	// height: 85px;
 	overflow: hidden;
-  .menu {
-  	position: absolute;
-  	top: 50%;
-  	transform: translateY(-50%);
-  	> div {
-  		float: left;
-  		padding: 20px;
-  	}
-  }
-  .menu-left {
-  	left: 0;
-  }
-  .menu-right {
-  	right: 0;
-  }
 }
