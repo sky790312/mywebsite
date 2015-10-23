@@ -1,7 +1,8 @@
 @import "utils/_layout";
-@import "../../image/icons/*.png";
-@include all-icons-sprites;  //all-後面接著的「icons」代表著是資料夾名稱
+@import "utils/_variables";
 
+// @import "../../image/icons/*.png";
+// @include all-icons-sprites;  //all-後面接著的「icons」代表著是資料夾名稱
 // .icons-sprite,
 // .icons-facebook,
 // .icons-twitter,
@@ -11,13 +12,12 @@
 // .icons-yahoo {  background-position: 0 -64px; }
 
 body {
-  background: rgba(102,51,153,0.7);
+  background: $main-bg-color;
 }
-
 .container {
 	padding : 0 15px;
   @include mediaQuires(S) {
-  	// width: 100%;
+  	width: 100%;
   }
   @include mediaQuires(M) {
   	width: 750px;
@@ -28,7 +28,21 @@ body {
   	margin: 0 auto;
   }
 }
-
+#header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  // height: 85px;
+  // overflow: hidden;
+  @include mediaQuires(M) {
+    left: 50%;
+    margin-left: -390px;
+  }
+  @include mediaQuires(L) {
+    left: 50%;
+    margin-left: -510px;
+  }
+}
 // .pull-left {
 //   float: left;
 // }

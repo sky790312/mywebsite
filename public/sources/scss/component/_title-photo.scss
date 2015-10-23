@@ -2,24 +2,29 @@
 
 /* component - my photo with side title desc */
 
+$title-photo-linear-gradient: linear-gradient(to right, #0A00AA, #4442D8, #0a00aa);
+$title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
+
 #title-photo {
+  margin-top: 85px;
   padding: 10em 0;
   background: #07a;
-  @include background(linear-gradient(to right,#07a, #0aa, #07a));
+  @include background($title-photo-linear-gradient);
   .title-photo {
     position: relative;
     margin: 0 auto;
     height: 10em;
     width: 10em;
-    background: #999 url('/image/mywebsite/me.png') 80% 0%;
+    background: #d4d4d4 url('/image/mywebsite/me.png') 80% 0%;
     background-size: 10em 10em;
     @include border-radius(50%);
-    @include box-shadow(0 0 0 0.8em rgba(255,255,255,0.3));
+    @include box-shadow($title-photo-bgimg-outer-color);
 
     @include mediaQuires(ML) {
       &:before, &:after {
         position: absolute;
         width: 10em;
+        color: white;
         font-size: 1.7em;
         top: 2em;
       };

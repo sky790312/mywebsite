@@ -2,21 +2,29 @@
 
 /* component - head */
 
-.head-section {
+// $head-boy
+
+$head-boy-color: #eee;
+$head-boy-eyes-color: #444;
+$head-boy-feets-color: #444;
+
+.head-boy {
   position: relative;
-  // z-index: -1;
+  z-index: 0;
   top: 20px;
-  // left: 50%;
   width: 85px;
-  // transform: translateX(-50%);
   cursor: pointer;
+  &.hide-body {
+    height: 65px;
+    overflow: hidden;
+  }
   .head {
     position: relative;
     width: 85px;
     height: 85px;
     border-radius: 50%;
-    background: #eee;
-    animation: head 1.2s infinite;
+    background: $head-boy-color;
+    // animation: head 1.2s infinite;
     // @include animation(head 1.2s infinite);
     .eyes {
       position: absolute;
@@ -25,7 +33,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: #444;
+      background: $head-boy-eyes-color;
       box-shadow: 20px 0 0 #444444;
       animation: eyes 2.5s infinite;
       // -webkit-animation: eyes 2.5s infinite;
@@ -34,28 +42,21 @@
   .feets {
     position: relative;
     top: -10px;
-
-    &:before {
+    &:before, &:after {
       position: absolute;
       width: 20px;
       height: 20px;
       left: 25px;
       z-index: 1;
       border-radius: 50%;
-      background: #444;
+      background: $head-boy-feets-color;
       content: '';
-      // animation: feets-left 1.2s infinite;
+      animation: feets-left 1.2s infinite;
     }
     &:after {
-      position: absolute;
-      width: 20px;
-      height: 20px;
       left: 45px;
       z-index: -1;
-      border-radius: 50%;
-      background: #444;
-      content: '';
-      // animation: feets-right 1.2s infinite;
+      animation: feets-right 1.2s infinite;
     }
   }
 }
