@@ -26,18 +26,25 @@
 $icon-menu-color: rgb(9, 87, 255);
 $icon-menu-border-radius: 10px;
 $icon-menu-line-height: 2px;
+$menu-bg-color: rgba(27, 139, 255, 0.8);
 $animate-duration: .3s;
 
 /* component - menu */
 
 .menu-assemble {
+  float: right;
+}
+
+// .menu-assemble {
   /* component - menu mobile */
   @include mediaQuires(S) {
     /* menu mobile - icon before checked */
     .mobile-menu {
-      position: fixed;
+      position: absolute;
       top: 15px;
-      right: 67px;
+      right: 15px;
+      width: 52px;
+      height: 46px;
       z-index: 5;
       .checkbox-toggle {
         position: absolute;
@@ -80,8 +87,8 @@ $animate-duration: .3s;
         pointer-events: auto;
 
         > .menu-background {
-          width: 200vw;
-          height: 200vw;
+          width: 300vw;
+          height: 300vw;
           > .menu-list {
             opacity: 1;
             @include transition(opacity $animate-duration ease $animate-duration);
@@ -128,7 +135,7 @@ $animate-duration: .3s;
         width: 0;
         height: 0;
         color: $main-text-color;
-        background: $main-bg-color;
+        background: $menu-bg-color;
         border-radius: 50%;
         @include transition(all $animate-duration ease);
         @include flex();
@@ -186,15 +193,16 @@ $animate-duration: .3s;
       display: none;
     }
     .menu {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      > div {
-        float: left;
+      // position: absolute;
+      // top: 50%;
+      // right: 0;
+      // transform: translateY(-50%);
+      > li {
+        // float: left;
+        display: inline-block;
         padding: 20px;
         color: $main-text-color;
       }
     }
   }
-}
+// }

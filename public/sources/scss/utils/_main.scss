@@ -15,32 +15,35 @@ body {
   background: $main-bg-color;
 }
 .container {
+  margin: auto;
 	padding : 0 15px;
   @include mediaQuires(S) {
   	width: 100%;
   }
   @include mediaQuires(M) {
   	width: 750px;
-  	margin: 0 auto;
+  	// margin: 0 auto;
   }
   @include mediaQuires(L) {
   	width: 990px;
-  	margin: 0 auto;
+  	// margin: 0 auto;
   }
 }
 #header {
   position: fixed;
+  width: 100%;
   top: 0;
+  background: $main-bg-color;
   z-index: 1;
   // height: 85px;
   // overflow: hidden;
   @include mediaQuires(M) {
-    left: 50%;
-    margin-left: -390px;
+    // left: 50%;
+    // margin-left: -390px;
   }
   @include mediaQuires(L) {
-    left: 50%;
-    margin-left: -510px;
+    // left: 50%;
+    // margin-left: -510px;
   }
 }
 // .pull-left {
