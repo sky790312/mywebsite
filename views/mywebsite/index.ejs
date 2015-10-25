@@ -8,43 +8,47 @@
 </head>
 <body id="app">
     <header id="header">
-    <div class="container">
-      <div class="head-boy hide-body">
-        <div class="head">
-          <div class="eyes"></div>
-        </div>
-        <div class="feets"></div>
-      </div>
-      <div class="menu-assemble">
-        <ul class="menu">
-          <li class="profolio">profolio</li>
-          <li class="aboutme">aboutme</li>
-          <li class="">exp/edu</li>
-          <li class="">skill</li>
-        </ul>
-        <div class="mobile-menu">
-          <input class="checkbox-toggle" type="checkbox" />
-          <div class="icon-menu">
-            <div></div>
+      <div class="container">
+        <div class="head-boy hide-body">
+          <div class="head">
+            <div class="eyes"></div>
           </div>
-          <div class="mobile-menu-in">
-            <div class="menu-background">
-              <div class="menu-list">
-                <ul>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Products</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Contact</a></li>
-                </ul>
+          <div class="feets"></div>
+        </div>
+        <div class="menu-assemble">
+          <ul class="menu">
+            <li class="profolio">profolio</li>
+            <li class="aboutme">aboutme</li>
+            <li class="">exp/edu</li>
+            <li class="">skill</li>
+          </ul>
+          <div class="mobile-menu">
+            <input class="checkbox-toggle" type="checkbox" />
+            <div class="icon-menu">
+              <div></div>
+            </div>
+            <div class="mobile-menu-in">
+              <div class="menu-background">
+                <div class="menu-list">
+                  <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </header>
     <section id="title-photo">
-      <div class="title-photo"></div>
+      <div class="container">
+        <div class="title-photo"></div>
+        <h1>Kevin Hu</h1>
+        <p>Welcome to my website, enjoy and have fun!</p>
+      </div>
     </section>
     <footer id="footer">
       <div>
@@ -53,7 +57,7 @@
     </footer>
   <script src="/js/mywebsite/indexBundle.js"></script>
   <script>
-    // new index($('#app'));
+    new index(document.querySelector('#app'));
   </script>
 </body>
 </html>

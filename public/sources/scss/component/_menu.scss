@@ -193,12 +193,8 @@ $animate-duration: .3s;
       display: none;
     }
     .menu {
-      // position: absolute;
-      // top: 50%;
-      // right: 0;
-      // transform: translateY(-50%);
+      height: 53px;
       > li {
-        // float: left;
         display: inline-block;
         padding: 20px;
         color: $main-text-color;

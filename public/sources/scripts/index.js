@@ -38,7 +38,7 @@ class ucarIndex {
     // };
 
     // //選取元素
-    // this.$app = $ele;
+    this.$app = $ele;
     // this.$ghostBtn = $ele.find('.ghostBtn');
     // this.$button = $ele.find('#submitBtn');
 
@@ -74,7 +74,7 @@ class ucarIndex {
     // const $from = this.$ghostBtn.find('#from option:selected');
     // const $to = this.$ghostBtn.find('#to option:selected');
 
-    $.extend(this.state, {
+    // $.extend(this.state, {
       // from: $from.val(),
       // ordDate: dateValue,
       // time: time,
@@ -92,7 +92,7 @@ class ucarIndex {
       // hsrBackToCityname: $from.data('cityname'),
       // siteCitycode: $to.data('citycode'),
       // siteCityname: $to.data('cityname')
-    });
+    // });
 
     // 產生ghost button
     // this.$ghostBtn.map((i,d)=> new gbg(d, this.state, function(newState){

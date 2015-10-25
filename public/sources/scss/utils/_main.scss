@@ -31,7 +31,7 @@ body {
 }
 #header {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   background: $main-bg-color;
   z-index: 1;
@@ -45,6 +45,13 @@ body {
     // left: 50%;
     // margin-left: -510px;
   }
+}
+#footer {
+  position: absolute;
+  width: 100vw;
+  height: 85px;
+  bottom: 0;
+  background: $main-bg-color;
 }
 // .pull-left {
 //   float: left;
