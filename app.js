@@ -75,6 +75,7 @@ var appRouter = express.Router();
 
 // pages
 appRouter.get('/', mywebsite.index);
+// appRouter.get('/projects', mywebsite.projects);
 
 // apis
 // appRouter.get('/api', mywebsite.testapi); // 測試api

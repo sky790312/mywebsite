@@ -11,9 +11,9 @@
 // .icons-twitter {  background-position: 0 -32px; }
 // .icons-yahoo {  background-position: 0 -64px; }
 
-body {
-  background: $main-bg-color;
-}
+// body {
+//   background: $main-bg-color;
+// }
 .container {
   margin: auto;
 	padding : 0 15px;
@@ -34,7 +34,7 @@ body {
   width: 100vw;
   top: 0;
   background: $main-bg-color;
-  z-index: 1;
+  z-index: 10;
   // height: 85px;
   // overflow: hidden;
   @include mediaQuires(M) {
@@ -47,11 +47,20 @@ body {
   }
 }
 #footer {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 85px;
   bottom: 0;
+  z-index: 10;
   background: $main-bg-color;
+}
+
+.hide {
+  display: none!important;
+}
+
+.show {
+  display: block!important;
 }
 // .pull-left {
 //   float: left;

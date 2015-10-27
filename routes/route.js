@@ -13,6 +13,15 @@ exports.index = function(req, res){
   res.end();
 };
 
+// exports.projects = function(req, res){
+//   // var data = {
+//   //   departures: myModel.getDeparture(),
+//   //   dest: myModel.getDest()
+//   // };
+//   res.render('./mywebsite/projects');
+//   res.end();
+// };
+
 // ***** 高鐵APIs *****
 // 高鐵列表
 // exports.hsrSearch = function(req, res){

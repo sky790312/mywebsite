@@ -15,9 +15,11 @@
           </div>
           <div class="feets"></div>
         </div>
+        <!-- <div>Kevin Hu</div> -->
         <div class="menu-assemble">
           <ul class="menu">
-            <li class="profolio">profolio</li>
+            <li class="projects">projects</li>
+            <!-- <li class="profolio">profolio</li> -->
             <li class="aboutme">aboutme</li>
             <li class="">exp/edu</li>
             <li class="">skill</li>
@@ -31,10 +33,11 @@
               <div class="menu-background">
                 <div class="menu-list">
                   <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">project</a></li>
+                    <!-- <li><a href="#">profolio</a></li> -->
+                    <li><a href="#">aboutme</a></li>
+                    <li><a href="#">exp/edu</a></li>
+                    <li><a href="#">skill</a></li>
                   </ul>
                 </div>
               </div>
@@ -50,14 +53,76 @@
         <p>Welcome to my website, enjoy and have fun!</p>
       </div>
     </section>
+    <section id="projects" class="hide">
+      <div id="profolios-section" class="profolios-section">
+        <ul>
+          <li class="profolio">
+            <div class="profolio-outside">
+              <h2 class="profolio-title">Profolio title</h2>
+              <p class="profolio-brief">brief description of profolio</p>
+            </div> <!-- .profolio-outside -->
+
+            <div class="profolio-inside">
+              <p class="profolio-desc">
+                detail description of profolio.. detail description of profolio.. detail description of profolio..
+              </p>
+            </div> <!-- .profolio-inside -->
+          </li>
+
+          <li class="profolio">
+            <div class="profolio-outside">
+              <h2 class="profolio-title">Profolio title</h2>
+              <p class="profolio-brief">brief description of profolio</p>
+            </div> <!-- .profolio-outside -->
+
+            <div class="profolio-inside">
+              <p class="profolio-desc">
+                detail description of profolio.. detail description of profolio.. detail description of profolio..
+              </p>
+            </div> <!-- .profolio-inside -->
+          </li>
+
+          <li class="profolio">
+            <div class="profolio-outside">
+              <h2 class="profolio-title">Profolio title</h2>
+              <p class="profolio-brief">brief description of profolio</p>
+            </div> <!-- .profolio-outside -->
+
+            <div class="profolio-inside">
+              <p class="profolio-desc">
+                detail description of profolio.. detail description of profolio.. detail description of profolio..
+              </p>
+            </div> <!-- .profolio-inside -->
+          </li>
+
+          <li class="profolio">
+            <div class="profolio-outside">
+              <h2 class="profolio-title">Profolio title</h2>
+              <p class="profolio-brief">brief description of profolio</p>
+            </div> <!-- .profolio-outside -->
+
+            <div class="profolio-inside">
+              <p class="profolio-desc">
+                detail description of profolio.. detail description of profolio.. detail description of profolio..
+              </p>
+            </div> <!-- .profolio-inside -->
+          </li>
+        </ul>
+        <a href="#" class="close"></a>
+        <a href="#" class="scroll"></a>
+      </div> <!-- .project-container -->
+    </section>
     <footer id="footer">
       <div>
         it's footer
       </div>
     </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <!-- <script src="/js/modules/pure-javascript-jquery-implementation.js"></script> -->
+  <script src="/js/modules/jquery-1.10.2.min.js"></script>
   <script src="/js/mywebsite/indexBundle.js"></script>
   <script>
-    new index(document.querySelector('#app'));
+    new index($('#app'));
   </script>
 </body>
 </html>
