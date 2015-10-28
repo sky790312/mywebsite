@@ -6,16 +6,15 @@
 
 $imgsrc: '/image/mywebsite/projects/'; // img common src
 
-$white: #ffffff; // White
-$black: #101524; // black
+$projects-bg-color: #101524; // black
 
 $items: 4; // profolio numbers
 
 
 // body {
 // 	font-size: 1.6rem;
-// 	color: $white;
-// 	background-color: $black;
+// 	color: $main-text-color;
+// 	background-color: $projects-bg-color;
 // }
 
 /*
@@ -26,8 +25,8 @@ $items: 4; // profolio numbers
 	height: 100vh;
 	width: 100vw;
 	position: relative;
-	background-color: $black;
-	color: $white;
+	background-color: $projects-bg-color;
+	color: $main-text-color;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
 
@@ -299,8 +298,8 @@ $items: 4; // profolio numbers
 	margin-top: 100vh;
 	padding: 4em 0;
 	cursor: auto;
-	background-color: $white;
-	color: lighten($black, 30%);
+	background-color: $main-text-color;
+	color: lighten($projects-bg-color, 30%);
 	@include transition(opacity 0.4s 0s, visibility 0s 0.4s);
 
 	.inside & {

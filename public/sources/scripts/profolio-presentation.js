@@ -115,7 +115,7 @@ $(function(){
 
 	profolio.init();
 
-	window.profolio = profolio;
+	window.app.profolio = profolio;
 
 });
 // init immediately (can use like plugin)

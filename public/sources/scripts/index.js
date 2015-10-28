@@ -1,8 +1,10 @@
 'use strict';
 
-import gbg from '../scripts/ghostBtnGenerators';
+// import gbg from '../scripts/ghostBtnGenerators';
 // import handleDateFormat from '../scripts/profolio-presentation';
 // import handleClickChangePage from '../scripts/_changePage';
+// var app = app || {};
+window.app = {};
 
 class index {
   constructor($ele) {
