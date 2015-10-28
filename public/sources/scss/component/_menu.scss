@@ -1,27 +1,5 @@
-@import 'compass/css3';
+@import 'compass';
 @import "utils/_variables";
-
-@mixin display-flex(){
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-@mixin flex(){
-  -webkit-box-flex: 0;
-  -webkit-flex: none;
-      -ms-flex: none;
-          flex: none;
-}
 
 $icon-menu-color: rgb(9, 87, 255);
 $icon-menu-border-radius: 10px;
@@ -68,7 +46,9 @@ $animate-duration: .3s;
         border-radius: $icon-menu-border-radius;
         cursor: pointer;
         @include transition(box-shadow $animate-duration ease);
-        @include display-flex();
+        @include display-flex;
+        @include align-items(center);
+        @include justify-content(center);
       }
     }
     /* menu mobile - icon checked */
@@ -104,9 +84,11 @@ $animate-duration: .3s;
       width: 100%;
       height: $icon-menu-line-height;
       background: white;
-      @include flex();
+      @include flex(none);
       @include transition(all $animate-duration ease);
-      @include display-flex();
+      @include display-flex;
+      @include align-items(center);
+      @include justify-content(center);
       &:before, &:after {
         content: '';
         position: absolute;
@@ -130,7 +112,9 @@ $animate-duration: .3s;
       width: 100%;
       height: 100%;
       pointer-events: none;
-      @include display-flex();
+      @include display-flex;
+      @include align-items(center);
+      @include justify-content(center);
       .menu-background {
         width: 0;
         height: 0;
@@ -138,8 +122,10 @@ $animate-duration: .3s;
         background: $menu-bg-color;
         border-radius: 50%;
         @include transition(all $animate-duration ease);
-        @include flex();
-        @include display-flex();
+        @include flex(none);
+        @include display-flex;
+        @include align-items(center);
+        @include justify-content(center);
       }
       .menu-list {
         text-align: center;

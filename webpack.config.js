@@ -22,7 +22,8 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader')},
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader!compass-loader') },
+      { test: /.scss$/, loader : ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader?includePaths[]=' +
+        Path.resolve(__dirname, './node_modules/compass-mixins/lib'))},
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
     ]
   },
