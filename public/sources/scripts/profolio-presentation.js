@@ -1,6 +1,6 @@
 'use strict';
 
-// dom ready
+// for mywebsite, 暫時先改成這樣.. 未來import export
 $(function(){
         var scrolling = false;
   var lastPos = 0;
@@ -20,6 +20,7 @@ $(function(){
       openProfolio: function(thisProfolio) {
 				profolio.$section.addClass('opening');
 				thisProfolio.addClass('inside').siblings('li').removeClass('loaded');
+
     	},
       closeProfolio: function(thisProfolio) {
 				var mq = window.getComputedStyle(document.querySelector('.profolios-section'), '::before').getPropertyValue('content').replace(/"/g, "").replace(/'/g, ""),
@@ -95,61 +96,23 @@ $(function(){
     	}
     },
     init: function() {
-    	// binding function
+			 // binding function
       profolio.bind.open();
       profolio.bind.close();
       profolio.bind.down();
       profolio.bind.scrolling();
-
-			// check if background images loaded then show (if need)
-			// profolio.$section.find('.profolio').arrangeProfolio({
-			//   	loadCompleted : function(){
-			//    		profolio.method.showProfolios(profolio.$section.find('li').eq(0));
-			//   	}
-			// });
-
-			// just use
 			profolio.method.showProfolios(profolio.$section.find('li').eq(0));
+    },
+    reStart: function() {
+    	// for mywebsite restart
+    	profolio.$section.find('li').removeClass('loaded inside');
+	   	profolio.method.showProfolios(profolio.$section.find('li').eq(0));
     }
-	};
+  };
 
 	profolio.init();
 
-	window.app.profolio = profolio;
+	window.app.projects = window.app.profolio || profolio;
 
 });
-// init immediately (can use like plugin)
-(function($){
 
-	$.fn.arrangeProfolio = function(options) {
-		// Default plugin settings
-		var defaults = {
-			// defaults setting
-			loadCompleted : function(){
-				this.addClass('loaded');
-			}
-		};
-
-		// extend default and user settings
-		var settings = $.extend({}, defaults, options);
-
-		// Loop through element
-		return this.each(function(){
-			var $this = $(this),
-					profolioImgs = window.getComputedStyle($this.get(0), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "").split(', ');
-			$this.data('loaded-count', 0);
-			$.each( profolioImgs, function(key, value){
-				var profolioImg = value.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
-				$('<img/>').attr('src', profolioImg).load(function() {
-					$(this).remove(); // prevent memory leaks
-					$this.data('loaded-count',$this.data('loaded-count')+1);
-					if ($this.data('loaded-count') >= profolioImgs.length) {
-						settings.loadCompleted.call($this);
-					}
-				});
-			});
-
-		});
-	};
-
-})(jQuery);

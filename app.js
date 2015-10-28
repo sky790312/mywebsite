@@ -34,7 +34,7 @@ var contentAge = 86400000 * 7; //1day = 86400000
 app.set('port', process.env.PORT || 5000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(favicon(__dirname + '/public/image/favicon/favicon.ico'));
+app.use(favicon(__dirname + '/public/images/favicon/favicon.ico'));
 
 /* app.use(logger()); */
 app.use(bodyParser());

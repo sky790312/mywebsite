@@ -1,7 +1,7 @@
 @import "utils/_layout";
 @import "utils/_variables";
 
-// @import "../../image/icons/*.png";
+// @import "../../images/icons/*.png";
 // @include all-icons-sprites;  //all-後面接著的「icons」代表著是資料夾名稱
 // .icons-sprite,
 // .icons-facebook,
@@ -41,22 +41,17 @@ a {
   z-index: 10;
   // height: 85px;
   // overflow: hidden;
-  @include mediaQuires(M) {
-    // left: 50%;
-    // margin-left: -390px;
-  }
-  @include mediaQuires(L) {
-    // left: 50%;
-    // margin-left: -510px;
-  }
 }
 #footer {
-  position: fixed;
+  position: relative;
   width: 100vw;
   height: 85px;
   bottom: 0;
   z-index: 10;
   background: $main-bg-color;
+  // &.relative-bottom {
+  //   position: relative;
+  // }
 }
 
 .hide {

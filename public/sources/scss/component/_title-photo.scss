@@ -1,4 +1,4 @@
-@import 'compass';
+@import 'compass/css3';
 @import '_animate';
 @import "utils/_variables";
 
@@ -8,9 +8,9 @@ $title-photo-linear-gradient: linear-gradient(to right, #0A00AA, #4442D8, #0a00a
 $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
 
 #title-photo {
-  // margin-top: 85px;
+  margin-top: 85px;
   // padding: 10em 0;
-  height: 100vh;
+  height: calc(100vh - 170px);
   text-align: center;
   background: #07a;
   @include background($title-photo-linear-gradient);
@@ -24,7 +24,7 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
     margin: 0 auto;
     height: 10em;
     width: 10em;
-    background: #d4d4d4 url('/image/mywebsite/me.png') 80% 0%;
+    background: #d4d4d4 url('/images/mywebsite/me.png') 80% 0%;
     background-size: 10em 10em;
     @include border-radius(50%);
     @include box-shadow($title-photo-bgimg-outer-color);

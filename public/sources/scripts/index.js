@@ -3,7 +3,7 @@
 // import gbg from '../scripts/ghostBtnGenerators';
 // import handleDateFormat from '../scripts/profolio-presentation';
 // import handleClickChangePage from '../scripts/_changePage';
-// var app = app || {};
+
 window.app = {};
 
 class index {
@@ -20,7 +20,6 @@ class index {
     // 方法
     this.init();
     this.eventListener();
-    console.log(this.$app.find('#title-photo'));
   }
 
   /*
@@ -33,7 +32,8 @@ class index {
     // $.extend(this.state, {
 
     // });
-
+// console.log(window.app.profolio)
+    // window.app.profolio.init();
     // 產生ghost button
     // this.$ghostBtn.map((i,d)=> new gbg(d, this.state, function(newState){
     //   $.extend( ucar.state, newState);
@@ -51,8 +51,8 @@ class index {
 
     // go projects
     this.changePage($goProjects, $from, $to, ()=>{
-      console.log($to);
-    }); 
+      window.app.projects.reStart();
+    });
 
     // $from.on('change', ()=>{
 
