@@ -32,12 +32,36 @@ class index {
     // $.extend(this.state, {
 
     // });
+
+    // this.$app.find('section').addClass('hide');
+
+    console.log(location.pathname)
+    console.log(history.state)
+    // new page url check
+    if(location.pathname){
+      let url = location.pathname.slice(1);
+      this.showPage(this.$app.find('#' + url), ()=>{
+        $(function(){
+          window.app.projects.reStart();
+        })
+      });
+    }
+    // history url
+    // if(history.state){
+    //   this.showPage(this.$app.find('#' + history.state.page), ()=>{
+    //     $(function(){
+    //       window.app.projects.reStart();
+    //     })
+    //   });
+    // }
+
 // console.log(window.app.profolio)
     // window.app.profolio.init();
     // 產生ghost button
     // this.$ghostBtn.map((i,d)=> new gbg(d, this.state, function(newState){
     //   $.extend( ucar.state, newState);
     // }));
+    // this.$app.removeClass('hide');
   }
 
   /*
@@ -45,30 +69,57 @@ class index {
    */
 
   eventListener() {
-    const $from = this.$app.find('#title-photo');
-    const $to = this.$app.find('#projects');
+    const $indexSection = this.$app.find('#KevinHu');
+    const $projectsSection = this.$app.find('#projects');
+    const $goIndex = this.$app.find('.KevinHu');
     const $goProjects = this.$app.find('.projects');
 
-    // go projects
-    this.changePage($goProjects, $from, $to, ()=>{
-      window.app.projects.reStart();
+    // history listen
+    $(window).on("popstate", ()=>{
+      if(!history.state){
+        this.showPage($indexSection);
+        return;
+      }
+      this.showPage(this.$app.find('#' + history.state.page), ()=>{
+        // window.app.projects.reStart();
+      });
     });
 
-    // $from.on('change', ()=>{
-
-    // });
+    this.changePage($indexSection, $goIndex, ()=>{
+      this.$app.find('section').addClass('hide');
+      setTimeout(function(){
+        $indexSection.removeClass('hide')
+      }, 10);
+    });
+    // go projects
+    this.changePage($projectsSection, $goProjects, ()=>{
+      window.app.projects.reStart();
+    });
   }
 
-  changePage($trigger, $from, $to, callback) {
+  changePage($page, $trigger, callback) {
       $trigger.off('click').on('click', ()=>{
-        // $from.fadeOut();
-        // $to.fadeIn();
-        $to.addClass('show').removeClass('hide');
-        $from.removeClass('show').addClass('hide');
+        this.showPage($page);
+
+        // history push
+        if(!history.state || history.state.page !== $trigger.text())
+          history.pushState({ 'page': $trigger.text() }, '', $trigger.text());
+
         if (typeof callback === 'function') {
           callback();
         }
       });
+  }
+
+  showPage($page, callback) {
+    // $from.fadeOut();
+    // $to.fadeIn();
+    this.$app.find('section').addClass('hide');
+    $page.removeClass('hide');
+
+    if (typeof callback === 'function') {
+      callback();
+    }
   }
 }
 
