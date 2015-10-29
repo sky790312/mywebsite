@@ -61,7 +61,10 @@ class index {
     // this.$ghostBtn.map((i,d)=> new gbg(d, this.state, function(newState){
     //   $.extend( ucar.state, newState);
     // }));
+
+    // ready and show
     // this.$app.removeClass('hide');
+    this.$app.find('#preloader').addClass('hide');
   }
 
   /*
@@ -81,15 +84,17 @@ class index {
         return;
       }
       this.showPage(this.$app.find('#' + history.state.page), ()=>{
+        // this.$app.find('.' + history.state.page).addClass('active');
+        // if projects
         // window.app.projects.reStart();
       });
     });
 
     this.changePage($indexSection, $goIndex, ()=>{
-      this.$app.find('section').addClass('hide');
-      setTimeout(function(){
-        $indexSection.removeClass('hide')
-      }, 10);
+      this.showPage($indexSection);
+      // setTimeout(function(){
+      //   $indexSection.removeClass('hide')
+      // }, 10);
     });
     // go projects
     this.changePage($projectsSection, $goProjects, ()=>{
@@ -98,17 +103,19 @@ class index {
   }
 
   changePage($page, $trigger, callback) {
-      $trigger.off('click').on('click', ()=>{
-        this.showPage($page);
+    $trigger.off('click').on('click', ()=>{
+      // if($trigger.hasClass('active'))
+        // return;
+      // $trigger.addClass('active');
+      this.showPage($page);
+      // history push
+      if(!history.state || history.state.page !== $trigger.text())
+        history.pushState({ 'page': $trigger.text() }, '', $trigger.text());
 
-        // history push
-        if(!history.state || history.state.page !== $trigger.text())
-          history.pushState({ 'page': $trigger.text() }, '', $trigger.text());
-
-        if (typeof callback === 'function') {
-          callback();
-        }
-      });
+      if (typeof callback === 'function') {
+        callback();
+      }
+    });
   }
 
   showPage($page, callback) {
