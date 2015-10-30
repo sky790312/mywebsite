@@ -1,7 +1,3 @@
-@import 'compass/css3';
-@import '_animate';
-@import "utils/_variables";
-
 /* component - my photo with side title desc */
 
 $title-photo-linear-gradient: linear-gradient(to right, #0A00AA, #4442D8, #0a00aa);
@@ -73,10 +69,10 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
    to {opacity: 1;}
 }
 @include keyframes(move-left-title) {
-   from {right: 9999px; opacity: 0;}
+   from {right: 2000px; opacity: 0;}
    to {right: 8em; opacity: 1;}
 }
 @include keyframes(move-right-title) {
-   from {left: 9999px; opacity: 0;}
+   from {left: 2000px; opacity: 0;}
    to {left: 8em; opacity: 1;}
 }

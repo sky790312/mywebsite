@@ -1,8 +1,11 @@
-// @import "utils";
+@import 'compass/css3';
+// @import '_animate';
+@import "animation/core";
+// @import "animation/animate";
 
 @import "utils/_variables";
-@import "utils/_main";
 @import "utils/_layout";
+@import "utils/_main";
 
 @import "component/_menu";
 @import "component/_head";
