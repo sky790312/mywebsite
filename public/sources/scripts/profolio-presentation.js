@@ -101,10 +101,10 @@ $(function(){
       profolio.bind.close();
       profolio.bind.down();
       profolio.bind.scrolling();
-			profolio.method.showProfolios(profolio.$section.find('li').eq(0));
+			// profolio.method.showProfolios(profolio.$section.find('li').eq(0));
     },
-    reStart: function() {
-    	// for mywebsite restart
+    start: function() {
+    	// for mywebsite start
     	profolio.$section.find('li').removeClass('loaded inside');
 	   	profolio.method.showProfolios(profolio.$section.find('li').eq(0));
     }

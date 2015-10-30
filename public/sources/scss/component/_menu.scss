@@ -7,7 +7,9 @@ $animate-duration: .3s;
 /* component - menu */
 
 .KevinHu {
-  position: absolute;
+  float: left;
+  font-size: 20px;
+  color: $main-text-color;
 }
 
 .menu-assemble {

@@ -35,14 +35,15 @@ class index {
 
     // this.$app.find('section').addClass('hide');
 
-    console.log(location.pathname)
-    console.log(history.state)
+    // console.log($(location).attr('pathname'))
+    // console.log(history.state)
     // new page url check
-    if(location.pathname){
-      let url = location.pathname.slice(1);
+    if($(location).attr('pathname')){
+      let url = $(location).attr('pathname').slice(1);
       this.showPage(this.$app.find('#' + url), ()=>{
-        $(function(){
-          window.app.projects.reStart();
+        // dom ready
+        $(()=>{
+          this.afterPage(url);
         })
       });
     }
@@ -50,7 +51,7 @@ class index {
     // if(history.state){
     //   this.showPage(this.$app.find('#' + history.state.page), ()=>{
     //     $(function(){
-    //       window.app.projects.reStart();
+    //       window.app.projects.start();
     //     })
     //   });
     // }
@@ -79,30 +80,47 @@ class index {
 
     // history listen
     $(window).on("popstate", ()=>{
-      if(!history.state){
-        this.showPage($indexSection);
-        return;
-      }
-      this.showPage(this.$app.find('#' + history.state.page), ()=>{
+      let url = history.state ? history.state.page : $(location).attr('pathname').slice(1);
+      this.showPage(this.$app.find('#' + url), ()=>{
         // this.$app.find('.' + history.state.page).addClass('active');
-        // if projects
-        // window.app.projects.reStart();
+        this.afterPage(url);
       });
     });
 
-    this.changePage($indexSection, $goIndex, ()=>{
-      this.showPage($indexSection);
-      // setTimeout(function(){
-      //   $indexSection.removeClass('hide')
-      // }, 10);
+    this.clickPage($indexSection, $goIndex, ()=>{
+      // this.showPage($indexSection);
+      this.afterPage('KevinHu');
     });
     // go projects
-    this.changePage($projectsSection, $goProjects, ()=>{
-      window.app.projects.reStart();
+    this.clickPage($projectsSection, $goProjects, ()=>{
+      // window.app.projects.start();
+      this.afterPage('projects');
     });
   }
 
-  changePage($page, $trigger, callback) {
+  showPage($page, callback) {
+    // $from.fadeOut();
+    // $to.fadeIn();
+    this.$app.find('section').addClass('hide');
+    $page.removeClass('hide');
+
+    if (typeof callback === 'function') {
+      callback();
+    }
+  }
+
+  afterPage(page) {
+    switch (page) {
+      default:
+        break;
+      case 'projects':
+        window.app.projects.start();
+        break;
+    }
+  }
+
+  // click and change page
+  clickPage($page, $trigger, callback) {
     $trigger.off('click').on('click', ()=>{
       // if($trigger.hasClass('active'))
         // return;
@@ -116,17 +134,6 @@ class index {
         callback();
       }
     });
-  }
-
-  showPage($page, callback) {
-    // $from.fadeOut();
-    // $to.fadeIn();
-    this.$app.find('section').addClass('hide');
-    $page.removeClass('hide');
-
-    if (typeof callback === 'function') {
-      callback();
-    }
   }
 }
 
