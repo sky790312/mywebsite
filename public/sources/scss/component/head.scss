@@ -2,7 +2,7 @@
 
 // $head-boy
 
-$head-boy-color: #eee;
+$head-boy-color: #ccc;
 $head-boy-eyes-color: #444;
 $head-boy-feets-color: #444;
 
@@ -11,9 +11,14 @@ $head-boy-feets-color: #444;
   margin-top: -65px;
   z-index: 0;
   cursor: pointer;
+  transition: all .2s linear;
   &.hide-body {
     height: 65px;
     overflow: hidden;
+  }
+  &:hover {
+    margin-top: -75px;
+    height: 75px;
   }
   .head {
     position: relative;

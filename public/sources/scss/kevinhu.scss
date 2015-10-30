@@ -17,15 +17,38 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
   }
   .title-photo {
     position: relative;
+    @include animation(show-photo .8s ease);
+  }
+  .photo {
+    position: relative;
     margin: 0 auto;
     height: 10em;
     width: 10em;
+    cursor: pointer;
+    z-index: 1;
     background: #d4d4d4 url('/images/mywebsite/me.png') 80% 0%;
     background-size: 10em 10em;
+    transition: all .2s linear;
     @include border-radius(50%);
     @include box-shadow($title-photo-bgimg-outer-color);
-    @include animation(show-photo 1.2s ease);
-
+    @include animation(swing-photo 1s linear 1.2s infinite);
+    &:hover {
+      background: #d4d4d4 url('/images/mywebsite/test.jpg') 100% 100%;
+      @include border-radius(15%);
+    }
+  }
+  .title {
+    position: absolute;
+    left: 50%;
+    margin: -10em 0 0 -5em;
+    height: 10em;
+    width: 10em;
+    &.title-skill {
+      // @include animation(move-left-title .8s ease-out .5s);
+    }
+    &.title-brief {
+      // @include animation(move-left-title .8s ease-out .5s);
+    }
     @include mediaQuires(ML) {
       &:before, &:after {
         position: absolute;
@@ -36,13 +59,13 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
         opacity: 0;
         font-size: 1.7em;
         content: 'FrontEnd Developer';
-        @include animation(move-left-title 1.2s ease .2s);
+        @include animation(move-left-title .8s ease-out .5s);
         @include animation-fill-mode(forwards);
       }
       &:after {
         left: 8em;
         content: 'web Developer';
-        @include animation(move-right-title 1.2s ease .2s);
+        @include animation(move-right-title .8s ease-out .5s);
         @include animation-fill-mode(forwards);
       }
     }
@@ -64,15 +87,22 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
    from {top: -999px;}
    to {top: 0;}
 }
+@include keyframes(swing-photo) {
+   0% {top: 0;}
+   25% {top: 3px;}
+   50% {top: 0;}
+   75% {top: -3px;}
+   100% {top: 0;}
+}
 @include keyframes(show-text) {
    from {opacity: 0;}
    to {opacity: 1;}
 }
 @include keyframes(move-left-title) {
-   from {right: 2000px; opacity: 0;}
+   from {right: 999px; opacity: 0;}
    to {right: 8em; opacity: 1;}
 }
 @include keyframes(move-right-title) {
-   from {left: 2000px; opacity: 0;}
+   from {left: 999px; opacity: 0;}
    to {left: 8em; opacity: 1;}
 }
