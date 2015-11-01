@@ -9,6 +9,7 @@ $animate-duration: .3s;
 .KevinHu {
   float: left;
   margin: 26px 0;
+  cursor: pointer;
   color: $main-text-color;
 }
 
@@ -186,7 +187,9 @@ $animate-duration: .3s;
       > li {
         display: inline-block;
         padding: 20px;
-        color: $main-text-color;
+        > a {
+          color: $main-text-color;
+        }
       }
     }
   }

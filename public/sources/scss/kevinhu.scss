@@ -26,15 +26,27 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
     width: 10em;
     cursor: pointer;
     z-index: 1;
-    background: #d4d4d4 url('/images/mywebsite/me.png') 80% 0%;
+    background-color: #d4d4d4;
+    background-position: 80% 0%;
     background-size: 10em 10em;
     transition: all .2s linear;
     @include border-radius(50%);
     @include box-shadow($title-photo-bgimg-outer-color);
     @include animation(swing-photo 1s linear 1.2s infinite);
     &:hover {
-      background: #d4d4d4 url('/images/mywebsite/test.jpg') 100% 100%;
       @include border-radius(15%);
+    }
+    &.photo-skill {
+      background-image: url('/images/mywebsite/me.png');
+      // &:hover {
+      //   background-image: url('/images/mywebsite/test.jpg');
+      // }
+    }
+    &.photo-brief {
+      background-image: url('/images/mywebsite/test.jpg');
+      // &:hover {
+      //   background-image: url('/images/mywebsite/me.png');
+      // }
     }
   }
   .title {
@@ -44,10 +56,20 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
     height: 10em;
     width: 10em;
     &.title-skill {
-      // @include animation(move-left-title .8s ease-out .5s);
+      &:before {
+        content: 'FrontEnd Developer';
+      }
+      &:after {
+        content: 'web Developer';
+      }
     }
     &.title-brief {
-      // @include animation(move-left-title .8s ease-out .5s);
+      &:before {
+        content: 'public me';
+      }
+      &:after {
+        content: 'private me';
+      }
     }
     @include mediaQuires(ML) {
       &:before, &:after {
@@ -58,14 +80,12 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
         color: black;
         opacity: 0;
         font-size: 1.7em;
-        content: 'FrontEnd Developer';
-        @include animation(move-left-title .8s ease-out .5s);
+        @include animation(show-left-title .8s ease-out .5s);
         @include animation-fill-mode(forwards);
       }
       &:after {
         left: 8em;
-        content: 'web Developer';
-        @include animation(move-right-title .8s ease-out .5s);
+        @include animation(show-right-title .8s ease-out .5s);
         @include animation-fill-mode(forwards);
       }
     }
@@ -98,11 +118,11 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
    from {opacity: 0;}
    to {opacity: 1;}
 }
-@include keyframes(move-left-title) {
+@include keyframes(show-left-title) {
    from {right: 999px; opacity: 0;}
    to {right: 8em; opacity: 1;}
 }
-@include keyframes(move-right-title) {
+@include keyframes(show-right-title) {
    from {left: 999px; opacity: 0;}
    to {left: 8em; opacity: 1;}
 }

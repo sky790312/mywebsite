@@ -81,23 +81,35 @@ class index {
     // history listen
     $(window).on("popstate", ()=>{
       let url = history.state ? history.state.page : $(location).attr('pathname').slice(1);
-      this.showPage(this.$app.find('#' + url), ()=>{
+      this.showPage(this.$app.find('#' + url), ()=> {
         // this.$app.find('.' + history.state.page).addClass('active');
         this.afterPage(url);
       });
     });
-
-    this.clickPage($indexSection, $goIndex, ()=>{
-      // this.showPage($indexSection);
+    // change photo title
+    $indexSection.off('click').on('click','.photo', (e)=> {
+      let $ele = $(e.target);
+      if($ele.hasClass('photo-skill')) {
+        $ele.removeClass('photo-skill').addClass('photo-brief');
+        $ele.next().removeClass('title-skill').addClass('title-brief');
+      }else {
+        $ele.removeClass('photo-brief').addClass('photo-skill');
+        $ele.next().removeClass('title-brief').addClass('title-skill');
+      }
+    });
+    // go index kevinhu
+    this.changePage($indexSection, $goIndex, ()=> {
       this.afterPage('KevinHu');
     });
     // go projects
-    this.clickPage($projectsSection, $goProjects, ()=>{
-      // window.app.projects.start();
+    this.changePage($projectsSection, $goProjects, ()=> {
       this.afterPage('projects');
     });
   }
 
+
+
+/* about page control - 未來移出js */
   showPage($page, callback) {
     // $from.fadeOut();
     // $to.fadeIn();
@@ -109,6 +121,7 @@ class index {
     }
   }
 
+  // page setting
   afterPage(page) {
     switch (page) {
       default:
@@ -120,7 +133,7 @@ class index {
   }
 
   // click and change page
-  clickPage($page, $trigger, callback) {
+  changePage($page, $trigger, callback) {
     $trigger.off('click').on('click', ()=>{
       // if($trigger.hasClass('active'))
         // return;
