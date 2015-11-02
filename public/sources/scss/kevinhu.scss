@@ -18,7 +18,7 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
       width: 100%;
       height: 100%;
       opacity: 0.75;
-      background: url('/images/mywebsite/testbkg.jpeg') 50% 0;
+      background: url('/images/mywebsite/bkg.jpg') 50% 0;
       background-repeat: no-repeat;
       @include background-size(cover);
   }
@@ -49,13 +49,13 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
       @include border-radius(15%);
     }
     &.photo-skill {
-      background-image: url('/images/mywebsite/me.png');
+      background-image: url('/images/mywebsite/me.jpg');
       // &:hover {
       //   background-image: url('/images/mywebsite/test.jpg');
       // }
     }
     &.photo-brief {
-      background-image: url('/images/mywebsite/test.jpg');
+      background-image: url('/images/mywebsite/me2.jpg');
       // &:hover {
       //   background-image: url('/images/mywebsite/me.png');
       // }

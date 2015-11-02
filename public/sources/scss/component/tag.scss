@@ -48,8 +48,11 @@ $tag-text-color: #eee;
 	@include border-radius(5px);
 
 	&:hover {
-		background-color: #47A1FF;;
-		opacity: 0.7;
+		background-color: #47A1FF;
+		padding: 7px 10px;
+		// font-size: 17px;
+		margin: 3px;
+		opacity: 0.9;
 	}
 }
 
