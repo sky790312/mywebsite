@@ -1,15 +1,27 @@
 /* component - my photo with side title desc */
 
-$title-photo-linear-gradient: linear-gradient(to right, #0A00AA, #4442D8, #0a00aa);
-$title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
+$title-photo-linear-gradient: linear-gradient(to right, $main-bg-color, rgba(0, 0, 0, 0.6), $main-bg-color);
+$title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
 
 #KevinHu {
   margin-top: 85px;
   // padding: 10em 0;
   height: calc(100vh - 170px);
   text-align: center;
-  background: #07a;
   @include background($title-photo-linear-gradient);
+  &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.75;
+      background-image: url('/images/mywebsite/testbkg.jpeg');
+      background-repeat: no-repeat;
+      @include background-size(cover);
+  }
   > div {
     position: relative;
     top: 50%;
@@ -76,8 +88,8 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
         position: absolute;
         top: 2.5em;
         right: 8em;
-        width: 10em;
-        color: black;
+        width: 7em;
+        color: $main-title-color;
         opacity: 0;
         font-size: 1.7em;
         @include animation(show-left-title .8s ease-out .5s);
@@ -89,6 +101,17 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
         @include animation-fill-mode(forwards);
       }
     }
+    @include mediaQuires(L) {
+      &:before, &:after {
+        width: 10em;
+      }
+      &:before {
+        text-align: right;
+      }
+      &:after {
+        text-align: left;
+      }
+    }
   }
   h1, p {
     opacity: 0;
@@ -96,10 +119,11 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
     @include animation-fill-mode(forwards);
   }
   h1 {
-    color: $main-text-color;
+    color: $main-title-color;
     padding: 40px;
   }
   p {
+    color: $main-text-color;
     font-size: 16px;
   }
 }
@@ -109,9 +133,9 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(77, 164, 255, 0.9);
 }
 @include keyframes(swing-photo) {
    0% {top: 0;}
-   25% {top: 3px;}
-   50% {top: 0;}
-   75% {top: -3px;}
+   50% {top: 3px;}
+   // 50% {top: 0;}
+   // 75% {top: -3px;}
    100% {top: 0;}
 }
 @include keyframes(show-text) {

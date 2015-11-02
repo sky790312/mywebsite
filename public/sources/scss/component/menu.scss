@@ -1,16 +1,16 @@
+/* component - menu */
+
 $icon-menu-color: rgb(9, 87, 255);
 $icon-menu-border-radius: 10px;
 $icon-menu-line-height: 2px;
 $menu-bg-color: rgba(27, 139, 255, 0.8);
 $animate-duration: .3s;
 
-/* component - menu */
-
 .KevinHu {
   float: left;
   margin: 26px 0;
   cursor: pointer;
-  color: $main-text-color;
+  color: $main-title-color;
 }
 
 .menu-assemble {
@@ -122,7 +122,7 @@ $animate-duration: .3s;
       .menu-background {
         width: 0;
         height: 0;
-        color: $main-text-color;
+        color: $main-title-color;
         background: $menu-bg-color;
         border-radius: 50%;
         @include transition(all $animate-duration ease);
@@ -154,7 +154,7 @@ $animate-duration: .3s;
           position: relative;
           display: inline;
           cursor: pointer;
-          color: $main-text-color;
+          color: $main-title-color;
           @include transition(color $animate-duration ease);
           &:after {
             content: '';
@@ -164,7 +164,7 @@ $animate-duration: .3s;
             left: 0;
             width: 0;
             height: 2px;
-            background: $main-text-color;
+            background: $main-title-color;
             @include transition(width $animate-duration ease);
           }
           &:hover:after, &:active:after, &:focus:after{
@@ -188,7 +188,7 @@ $animate-duration: .3s;
         display: inline-block;
         padding: 20px;
         > a {
-          color: $main-text-color;
+          color: $main-title-color;
         }
       }
     }

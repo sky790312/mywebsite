@@ -1,0 +1,59 @@
+/* component - tags */
+
+$tag-bg-color: rgba(27, 139, 255, 1);
+$tag-text-color: #eee;
+
+.tags-left {
+	position: absolute;
+  opacity: 0;
+  @include animation(show-tags 1.2s ease 1s);
+  @include animation-fill-mode(forwards);
+  @include mediaQuires(S) {
+  	display: none;
+  }
+  @include mediaQuires(M) {
+		top: 8.5em;
+	}
+  @include mediaQuires(L) {
+		top: 7em;
+		left: 6.5em;
+	}
+}
+
+.tags-right {
+	position: absolute;
+  opacity: 0;
+  @include animation(show-tags 1.2s ease 1s);
+  @include animation-fill-mode(forwards);
+  @include mediaQuires(S) {
+  	display: none;
+  }
+  @include mediaQuires(M) {
+		top: 8.5em;
+		right: 2.8em;
+	}
+  @include mediaQuires(L) {
+		top: 7em;
+		right: 9.5em;
+	}
+}
+
+.tag {
+	float: left;
+	margin: 5px;
+	padding: 5px 8px;
+	color: $tag-text-color;
+	background-color: $tag-bg-color;
+	cursor: pointer;
+	@include border-radius(5px);
+
+	&:hover {
+		background-color: #47A1FF;;
+		opacity: 0.7;
+	}
+}
+
+@include keyframes(show-tags) {
+   from {opacity: 0;}
+   to {opacity: 1;}
+}
