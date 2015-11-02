@@ -18,7 +18,7 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
       width: 100%;
       height: 100%;
       opacity: 0.75;
-      background-image: url('/images/mywebsite/testbkg.jpeg');
+      background: url('/images/mywebsite/testbkg.jpeg') 50% 0;
       background-repeat: no-repeat;
       @include background-size(cover);
   }
