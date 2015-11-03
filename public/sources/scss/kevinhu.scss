@@ -30,6 +30,33 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
   .title-photo {
     position: relative;
     @include animation(show-photo .8s ease);
+
+    &.about-skill {
+      > .photo {
+        background-image: url('/images/mywebsite/me.jpg');
+      }
+      > .title {
+        &:before {
+          content: 'FrontEnd Developer';
+        }
+        &:after {
+          content: 'web Developer';
+        }
+      }
+    }
+    &.about-brief {
+      > .photo {
+        background-image: url('/images/mywebsite/me2.jpg');
+      }
+      > .title {
+        &:before {
+          content: 'public me';
+        }
+        &:after {
+          content: 'private me';
+        }
+      }
+    }
   }
   .photo {
     position: relative;
@@ -48,18 +75,6 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
     &:hover {
       @include border-radius(15%);
     }
-    &.photo-skill {
-      background-image: url('/images/mywebsite/me.jpg');
-      // &:hover {
-      //   background-image: url('/images/mywebsite/test.jpg');
-      // }
-    }
-    &.photo-brief {
-      background-image: url('/images/mywebsite/me2.jpg');
-      // &:hover {
-      //   background-image: url('/images/mywebsite/me.png');
-      // }
-    }
   }
   .title {
     position: absolute;
@@ -67,22 +82,6 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
     margin: -10em 0 0 -5em;
     height: 10em;
     width: 10em;
-    &.title-skill {
-      &:before {
-        content: 'FrontEnd Developer';
-      }
-      &:after {
-        content: 'web Developer';
-      }
-    }
-    &.title-brief {
-      &:before {
-        content: 'public me';
-      }
-      &:after {
-        content: 'private me';
-      }
-    }
     @include mediaQuires(ML) {
       &:before, &:after {
         position: absolute;
@@ -127,16 +126,14 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
     font-size: 16px;
   }
 }
+@include keyframes(swing-photo) {
+   0% {top: 0;}
+   50% {top: 5px;}
+   100% {top: 0;}
+}
 @include keyframes(show-photo) {
    from {top: -999px;}
    to {top: 0;}
-}
-@include keyframes(swing-photo) {
-   0% {top: 0;}
-   50% {top: 3px;}
-   // 50% {top: 0;}
-   // 75% {top: -3px;}
-   100% {top: 0;}
 }
 @include keyframes(show-text) {
    from {opacity: 0;}

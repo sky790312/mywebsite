@@ -80,7 +80,8 @@ class index {
 
     // history listen
     $(window).on("popstate", ()=>{
-      let url = history.state ? history.state.page : $(location).attr('pathname').slice(1);
+      let url = history.state ?
+        history.state.page : $(location).attr('pathname').slice(1);
       this.showPage(this.$app.find('#' + url), ()=> {
         // this.$app.find('.' + history.state.page).addClass('active');
         this.afterPage(url);
@@ -88,13 +89,15 @@ class index {
     });
     // change photo title
     $indexSection.off('click').on('click','.photo', (e)=> {
-      let $ele = $(e.target);
-      if($ele.hasClass('photo-skill')) {
-        $ele.removeClass('photo-skill').addClass('photo-brief');
-        $ele.next().removeClass('title-skill').addClass('title-brief');
-      }else {
-        $ele.removeClass('photo-brief').addClass('photo-skill');
-        $ele.next().removeClass('title-brief').addClass('title-skill');
+      let $ele = $(e.target).parent();
+      if($ele.hasClass('about-skill')){
+        $ele.removeClass('about-skill').addClass('about-brief');
+        $ele.find('.tags-brief').removeClass('hide');
+        $ele.find('.tags-skill').addClass('hide');
+      }else{
+        $ele.removeClass('about-brief').addClass('about-skill');
+        $ele.find('.tags-brief').addClass('hide');
+        $ele.find('.tags-skill').removeClass('hide');
       }
     });
     // go index kevinhu
@@ -123,6 +126,11 @@ class index {
 
   // page setting
   afterPage(page) {
+    if(this.$app.find('.' + page).hasClass('active'))
+      return;
+    this.$app.find('.KevinHu').removeClass('active');
+    this.$app.find('.menu a').removeClass('active');
+    this.$app.find('.' + page).addClass('active');
     switch (page) {
       default:
         break;

@@ -80,7 +80,7 @@ appRouter.get('/', mywebsite.index);
 // apis
 // appRouter.get('/api', mywebsite.testapi); // 測試api
 
-app.use('/', appRouter);
+// app.use('/', appRouter);
 app.use('/KevinHu', appRouter);
 // app.use('/mywebsite', appRouter);
 app.use('/projects', appRouter)

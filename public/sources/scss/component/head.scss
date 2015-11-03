@@ -18,26 +18,15 @@ $head-boy-feets-color: #444;
     margin-top: -75px;
     height: 75px;
   }
-  .head {
+  > .head {
     position: relative;
     width: 85px;
     height: 85px;
     border-radius: 50%;
     background: $head-boy-color;
     // @include animation(head 1.2s infinite);
-    .eyes {
-      position: absolute;
-      top: 35px;
-      left: 30px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: $head-boy-eyes-color;
-      box-shadow: 20px 0 0 #444444;
-      @include animation(eyes 2.5s infinite);
-    }
   }
-  .feets {
+  > .feets {
     position: relative;
     top: -10px;
     &:before, &:after {
@@ -56,6 +45,17 @@ $head-boy-feets-color: #444;
       z-index: -1;
       // @include animation(feets-right 1.2s infinite);
     }
+  }
+  .eyes {
+    position: absolute;
+    top: 35px;
+    left: 30px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $head-boy-eyes-color;
+    box-shadow: 20px 0 0 #444444;
+    @include animation(eyes 2.5s infinite);
   }
 }
 

@@ -17,180 +17,229 @@ $animate-duration: .3s;
   float: right;
 }
 
-// .menu-assemble {
-  /* component - menu mobile */
-  @include mediaQuires(S) {
-    /* menu mobile - icon before checked */
-    .mobile-menu {
+/* component - menu mobile */
+@include mediaQuires(S) {
+  /* menu mobile - icon before checked */
+  .mobile-menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 52px;
+    height: 46px;
+    z-index: 5;
+    > .checkbox-toggle {
       position: absolute;
-      top: 15px;
-      right: 15px;
-      width: 52px;
-      height: 46px;
-      z-index: 5;
-      .checkbox-toggle {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 6;
-        cursor: pointer;
-        width: 52px;
-        height: 46px;
-        opacity: 0;
-      }
-      .icon-menu {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        width: 26px;
-        height: 30px;
-        padding: .5em .8em;
-        background: $icon-menu-color;
-        border-radius: $icon-menu-border-radius;
-        cursor: pointer;
-        @include transition(box-shadow $animate-duration ease);
-        @include display-flex;
-        @include align-items(center);
-        @include justify-content(center);
-      }
-    }
-    /* menu mobile - icon checked */
-    .mobile-menu .checkbox-toggle:checked {
-      + .icon-menu > div {
-        @include transform(rotate(135deg));
-        &:before, &:after {
-          top: 0;
-          @include transform(rotate(90deg));
-        }
-        &:after {
-          opacity: 0;
-        }
-      }
-      ~ .mobile-menu-in {
-        pointer-events: auto;
-
-        > .menu-background {
-          width: 300vw;
-          height: 300vw;
-          > .menu-list {
-            opacity: 1;
-            @include transition(opacity $animate-duration ease $animate-duration);
-          }
-        }
-      }
-      &:hover + .icon-menu > div {
-        @include transform(rotate(225deg));
-      }
-    }
-    .mobile-menu .icon-menu > div {
-      position: relative;
-      width: 100%;
-      height: $icon-menu-line-height;
-      background: white;
-      @include flex(none);
-      @include transition(all $animate-duration ease);
-      @include display-flex;
-      @include align-items(center);
-      @include justify-content(center);
-      &:before, &:after {
-        content: '';
-        position: absolute;
-        z-index: 5;
-        top: -10px;
-        left: 0;
-        width: 100%;
-        height: $icon-menu-line-height;
-        background: inherit;
-        @include transition(all $animate-duration ease);
-      }
-      &:after {
-        top: 10px;
-      }
-    }
-    /* menu mobile - menu section */
-    .mobile-menu .mobile-menu-in {
-      position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
+      z-index: 6;
+      cursor: pointer;
+      width: 52px;
+      height: 46px;
+      opacity: 0;
+    }
+    > .icon-menu {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      width: 26px;
+      height: 30px;
+      padding: .5em .8em;
+      background: $icon-menu-color;
+      border-radius: $icon-menu-border-radius;
+      cursor: pointer;
+      @include transition(box-shadow $animate-duration ease);
       @include display-flex;
       @include align-items(center);
       @include justify-content(center);
-      .menu-background {
-        width: 0;
-        height: 0;
-        color: $main-title-color;
-        background: $menu-bg-color;
-        border-radius: 50%;
-        @include transition(all $animate-duration ease);
-        @include flex(none);
-        @include display-flex;
-        @include align-items(center);
-        @include justify-content(center);
+    }
+  }
+  /* menu mobile - icon checked */
+  .mobile-menu .checkbox-toggle:checked {
+    + .icon-menu > div {
+      @include transform(rotate(135deg));
+      &:before, &:after {
+        top: 0;
+        @include transform(rotate(90deg));
       }
-      .menu-list {
-        text-align: center;
-        max-width: 90vw;
-        max-height: 100vh;
+      &:after {
         opacity: 0;
-        overflow-y: auto;
       }
     }
-    .mobile-menu .menu-list > ul {
-      list-style: none;
-      padding: 0 1em;
-      margin: 0;
-      display: block;
+    ~ .mobile-menu-in {
+      pointer-events: auto;
+
+      > .menu-background {
+        width: 300vw;
+        height: 300vw;
+        > .menu-list {
+          opacity: 1;
+          @include transition(opacity $animate-duration ease $animate-duration);
+        }
+      }
+    }
+    &:hover + .icon-menu > div {
+      @include transform(rotate(225deg));
+    }
+  }
+  .mobile-menu .icon-menu > div {
+    position: relative;
+    width: 100%;
+    height: $icon-menu-line-height;
+    background: white;
+    @include flex(none);
+    @include transition(all $animate-duration ease);
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      z-index: 5;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: $icon-menu-line-height;
+      background: inherit;
+      @include transition(all $animate-duration ease);
+    }
+    &:after {
+      top: 10px;
+    }
+  }
+  /* menu mobile - menu section */
+  .mobile-menu .mobile-menu-in {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);
+    > .menu-background {
+      width: 0;
+      height: 0;
+      color: $main-title-color;
+      background: $menu-bg-color;
+      border-radius: 50%;
+      @include transition(all $animate-duration ease);
+      @include flex(none);
+      @include display-flex;
+      @include align-items(center);
+      @include justify-content(center);
+    }
+    .menu-list {
+      text-align: center;
+      max-width: 90vw;
       max-height: 100vh;
-      > li {
-        padding: 0;
-        margin: 1em;
-        font-size: 24px;
-        display: block;
-        > a {
-          position: relative;
-          display: inline;
-          cursor: pointer;
-          color: $main-title-color;
-          @include transition(color $animate-duration ease);
-          &:after {
-            content: '';
-            position: absolute;
-            z-index: 5;
-            bottom: -0.15em;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: $main-title-color;
-            @include transition(width $animate-duration ease);
-          }
-          &:hover:after, &:active:after, &:focus:after{
-            width: 100%;
-          }
-        }
-      }
-    }
-    .menu {
-      display: none;
+      opacity: 0;
+      overflow-y: auto;
     }
   }
-  /* component - menu pad/disk */
-  @include mediaQuires(ML) {
-    .mobile-menu {
-      display: none;
-    }
-    .menu {
-      height: 53px;
-      > li {
-        display: inline-block;
-        padding: 20px;
-        > a {
-          color: $main-title-color;
+  .mobile-menu .menu-list > ul {
+    list-style: none;
+    padding: 0 1em;
+    margin: 0;
+    display: block;
+    max-height: 100vh;
+    > li {
+      padding: 0;
+      margin: 1em;
+      font-size: 24px;
+      display: block;
+      > a {
+        position: relative;
+        display: inline;
+        cursor: pointer;
+        color: $main-title-color;
+        @include transition(color $animate-duration ease);
+        &:after {
+          content: '';
+          position: absolute;
+          z-index: 5;
+          bottom: -0.15em;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: $main-title-color;
+          @include transition(width $animate-duration ease);
+        }
+        &:hover:after, &:active:after, &:focus:after{
+          width: 100%;
         }
       }
     }
   }
+  .menu {
+    display: none;
+  }
+}
+/* component - menu pad/disk */
+@include mediaQuires(ML) {
+  .mobile-menu {
+    display: none;
+  }
+  .menu {
+    height: 53px;
+    > li {
+      display: inline-block;
+      padding: 20px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    a {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      color: $main-title-color;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 0;
+        height: 2px;
+        background-color: #FEFF1B;
+        transition: max-width 0.2s ease;
+      }
+      &:hover {
+        font-weight: bold;
+        &:after {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// .link a {
+//   padding: 5px;
+//   display: inline-block;
+//   position: relative; // 給偽元素計算位置用
+//   font-size: 3em;
+//   color: white;
+//   text-decoration: none;
+
+//   &:after {
+//     content: '';
+//     position: absolute; // 指定位置
+//     bottom: 0; // 指定位置
+//     left: 50%; // 指定位置，置中用
+//     transform: translateX(-50%); //置中用
+//     width: 100%; // 先設定寬度 100%，這樣 Link 有多長線就會有多長
+//     max-width: 0px; // 再強制 max-width 為 0px
+//     height: 3px;
+//     background-color: yellow;
+//     transition: all 0.5s ease; // 動態效果
+//   }
+
+//   &:hover {
+//     &:after {
+//       max-width: 100%; // 解放 max-width！
+//     }
+//   }
 // }

@@ -3,42 +3,62 @@
 $tag-bg-color: rgba(27, 139, 255, 1);
 $tag-text-color: #eee;
 
-.tags-left {
-	position: absolute;
+.tags {
   opacity: 0;
-  @include animation(show-tags 1.2s ease 1s);
+	@include animation(show-tags 1.2s ease 1s);
   @include animation-fill-mode(forwards);
-  @include mediaQuires(S) {
-  	display: none;
-  }
-  @include mediaQuires(M) {
-		top: 8.5em;
-	}
-  @include mediaQuires(L) {
-		top: 7em;
-		left: 6.5em;
+	.tags-left, .tags-right {
+		position: absolute;
+	  @include mediaQuires(S) {
+	  	display: none;
+	  }
 	}
 }
-
-.tags-right {
-	position: absolute;
-  opacity: 0;
-  @include animation(show-tags 1.2s ease 1s);
-  @include animation-fill-mode(forwards);
-  @include mediaQuires(S) {
-  	display: none;
-  }
-  @include mediaQuires(M) {
-		top: 8.5em;
-		right: 2.8em;
+.tags .tags-skill {
+	> .tags-left {
+		@include mediaQuires(M) {
+			top: 8.5em;
+			left: 1em;
+		}
+	  @include mediaQuires(L) {
+			top: 7em;
+			left: 6.5em;
+		}
 	}
-  @include mediaQuires(L) {
-		top: 7em;
-		right: 9.5em;
+	> .tags-right {
+		@include mediaQuires(M) {
+			top: 8.5em;
+			right: 2.8em;
+		}
+	  @include mediaQuires(L) {
+			top: 7em;
+			right: 9.6em;
+		}
 	}
 }
-
-.tag {
+.tags .tags-brief {
+	> .tags-left {
+	  @include mediaQuires(M) {
+			top: 7em;
+			left: 5em;
+		}
+	  @include mediaQuires(L) {
+			top: 7em;
+			left: 14.5em;
+		}
+	}
+	> .tags-right {
+	  @include mediaQuires(M) {
+			top: 7em;
+			right: 5em;
+		}
+	  @include mediaQuires(L) {
+			top: 7em;
+			right: 14em;
+		}
+	}
+}
+.tags .tag {
 	float: left;
 	margin: 5px;
 	padding: 5px 8px;
