@@ -1,6 +1,9 @@
 /* component - menu */
 
-$icon-menu-color: rgb(9, 87, 255);
+$menu-hover-color: #4380BE;
+
+$icon-menu-color: #4380BE;
+$icon-menu-checked-color: rgba(255, 255, 255, 0);
 $icon-menu-border-radius: 10px;
 $icon-menu-line-height: 2px;
 $menu-bg-color: rgba(27, 139, 255, 0.8);
@@ -56,6 +59,9 @@ $animate-duration: .3s;
   }
   /* menu mobile - icon checked */
   .mobile-menu .checkbox-toggle:checked {
+    + .icon-menu {
+      background: $icon-menu-checked-color;
+    }
     + .icon-menu > div {
       @include transform(rotate(135deg));
       &:before, &:after {
@@ -203,11 +209,11 @@ $animate-duration: .3s;
         width: 100%;
         max-width: 0;
         height: 2px;
-        background-color: #FEFF1B;
+        background-color: $menu-hover-color;
         transition: max-width 0.2s ease;
       }
       &:hover {
-        font-weight: bold;
+        // font-weight: bold;
         &:after {
           max-width: 100%;
         }

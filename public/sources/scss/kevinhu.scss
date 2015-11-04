@@ -112,32 +112,36 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
       }
     }
   }
-  h1, p {
-    opacity: 0;
-    @include animation(show-text 1.2s ease 1s);
-    @include animation-fill-mode(forwards);
-  }
-  h1 {
-    color: $main-title-color;
-    padding: 40px;
-  }
-  p {
+  .welcome-typing {
+    width: 0;
+    margin: auto;
+    white-space:nowrap;
+    overflow:hidden;
     color: $main-text-color;
     font-size: 16px;
+    @include animation(typing 1s steps(50, end) 1.3s);
+    @include animation-fill-mode(forwards);
+    @include mediaQuires(M) {
+      margin-left: 200px;
+    }
+    @include mediaQuires(L) {
+      margin-left: 320px;
+    }
   }
 }
+
 @include keyframes(swing-photo) {
    0% {top: 0;}
    50% {top: 5px;}
    100% {top: 0;}
 }
+@include keyframes(typing) {
+    from {width: 0;}
+    to {width: 350px;}
+}
 @include keyframes(show-photo) {
    from {top: -999px;}
    to {top: 0;}
-}
-@include keyframes(show-text) {
-   from {opacity: 0;}
-   to {opacity: 1;}
 }
 @include keyframes(show-left-title) {
    from {right: 999px; opacity: 0;}

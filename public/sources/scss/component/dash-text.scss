@@ -1,0 +1,60 @@
+/* component - svg dash text - title Kevin Hu */
+
+$dash-color-1: #579FE3;
+$dash-color-2: #00A3FA;
+$dash-color-3: #4EAFFA;
+$dash-color-4: #2471F2;
+$dash-color-5: #3D72CA;
+
+#name {
+	opacity: 0;
+	@include animation(show-text 1.2s ease 1s);
+  @include animation-fill-mode(forwards);
+}
+
+#svg-name text{
+  font: 3em Open Sans, Impact;
+  letter-spacing: 4px;
+}
+
+.text {
+  fill: none;
+  stroke-width: 2;
+  stroke-dasharray: 80 320;
+  stroke-dashoffset: 0;
+  @include animation(stroke 10s infinite linear);
+}
+
+.text:nth-child(5n + 1) {
+  stroke: $dash-color-1;
+  @include animation-delay(-2s);
+}
+.text:nth-child(5n + 2) {
+  stroke: $dash-color-2;
+  @include animation-delay(-4s);
+}
+
+.text:nth-child(5n + 3) {
+  stroke: $dash-color-3;
+  @include animation-delay(-6s);
+}
+
+.text:nth-child(5n + 4) {
+  stroke: $dash-color-4;
+  @include animation-delay(-8s);
+}
+
+.text:nth-child(5n + 5) {
+  stroke: $dash-color-5;
+  @include animation-delay(-10s);
+}
+
+@include keyframes(show-text) {
+   from {opacity: 0;}
+   to {opacity: 1;}
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
