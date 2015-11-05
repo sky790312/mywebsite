@@ -1,5 +1,3 @@
-/* component - my photo with side title desc */
-
 $title-photo-linear-gradient: linear-gradient(to right, $main-bg-color, rgba(0, 0, 0, 0.6), $main-bg-color);
 $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
 
@@ -68,7 +66,7 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
     background-color: #d4d4d4;
     background-position: 80% 0%;
     background-size: 10em 10em;
-    transition: all .2s linear;
+    @include transition(all .2s linear);
     @include border-radius(50%);
     @include box-shadow($title-photo-bgimg-outer-color);
     @include animation(swing-photo 1s linear 1.2s infinite);
@@ -115,17 +113,27 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
   .welcome-typing {
     width: 0;
     margin: auto;
-    white-space:nowrap;
-    overflow:hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
     color: $main-text-color;
     font-size: 16px;
-    @include animation(typing 1s steps(50, end) 1.3s);
+    @include animation(typing 2.5s steps(50, end) 1.3s);
     @include animation-fill-mode(forwards);
     @include mediaQuires(M) {
       margin-left: 200px;
     }
     @include mediaQuires(L) {
       margin-left: 320px;
+    }
+    &:after {
+      content: '_';
+      position: relative;
+      display: block;
+      margin-top: -12px;
+      text-align: right;
+      @include animation(typing-underline 1s linear infinite 1s);
+      @include animation-fill-mode(forwards);
     }
   }
 }
@@ -137,7 +145,11 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
 }
 @include keyframes(typing) {
     from {width: 0;}
-    to {width: 350px;}
+    to {width: 360px;}
+}
+@include keyframes(typing-underline) {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 @include keyframes(show-photo) {
    from {top: -999px;}

@@ -1,6 +1,7 @@
 /* component - tags */
 
 $tag-bg-color: #4380BE;
+$tag-bg-hover-color: #47A1FF;
 $tag-text-color: #eee;
 
 .tags {
@@ -68,7 +69,7 @@ $tag-text-color: #eee;
 	@include border-radius(5px);
 
 	&:hover {
-		background-color: #47A1FF;
+		background-color: $tag-bg-hover-color;
 		padding: 7px 10px;
 		// font-size: 17px;
 		margin: 3px;

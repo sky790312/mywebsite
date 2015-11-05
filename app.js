@@ -83,7 +83,8 @@ appRouter.get('/', mywebsite.index);
 // app.use('/', appRouter);
 app.use('/KevinHu', appRouter);
 // app.use('/mywebsite', appRouter);
-app.use('/projects', appRouter)
+app.use('/projects', appRouter);
+app.use('/skills', appRouter);
 
 
 // Handle 404

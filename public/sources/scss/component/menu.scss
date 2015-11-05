@@ -4,6 +4,7 @@ $menu-hover-color: #4380BE;
 
 $icon-menu-color: #4380BE;
 $icon-menu-checked-color: rgba(255, 255, 255, 0);
+$icon-menu-cancel-color: #FFF;
 $icon-menu-border-radius: 10px;
 $icon-menu-line-height: 2px;
 $menu-bg-color: rgba(27, 139, 255, 0.8);
@@ -13,7 +14,18 @@ $animate-duration: .3s;
   float: left;
   margin: 26px 0;
   cursor: pointer;
+  opacity: 0.7;
   color: $main-title-color;
+  font-size: 30px;
+  &.active {
+    opacity: 1;
+    font-size: 32px;
+    cursor: default;
+  }
+  &:hover {
+    font-size: 32px;
+    @include transition(font-size .2s linear);
+  }
 }
 
 .menu-assemble {
@@ -92,7 +104,7 @@ $animate-duration: .3s;
     position: relative;
     width: 100%;
     height: $icon-menu-line-height;
-    background: white;
+    background-color: $icon-menu-cancel-color;
     @include flex(none);
     @include transition(all $animate-duration ease);
     @include display-flex;
@@ -106,7 +118,7 @@ $animate-duration: .3s;
       left: 0;
       width: 100%;
       height: $icon-menu-line-height;
-      background: inherit;
+      background-color: inherit;
       @include transition(all $animate-duration ease);
     }
     &:after {
@@ -128,7 +140,7 @@ $animate-duration: .3s;
       width: 0;
       height: 0;
       color: $main-title-color;
-      background: $menu-bg-color;
+      background-color: $menu-bg-color;
       border-radius: 50%;
       @include transition(all $animate-duration ease);
       @include flex(none);
@@ -169,7 +181,7 @@ $animate-duration: .3s;
           left: 0;
           width: 0;
           height: 2px;
-          background: $main-title-color;
+          background-color: $main-title-color;
           @include transition(width $animate-duration ease);
         }
         &:hover:after, &:active:after, &:focus:after{
@@ -210,12 +222,19 @@ $animate-duration: .3s;
         max-width: 0;
         height: 2px;
         background-color: $menu-hover-color;
-        transition: max-width 0.2s ease;
+        @include transition(max-width 0.2s ease);
       }
       &:hover {
         // font-weight: bold;
         &:after {
           max-width: 100%;
+        }
+      }
+      &.active {
+        cursor: default;
+        color: #47A1FF;
+          &:after {
+          max-width: 0;
         }
       }
     }

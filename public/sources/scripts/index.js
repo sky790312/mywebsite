@@ -75,8 +75,10 @@ class index {
   eventListener() {
     const $indexSection = this.$app.find('#KevinHu');
     const $projectsSection = this.$app.find('#projects');
+    const $skillsSection = this.$app.find('#skills');
     const $goIndex = this.$app.find('.KevinHu');
     const $goProjects = this.$app.find('.projects');
+    const $goSkills = this.$app.find('.skills');
 
     // history listen
     $(window).on("popstate", ()=>{
@@ -108,6 +110,10 @@ class index {
     this.changePage($projectsSection, $goProjects, ()=> {
       this.afterPage('projects');
     });
+    // go skills
+    this.changePage($skillsSection, $goSkills, ()=> {
+      this.afterPage('skills');
+    });
   }
 
 
@@ -126,11 +132,12 @@ class index {
 
   // page setting
   afterPage(page) {
-    if(this.$app.find('.' + page).hasClass('active'))
+    let $ele = this.$app.find('.' + page);
+    if($ele.hasClass('active'))
       return;
     this.$app.find('.KevinHu').removeClass('active');
     this.$app.find('.menu a').removeClass('active');
-    this.$app.find('.' + page).addClass('active');
+    $ele.addClass('active');
     switch (page) {
       default:
         break;

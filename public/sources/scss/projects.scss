@@ -336,7 +336,7 @@ $items: 4; // profolio numbers
 
 .profolios-section .close {
 	position: fixed;
-	top: 30px;
+	top: 15%;
 	right: 5%;
 	background: url($imgsrc + 'icon-close-s.svg') no-repeat center center;
 	@include transform(scale(0));

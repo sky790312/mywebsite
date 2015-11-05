@@ -8,6 +8,7 @@ $dash-color-5: #3D72CA;
 
 #name {
 	opacity: 0;
+  cursor: default;
 	@include animation(show-text 1.2s ease 1s);
   @include animation-fill-mode(forwards);
 }
