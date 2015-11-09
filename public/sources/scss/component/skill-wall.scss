@@ -2,24 +2,24 @@
 
 #skill-wall {
 	position: relative;
-	width: 750px;
+	width: 740px;
   height: 340px;
   margin: auto;
   padding: 0;
   font-family: 'Oswald', sans-serif;
   font-size: 100%;
   text-transform: uppercase;
-  color: #666;
+  @include animation(fadein 1s linear);
 	.skill-frontend {
 		right: 0;
-		width: 580px;
-		background-color: whitesmoke;
+		width: 590px;
+		background-color: #F3F3F3;
 	}
 	.skill-backend {
 		left: 0;
 		width: 150px;
-		margin-left: 20px;
-		background-color: gray;
+		// margin-left: 20px;
+		background-color: #DADADA;
 	}
 	> ul {
 		position: absolute;
@@ -33,104 +33,99 @@
 		position: absolute;
 	  top: 0;
 	  left: 0;
-	  opacity: 0;
-    @include animation(fadein 1s linear);
-    @include animation-fill-mode(forwards);
 	}
 }
 .skill-frontend {
-	.html5 {
-		color: #3F3F3F;
+	> li {
+  	color: #666;
+	}
+	> .html5 {
+		color: #363636;
 	  font-weight: 700;
 	  letter-spacing: -.05em;
 		@include transform(scale(7.5, 7.8) translate(1.18em, .68em));
 	}
 
-	.webpack {
+	> .webpack {
 	  letter-spacing: -.04em;
 	  font-weight: 400;
-		@include transform(scale(1.6) rotate(90deg) translate(2.95em, -11.8em));
+		@include transform(scale(1.7) rotate(90deg) translate(2.85em, -11.2em));
 	}
-	.seo {
+	> .seo {
 		color: #EDA751;
 	  font-weight: 300;
 	  letter-spacing: -0.07em;
 		@include transform(scale(3.9, 4) translate(6.05em, .85em));
-    @include animation(fadein .5s linear .5s);
-    @include animation-fill-mode(forwards);
 	}
-	.responsive {
+	> .responsive {
 		color: #9D4C25;
 	  letter-spacing: .1em;
 	  font-weight: 400;
 		@include transform(scale(1.37, 1.55) rotate(90deg) translate(4.1em, -18em));
 	}
-	.css3 {
+	> .css3 {
+		color: #909090;
 	  letter-spacing: .01em;
 	  font-weight: 700;
 		@include transform(scale(6.8, 6.75) rotate(90deg) translate(1.32em, -4.54em));
 	}
-	.ga {
+	> .ga {
 		color: #B47E3F;
 	  font-weight: 700;
 	  letter-spacing: -.03em;
 		@include transform(scale(3.4) translate(7em, 2.15em));
 	}
-	.es6 {
+	> .es6 {
 		color: #2976C6;
 	  font-weight: 400;
 	  word-spacing: .3em;
 		@include transform(scale(2) translate(.9em, 5.14em));
 	}
-	.css-framework {
+	> .css-framework {
 		color: #B36A78;
 	  font-weight: 300;
 	  letter-spacing: -.03em;
 	  word-spacing: .3em;
 		@include transform(scale(2) translate(3.8em, 5.14em));
-		@include animation(fadein .5s linear .5s);
-    @include animation-fill-mode(forwards);
 	}
-	.reactjs {
+	> .reactjs {
 	  font-weight: 400;
 		@include transform(scale(3, 3) translate(6.6em, 3.55em));
 	}
-	.open-third-api {
+	> .open-third-api {
 		color: #A552BA;
 	  font-weight: 700;
 	  letter-spacing: -.010em;
 		@include transform(scale(1.85, 1.9) translate(1.95em, 6.6em));
 	}
-	.ajax {
+	> .ajax {
 		color: #5546AD;
 	  letter-spacing: -0.01em;
 	  font-weight: 700;
 		@include transform(scale(2.4, 2.3) rotate(90deg) translate(6em, -5.8em));
 	}
-	.cross-browser {
+	> .cross-browser {
 	  letter-spacing: -0.05em;
 		@include transform(scale(2, 2) translate(2.05em, 7.4em));
 	}
-	.jquery {
+	> .jquery {
 		color: #5A7DA1;
 	  font-weight: 700;
 		@include transform(scale(3.88, 3.8) translate(5.42em, 3.72em));
 	}
-	.object-oriented {
+	> .object-oriented {
 		color: #2D8955;
 	  font-weight: 700;
 		@include transform(scale(2) translate(2.2em, 8.58em));
-		@include animation(fadein .5s linear .5s);
-    @include animation-fill-mode(forwards);
 	}
-	.javascript {
+	> .javascript {
 	  color: #ee5d29;
 	  font-weight: 700;
 	  letter-spacing: .05em;
 		@include transform(scale(1.8) translate(10em, 9.55em));
 	}
-	.angularjs {
-		color: #a7a7a7;
+	> .angularjs {
+		color: #780000;
 	  font-weight: 400;
 	  letter-spacing: 0em;
 	  word-spacing: .1em;
@@ -138,7 +133,41 @@
 	}
 }
 .skill-backend {
-
+	> li {
+		color: #565656;
+	}
+	> .awsec2 {
+		@include transform(scale(1) translate(1.55em, 2.5em));
+	}
+	> .nginx {
+		@include transform(scale(1.15) translate(1.5em, 3.5em));
+	}
+	> .mysql {
+		@include transform(scale(1) translate(1.55em, 5.5em));
+	}
+	> .nodejs {
+	  font-weight: 700;
+		@include transform(scale(2) translate(1.48em, 3.7em));
+	}
+	> .ror {
+		@include transform(scale(1.1) translate(1.65em, 8.5em));
+	}
+	> .play {
+		@include transform(scale(1) translate(1.55em, 11em));
+	}
+	> .wordpress {
+		@include transform(scale(1.3) translate(1.75em, 9.7em));
+	}
+	> .joomla {
+		@include transform(scale(1) translate(1.55em, 14.2em));
+	}
+	> .git {
+	  font-weight: 700;
+		@include transform(scale(1.5) translate(1.2em, 10.6em));
+	}
+	> .svn {
+		@include transform(scale(1) translate(1.55em, 17.5em));
+	}
 }
 
 @include keyframes(fadein) {

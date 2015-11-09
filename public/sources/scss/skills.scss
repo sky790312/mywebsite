@@ -1,6 +1,65 @@
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
-
 #skills {
 	margin-top: 85px;
 	padding: 40px 0;
+}
+
+#skills-detail {
+	margin: 40px auto;
+	max-width: 70%;
+  @include mediaQuires(ML) {
+	  max-width: 600px;
+  }
+  font-family: Arial,"微軟正黑體";
+}
+
+.levels {
+	position: relative;
+	left: 50px;
+	> div {
+		float: left;
+		width: 25%;
+		padding: 20px 0;
+		text-align: center;
+		font-weight: bolder;
+	}
+}
+
+.skill-level {
+	position: relative;
+  left: 50px;
+	background-color: #E1E1E1;
+	margin-bottom: 40px;
+	.start, .begineer, .familiar, .proficient, .expert {
+	  position: absolute;
+		height: 20px;
+	  width: 20px;
+	  margin: -5px 0 0 -10px;
+	  z-index: 5;
+	  border-radius: 50%;
+	  border: 1px solid white;
+	  background-color: #E1E1E1;
+	}
+	.start {
+	  left: 0;
+	}
+	.begineer {
+	  left: 25%;
+	}
+	.familiar {
+	  left: 50%;
+	}
+	.proficient {
+	  left: 75%;
+	}
+	.expert {
+	  left: 100%;
+	}
+}
+@keyframes percentage-flow {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 600px 0%;
+  }
 }

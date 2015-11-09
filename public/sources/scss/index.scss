@@ -5,6 +5,7 @@
 
 @import "utils/_variables";
 @import "utils/_layout";
+@import "utils/fonts";
 @import "utils/main";
 
 @import "component/menu";
@@ -12,6 +13,7 @@
 @import "component/tag";
 @import "component/dash-text";
 @import "component/skill-wall";
+@import "component/skill-level";
 
 @import "kevinhu";
 @import "projects";
