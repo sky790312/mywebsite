@@ -14,11 +14,12 @@
 
 .levels {
 	position: relative;
-	left: 50px;
+	left: 55px;
 	> div {
 		float: left;
 		width: 25%;
 		padding: 20px 0;
+	  color: #565656;
 		text-align: center;
 		font-weight: bolder;
 	}
@@ -26,40 +27,27 @@
 
 .skill-level {
 	position: relative;
-  left: 50px;
+  left: 55px;
 	background-color: #E1E1E1;
 	margin-bottom: 40px;
-	.start, .begineer, .familiar, .proficient, .expert {
+	border-radius: 10px;
+	.start, .junior, .middle, .senior, .expert {
 	  position: absolute;
-		height: 20px;
-	  width: 20px;
-	  margin: -5px 0 0 -10px;
-	  z-index: 5;
-	  border-radius: 50%;
-	  border: 1px solid white;
-	  background-color: #E1E1E1;
+		height: 18px;
+	  width: 1px;
+	  margin-top: -3px;
+	  background-color: white;
 	}
-	.start {
-	  left: 0;
-	}
-	.begineer {
+	.junior {
 	  left: 25%;
 	}
-	.familiar {
+	.middle {
 	  left: 50%;
 	}
-	.proficient {
+	.senior {
 	  left: 75%;
 	}
-	.expert {
-	  left: 100%;
-	}
 }
-@keyframes percentage-flow {
-  from {
-    background-position: 0% 0%;
-  }
-  to {
-    background-position: 600px 0%;
-  }
-}
+
+canvas { display: block; background: #111; }
+canvas:hover { cursor: pointer; }

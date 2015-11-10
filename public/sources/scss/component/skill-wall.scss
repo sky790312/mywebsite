@@ -10,16 +10,26 @@
   font-size: 100%;
   text-transform: uppercase;
   @include animation(fadein 1s linear);
+	@include mediaQuires(S) {
+		width: auto;
+	}
 	.skill-frontend {
 		right: 0;
 		width: 590px;
 		background-color: #F3F3F3;
+		@include mediaQuires(S) {
+			position: relative;
+			margin: auto;
+		}
 	}
 	.skill-backend {
 		left: 0;
 		width: 150px;
 		// margin-left: 20px;
 		background-color: #DADADA;
+		@include mediaQuires(S) {
+			display: none;
+		}
 	}
 	> ul {
 		position: absolute;

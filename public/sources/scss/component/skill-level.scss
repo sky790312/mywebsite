@@ -1,70 +1,24 @@
 .bar {
   height: 10px;
   border-radius: 10px;
-  &:before, &:after {
+  &:before {
     display: block;
+    content: attr(data-skill);
+    left: -120px;
     position: absolute;
     top: -12px;
     // height: 10px;
     padding: 10px;
+    color: #565656;
+    border-radius: 10px;
     font-style: italic;
     font-weight: bolder;
   }
-  &:before {
-    content: attr(data-skill);
-    left: -120px;
-  }
-  // &:after {
-  //   content: attr(data-percent) "%";
-  //   right: -70px;
-  // }
-  &.mint {
-    background-color: #14C3A2;
-    background-image: repeating-linear-gradient(-45deg, #14C3A2, #14C3A2 30px, #22e8c3 30px, #22e8c3 60px);
+  &.custom-blue {
+    @include background(linear-gradient(to right, rgba(168,204,237,1) 0%, rgba(58,142,233,1) 99%, rgba(58,142,233,1) 100%));
     background-size: 600px 100%;
-    animation: percentage-flow 12s linear infinite;
-    border-bottom: 0.2rem solid #0d7e68;
+    @include animation(percentage-flow 1s linear);
     &:before, &:after {
-      color: #14C3A2;
-    }
-  }
-  &.red {
-    background-color: #CF4647;
-    background-image: repeating-linear-gradient(-45deg, #CF4647, #CF4647 30px, #da6e6f 30px, #da6e6f 60px);
-    background-size: 600px 100%;
-    animation: percentage-flow 12s linear infinite;
-    border-bottom: 0.2rem solid #9f292a;
-    &:before, &:after {
-      color: #CF4647;
-    }
-  }
-  &.orange {
-    background-color: #EB7B59;
-    background-image: repeating-linear-gradient(-45deg, #EB7B59, #EB7B59 30px, #f09f87 30px, #f09f87 60px);
-    background-size: 600px 100%;
-    animation: percentage-flow 12s linear infinite;
-    border-bottom: 0.2rem solid #dd481b;
-    &:before, &:after {
-      color: #EB7B59;
-    }
-  }
-  &.blue {
-    background-color: #3F5EF3;
-    background-image: repeating-linear-gradient(-45deg, #304FDF, #304FDF 30px, #3F5EF3 30px, #3F5EF3 60px);
-    animation: percentage-flow 12s linear infinite;
-    border-bottom: 0.2rem solid #03187A;
-    &:before, &:after {
-      color: #304FDF;
-    }
-  }
-  &.purple {
-    background-color: #595B5A;
-    background-image: repeating-linear-gradient(-45deg, #8D48C8, #8D48C8 30px, #B46CF1 30px, #B46CF1 60px);
-    background-size: 600px 100%;
-    animation: percentage-flow 12s linear infinite;
-    border-bottom: 0.2rem solid #762DB4;
-    &:before, &:after {
-      color: #8D48C8;
     }
   }
   &[data-percent="5"] {
@@ -126,5 +80,13 @@
   }
   &[data-percent="100"] {
     width: 100%;
+  }
+}
+@keyframes percentage-flow {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 600px 0%;
   }
 }
