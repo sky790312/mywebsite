@@ -43,6 +43,10 @@
 		position: absolute;
 	  top: 0;
 	  left: 0;
+	  &:hover {
+	  	// font-size: 17px;
+	  	opacity: 0.9;
+	  }
 	}
 }
 .skill-frontend {
@@ -61,17 +65,17 @@
 	  font-weight: 400;
 		@include transform(scale(1.7) rotate(90deg) translate(2.85em, -11.2em));
 	}
-	> .seo {
+	> .rwd {
 		color: #EDA751;
 	  font-weight: 300;
 	  letter-spacing: -0.07em;
-		@include transform(scale(3.9, 4) translate(6.05em, .85em));
+		@include transform(scale(3.1, 4) translate(7.6em, .85em));
 	}
-	> .responsive {
+	> .bootstrap {
 		color: #9D4C25;
 	  letter-spacing: .1em;
 	  font-weight: 400;
-		@include transform(scale(1.37, 1.55) rotate(90deg) translate(4.1em, -18em));
+		@include transform(scale(1.4, 1.55) rotate(90deg) translate(3.9em, -17.8em));
 	}
 	> .css3 {
 		color: #909090;
