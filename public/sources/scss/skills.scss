@@ -1,6 +1,6 @@
 #skills {
-	margin-top: 85px;
-	padding: 40px 0;
+	padding: 135px 0;
+	background-color: #364656;
 }
 
 #skills-detail {
@@ -12,30 +12,30 @@
   font-family: Arial,"微軟正黑體";
 }
 
-.levels {
+#skills-detail .levels {
 	position: relative;
 	left: 55px;
 	> div {
 		float: left;
 		width: 25%;
 		padding: 20px 0;
-	  color: #565656;
+	  color: white;
 		text-align: center;
 		font-weight: bolder;
 	}
 }
 
-.skill-level {
+#skills-detail .skill-level {
 	position: relative;
   left: 55px;
-	background-color: #E1E1E1;
+	background-color: #ccc;
 	margin-bottom: 40px;
 	border-radius: 10px;
-	.start, .junior, .middle, .senior, .expert {
+	.junior, .middle, .senior {
 	  position: absolute;
-		height: 18px;
+		height: 10px;
 	  width: 1px;
-	  margin-top: -3px;
+	  z-index: 1;
 	  background-color: white;
 	}
 	.junior {
@@ -48,6 +48,3 @@
 	  left: 75%;
 	}
 }
-
-canvas { display: block; background: #111; }
-canvas:hover { cursor: pointer; }

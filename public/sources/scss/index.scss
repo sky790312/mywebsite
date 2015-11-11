@@ -3,18 +3,24 @@
 @import "animation/core";
 // @import "animation/animate";
 
+/* utils */
 @import "utils/_variables";
 @import "utils/_layout";
 @import "utils/fonts";
 @import "utils/main";
 
+/* component */
 @import "component/menu";
 @import "component/head";
 @import "component/tag";
 @import "component/dash-text";
-@import "component/skill-wall";
-@import "component/skill-level";
 
+/* pages  */
 @import "kevinhu";
 @import "projects";
 @import "skills";
+
+/* skills page component */
+@import "skills/skill-wall";
+@import "skills/skill-level";
+@import "skills/background-cloud";

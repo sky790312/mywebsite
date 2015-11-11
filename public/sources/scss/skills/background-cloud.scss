@@ -1,0 +1,70 @@
+#background-cloud {
+	position: fixed;
+  bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	padding-top: 85px;
+	margin-top: 80px;
+	z-index: 0;
+}
+#background-cloud {
+	.cloud1 {
+		@include animation(moveCloud 35s linear infinite);
+		@include transform(scale(0.65));
+	}
+	.cloud2 {
+		@include animation(moveCloud 20s linear infinite);
+		@include transform(scale(0.3));
+	}
+	.cloud3 {
+		@include animation(moveCloud 30s linear infinite);
+		@include transform(scale(0.5));
+	}
+	.cloud4 {
+		@include animation(moveCloud 18s linear infinite);
+		@include transform(scale(0.4));
+	}
+	.cloud5 {
+		@include animation(moveCloud 25s linear infinite);
+		@include transform(scale(0.55));
+	}
+}
+#background-cloud .cloud {
+	position: relative;
+	width: 350px;
+	height: 120px;
+	// background: #4E657C;
+	@include background(linear-gradient(top, #4E657C 5%, #3D536B 100%));
+	@include border-radius(100px);
+	@include box-shadow(0 8px 5px rgba(0, 0, 0, 0.1));
+	&:after, &:before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+	  background: #4E657C;
+	}
+	&:before {
+		top: -90px;
+		right: 50px;
+		width: 180px;
+		height: 180px;
+		@include border-radius(200px);
+	}
+	&:after {
+		top: -50px;
+		left: 50px;
+		width: 100px;
+		height: 100px;
+		@include border-radius(100px);
+	}
+}
+
+@include keyframes(moveCloud) {
+    0% {
+        margin-left: -65%;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
