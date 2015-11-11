@@ -97,10 +97,8 @@
 	}
 	> .css-framework {
 		color: #B36A78;
-	  font-weight: 300;
-	  letter-spacing: -.03em;
-	  word-spacing: .3em;
-		@include transform(scale(2) translate(3.8em, 5.14em));
+	  font-weight: 400;
+		@include transform(scale(1.65) translate(4.1em, 6.25em));
 	}
 	> .reactjs {
 	  font-weight: 400;
