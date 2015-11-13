@@ -1,7 +1,11 @@
+@import "utils/fonts";
+
+$skill-background-linear-gradient: 'linear-gradient(90deg, #033c58 , #05182d , #033c58)';
+
 #skills {
 	padding: 135px 0;
-	background-color: #05182d;
-	@include background (linear-gradient(90deg, #033c58 , #05182d , #033c58));
+	// background-color: #05182d;
+	@include background ($skill-background-linear-gradient);
 }
 
 #skills-desc {
@@ -28,10 +32,10 @@
 #skills-detail {
 	margin: 40px auto;
 	max-width: 70%;
+  font-family: Arial,"微軟正黑體";
   @include mediaQuires(ML) {
 	  max-width: 600px;
   }
-  font-family: Arial,"微軟正黑體";
 }
 
 #skills-detail .levels {
