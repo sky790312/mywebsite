@@ -1,0 +1,29 @@
+#background-bubble {
+  > .bubble1, > .bubble2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  > .bubble1 {
+    background: url($imgsrc + 'skills/bubble1.png') repeat 20% 20%;
+    opacity: 0.6;
+    @include animation(bkg-animate 100s linear infinite);
+  }
+  > .bubble2 {
+    background: url($imgsrc + 'skills/bubble2.png') repeat 35% 35%;
+    opacity: 0.4;
+    @include animation(bkg-animate 60s linear infinite);
+  }
+}
+@include keyframes(bkg-animate) {
+  from {
+    left: 0;
+    top: 0;
+  }
+  to {
+    left: -1000px;
+    top: -1000px;
+  }
+}

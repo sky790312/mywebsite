@@ -53,8 +53,8 @@ body {
   // overflow: hidden;
 }
 #footer {
-  position: relative;
-  // width: 100vw;
+  position: fixed;
+  width: 100vw;
   height: 85px;
   bottom: 0;
   z-index: 10;

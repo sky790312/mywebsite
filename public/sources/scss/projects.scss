@@ -1,4 +1,4 @@
-$imgsrc: '/images/mywebsite/projects/'; // img common src
+// $imgsrc: '/images/mywebsite/projects/'; // img common src
 
 $projects-bg-color: #101524; // black
 
@@ -51,7 +51,7 @@ $items: 4; // profolio numbers
     	left: 0;
     	height: 100vh / $items;
     	width: 100%;
-			background: url($imgsrc + 'img-1-s.jpg') no-repeat center center;
+			background: url($imgsrc + 'projects/img-1-s.jpg') no-repeat center center;
 			background-size: cover;
 			@include transition(opacity 0.5s, height 0.4s);
     }
@@ -69,7 +69,7 @@ $items: 4; // profolio numbers
 			// 	content: 'images/img-2-small.jpg';
 			// }
 			&::after {
-				background-image: url($imgsrc + 'img-2-s.jpg');
+				background-image: url($imgsrc + 'projects/img-2-s.jpg');
 			}
 		}
 
@@ -80,7 +80,7 @@ $items: 4; // profolio numbers
 			// 	content: 'images/img-3-small.jpg';
 			// }
 			&::after {
-				background-image: url($imgsrc + 'img-3-s.jpg');
+				background-image: url($imgsrc + 'projects/img-3-s.jpg');
 			}
 		}
 
@@ -91,7 +91,7 @@ $items: 4; // profolio numbers
 			// 	content: 'images/img-4-small.jpg';
 			// }
 			&::after {
-				background-image: url($imgsrc + 'img-4-s.jpg');
+				background-image: url($imgsrc + 'projects/img-4-s.jpg');
 			}
 		}
 
@@ -132,7 +132,7 @@ $items: 4; // profolio numbers
 			// 	content: 'images/img-1-large.jpg';
 			// }
 			&:first-of-type::after {
-				background-image: url($imgsrc + '/img-1-l.jpg');
+				background-image: url($imgsrc + 'projects/img-1-l.jpg');
 			}
 
 			&:nth-of-type(2) {
@@ -143,7 +143,7 @@ $items: 4; // profolio numbers
 				// 	content: 'images/img-2-large.jpg';
 				// }
 				&::after {
-					background-image: url($imgsrc + 'img-2-l.jpg');
+					background-image: url($imgsrc + 'projects/img-2-l.jpg');
 				}
 			}
 
@@ -155,7 +155,7 @@ $items: 4; // profolio numbers
 				// 	content: 'images/img-3-large.jpg';
 				// }
 				&::after {
-					background-image: url($imgsrc + 'img-3-l.jpg');
+					background-image: url($imgsrc + 'projects/img-3-l.jpg');
 				}
 			}
 
@@ -167,7 +167,7 @@ $items: 4; // profolio numbers
 				// 	content: 'images/img-4-large.jpg';
 				// }
 				&::after {
-					background-image: url($imgsrc + 'img-4-l.jpg');
+					background-image: url($imgsrc + 'projects/img-4-l.jpg');
 				}
 			}
 
@@ -338,10 +338,10 @@ $items: 4; // profolio numbers
 	position: fixed;
 	top: 15%;
 	right: 5%;
-	background: url($imgsrc + 'icon-close-s.svg') no-repeat center center;
+	background: url($imgsrc + 'projects/icon-close-s.svg') no-repeat center center;
 	@include transform(scale(0));
 	@include mediaQuires(L) {
-		background-image: url($imgsrc + 'icon-close-l.svg');
+		background-image: url($imgsrc + 'projects/icon-close-l.svg');
 	}
 }
 
@@ -349,10 +349,10 @@ $items: 4; // profolio numbers
 	position: absolute;
 	bottom: 30px;
 	left: 50%;
-	background: url($imgsrc + 'icon-arrow-s.svg') no-repeat center center;
+	background: url($imgsrc + 'projects/icon-arrow-s.svg') no-repeat center center;
 	@include transform(translateX(-50%) scale(0));
 	@include mediaQuires(L) {
-		background-image: url($imgsrc + 'icon-arrow-l.svg');
+		background-image: url($imgsrc + 'projects/icon-arrow-l.svg');
 	}
 }
 

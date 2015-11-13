@@ -1,6 +1,27 @@
 #skills {
 	padding: 135px 0;
-	background-color: #364656;
+	background-color: #05182d;
+}
+
+#skills-desc {
+	position: relative;
+	margin: 20px auto 40px auto;
+	padding: 20px;
+	color: white;
+	border-bottom: 1px solid white;
+	z-index: 5;
+	text-align: center;
+	font-size: 18px;
+	> ul {
+		list-style-type: none;
+	}
+	li {
+		padding: 5px;
+		&::first-letter {
+			font-size: 22px;
+			font-weight: bold;
+		}
+	}
 }
 
 #skills-detail {
