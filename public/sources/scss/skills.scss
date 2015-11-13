@@ -1,6 +1,7 @@
 #skills {
 	padding: 135px 0;
 	background-color: #05182d;
+	@include background (linear-gradient(90deg, #033c58 , #05182d , #033c58));
 }
 
 #skills-desc {
