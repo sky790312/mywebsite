@@ -84,7 +84,7 @@ appRouter.get('/', mywebsite.index);
 app.use('/KevinHu', appRouter);
 // app.use('/mywebsite', appRouter);
 app.use('/projects', appRouter);
-app.use('/profile', appRouter);
+app.use('/aboutme', appRouter);
 app.use('/background', appRouter);
 app.use('/skills', appRouter);
 

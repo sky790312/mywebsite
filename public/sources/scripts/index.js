@@ -75,12 +75,12 @@ class index {
   eventListener() {
     const $indexSection = this.$app.find('#KevinHu');
     const $projectsSection = this.$app.find('#projects');
-    const $profileSection = this.$app.find('#profile');
+    const $aboutmeSection = this.$app.find('#aboutme');
     const $backgroundSection = this.$app.find('#background');
     const $skillsSection = this.$app.find('#skills');
     const $goIndex = this.$app.find('.KevinHu');
     const $goProjects = this.$app.find('.projects');
-    const $goProfile = this.$app.find('.profile');
+    const $goAboutme = this.$app.find('.aboutme');
     const $goBackground = this.$app.find('.background');
     const $goSkills = this.$app.find('.skills');
 
@@ -114,9 +114,9 @@ class index {
     this.changePage($projectsSection, $goProjects, ()=> {
       this.afterPage('projects');
     });
-    // go profile
-    this.changePage($profileSection, $goProfile, ()=> {
-      this.afterPage('profile');
+    // go aboutme
+    this.changePage($aboutmeSection, $goAboutme, ()=> {
+      this.afterPage('aboutme');
     });
     // go background
     this.changePage($backgroundSection, $goBackground, ()=> {
