@@ -5,6 +5,7 @@ import '../scss/index.scss';
 
 // import FastClick from 'fastclick';
 import '../scripts/profolio-presentation.js';
+// import '../scripts/test.js';
 import index from '../scripts/index.js';
 
 // FastClick.attach(document.body);

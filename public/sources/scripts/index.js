@@ -75,9 +75,13 @@ class index {
   eventListener() {
     const $indexSection = this.$app.find('#KevinHu');
     const $projectsSection = this.$app.find('#projects');
+    const $profileSection = this.$app.find('#profile');
+    const $backgroundSection = this.$app.find('#background');
     const $skillsSection = this.$app.find('#skills');
     const $goIndex = this.$app.find('.KevinHu');
     const $goProjects = this.$app.find('.projects');
+    const $goProfile = this.$app.find('.profile');
+    const $goBackground = this.$app.find('.background');
     const $goSkills = this.$app.find('.skills');
 
     // history listen
@@ -109,6 +113,14 @@ class index {
     // go projects
     this.changePage($projectsSection, $goProjects, ()=> {
       this.afterPage('projects');
+    });
+    // go profile
+    this.changePage($profileSection, $goProfile, ()=> {
+      this.afterPage('profile');
+    });
+    // go background
+    this.changePage($backgroundSection, $goBackground, ()=> {
+      this.afterPage('background');
     });
     // go skills
     this.changePage($skillsSection, $goSkills, ()=> {
