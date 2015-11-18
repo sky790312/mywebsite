@@ -155,6 +155,12 @@ class index {
         break;
       case 'projects':
         window.app.projects.start();
+        // require.ensure([], function() { // this syntax is weird but it works
+        //   showloading();
+        //   var test = require('../scripts/test.js'); // when this function is called, the module is guaranteed to be synchronously available.
+        //   new test.q();
+        //   hideloading();
+        // });
         break;
     }
   }
