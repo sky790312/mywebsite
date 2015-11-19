@@ -11,3 +11,5 @@ import index from '../scripts/index.js';
 // FastClick.attach(document.body);
 
 window.index = index;
+
+new index($('#app'));
