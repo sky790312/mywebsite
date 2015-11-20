@@ -1,6 +1,238 @@
 #aboutme {
+	// > div {
+	// 	position: absolute;
+	// 	top: 50%;
+	// 	width: 100%;
+	// 	transform: translateY(-50%);
+	// }
+}
+
+/* common component */
+#parallax {
+	margin: 0;
+	padding: 0;
+	background: #000;
 	position: absolute;
-	top: 50%;
 	width: 100%;
-	transform: translateY(-50%);
+	height: 100%;
+	overflow: hidden;
+}
+.page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	cursor: default;
+	visibility: hidden;
+}
+.prx {
+	position: absolute;
+	color: #FFF;
+	font-family: 'Bangers', cursive;
+	font-size:1.5em;
+	overflow: hidden;
+}
+.link {
+	cursor: pointer;
+	font-size: 3em;
+	min-width: 200px;
+	text-decoration: none;
+	&:hover {
+		color: #F80;
+	}
+}
+.desc {
+	color: #777;
+}
+
+/* mainpage section */
+.mainpage-section {
+	.main-ftitle {
+		left: 50%;
+		top: 6%;
+		width: 15%;
+		color: #3893F0;
+		font-size: 128px;
+		font-weight: bold;
+		text-align: center;
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+	.main-btitle {
+		left: 65%;
+		top: 10%;
+		width: 25%;
+		color: #1F64AB;
+		font-size: 90px;
+		font-weight: bold;
+	}
+	.mainpage-img1 {
+		position: absolute;
+		top: 25%;
+		left: 25%;
+		width: 50%;
+		height: 50%;
+	  background: url($imgsrc + 'aboutme/aboutme-me1.jpg') no-repeat center center;
+	  background-size: 100%;
+	  opacity: .9;
+	}
+	.go-page1 {
+		left: 15%;
+		top: 17%;
+	}
+	.go-page2 {
+		left: 68%;
+		top: 76%;
+	}
+	.go-page3 {
+		left: 20%;
+		top: 80%;
+	}
+}
+
+/* page1 section */
+.page1-section {
+	left: -100%;
+	top: -100%;
+	.page1-desc {
+		left: 30%;
+		top: 10%;
+		width: 40%;
+		> span {
+			color: #fff;
+		}
+	}
+	.page1-img1 {
+		position: absolute;
+		left: 35%;
+		top: 25%;
+		width: 16%;
+		width: 22%;
+		height: 65%;
+	  background: url($imgsrc + 'aboutme/aboutme-me2.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.page1-goback {
+		left: 60%;
+		top: 60%;
+	}
+}
+/* page2 section */
+.page2-section {
+	left: 100%;
+	top: 100%;
+	.page2-title {
+		left: 55%;
+		top: 12%;
+		width: 40%;
+		color: #3893F0;
+		font-size: 90px;
+		font-weight: bold;
+	}
+	.page2-desc {
+		left: 13%;
+		top: 58%;
+		width: 32%;
+	}
+	.page2-img1 {
+		left: 10%;
+		top: 10%;
+		width: 30%;
+		height: 40%;
+	  background: url($imgsrc + 'aboutme/aboutme-me3.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.page2-img2 {
+		left: 50%;
+		top: 30%;
+		width: 35%;
+		height: 45%;
+	  background: url($imgsrc + 'aboutme/aboutme-me4.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.page2-goback {
+		left: 10%;
+		top: 80%;
+	}
+	.go-page4 {
+		left: 35%;
+		top: 80%;
+		width: 350px;
+	}
+}
+/* page3 section */
+.page3-section {
+	left: -100%;
+	top: 100%;
+	.page3-desc {
+		left: 33%;
+		top: 15%;
+		width: 35%;
+		> span {
+			color: #fff;
+		}
+	}
+	.page3-img1 {
+		left: 30%;
+		top: 30%;
+		width: 40%;
+		height: 50%;
+	  background: url($imgsrc + 'aboutme/aboutme-me5.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.page3-goback {
+		left: 46%;
+		top: 82%;
+		font-size: 4em;
+	}
+}
+/* page4 section */
+.page4-section {
+	left: 200%;
+	top: 200%;
+	.page4-title {
+		left: 10%;
+		top: 15%;
+		width: 40%;
+		color: #3893F0;
+		font-size: 90px;
+		font-weight: bold;
+		text-align: center;
+	}
+	.page4-img1 {
+		left: 55%;
+		top: 20%;
+		width: 30%;
+		height: 30%;
+	  background: url($imgsrc + 'aboutme/aboutme-me6.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.page4-img2 {
+		left: 10%;
+		top: 40%;
+		width: 30%;
+		height: 30%;
+	  background: url($imgsrc + 'aboutme/aboutme-me1.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.page4-img3 {
+		left: 20%;
+		top: 50%;
+		width: 30%;
+		height: 30%;
+	  background: url($imgsrc + 'aboutme/aboutme-me1.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.page4-img4 {
+		left: 30%;
+		top: 60%;
+		width: 30%;
+		height: 30%;
+	  background: url($imgsrc + 'aboutme/aboutme-me1.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.page4-goback {
+		left: 75%;
+		top: 80%;
+	}
 }

@@ -1,8 +1,6 @@
 'use strict';
 
-// import gbg from '../scripts/ghostBtnGenerators';
-// import handleDateFormat from '../scripts/profolio-presentation';
-// import handleClickChangePage from '../scripts/_changePage';
+import dynamicLoading from '../scripts/dynamicLoading';
 
 window.app = {};
 
@@ -14,8 +12,6 @@ class index {
 
     // //選取元素
     this.$app = $ele;
-    // this.$ghostBtn = $ele.find('.ghostBtn');
-    // this.$button = $ele.find('#submitBtn');
 
     // 方法
     this.init();
@@ -33,10 +29,6 @@ class index {
 
     // });
 
-    // this.$app.find('section').addClass('hide');
-
-    // console.log($(location).attr('pathname'))
-    // console.log(history.state)
     // new page url check
     if($(location).attr('pathname')){
       let url = $(location).attr('pathname').slice(1);
@@ -56,15 +48,7 @@ class index {
     //   });
     // }
 
-// console.log(window.app.profolio)
-    // window.app.profolio.init();
-    // 產生ghost button
-    // this.$ghostBtn.map((i,d)=> new gbg(d, this.state, function(newState){
-    //   $.extend( ucar.state, newState);
-    // }));
-
     // ready and show
-    // this.$app.removeClass('hide');
     this.$app.find('#preloader').addClass('hide');
   }
 
@@ -128,8 +112,6 @@ class index {
     });
   }
 
-
-
 /* about page control - 未來移出js */
   showPage($page, callback) {
     // $from.fadeOut();
@@ -142,35 +124,9 @@ class index {
     }
   }
 
-  // page setting
-  afterPage(page) {
-    let $ele = this.$app.find('.' + page);
-    if($ele.hasClass('active'))
-      return;
-    this.$app.find('.KevinHu').removeClass('active');
-    this.$app.find('.menu a').removeClass('active');
-    $ele.addClass('active');
-    switch (page) {
-      default:
-        break;
-      case 'projects':
-        window.app.projects.start();
-        // require.ensure([], function() { // this syntax is weird but it works
-        //   showloading();
-        //   var test = require('../scripts/test.js'); // when this function is called, the module is guaranteed to be synchronously available.
-        //   new test.q();
-        //   hideloading();
-        // });
-        break;
-    }
-  }
-
   // click and change page
   changePage($page, $trigger, callback) {
     $trigger.off('click').on('click', ()=>{
-      // if($trigger.hasClass('active'))
-        // return;
-      // $trigger.addClass('active');
       this.showPage($page);
       // history push
       if(!history.state || history.state.page !== $trigger.text())
@@ -180,6 +136,41 @@ class index {
         callback();
       }
     });
+  }
+
+  // page setting
+  afterPage(page) {
+    let $ele = this.$app.find('.' + page);
+    if($ele.hasClass('active'))
+      return;
+    // only listen hashchange when aboutme page
+    if(window.app.aboutme) {
+      window.app.aboutme.method.stop();
+      window.app.aboutme.unbind.offhashchange();
+    }
+    this.$app.find('.KevinHu').removeClass('active');
+    this.$app.find('.menu a').removeClass('active');
+    $ele.addClass('active');
+
+    switch (page) {
+      default:
+        break;
+      case 'projects':
+        if(window.app.projects) {
+          window.app.projects.start();
+        } else {
+          dynamicLoading('projects');
+        }
+        break;
+      case 'aboutme':
+        if(window.app.aboutme) {
+          window.app.aboutme.method.run();
+          window.app.aboutme.bind.onhashchange();
+        } else {
+          dynamicLoading('aboutme');
+        }
+        break;
+    }
   }
 }
 

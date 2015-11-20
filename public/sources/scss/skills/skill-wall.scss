@@ -173,11 +173,11 @@
 	> .joomla {
 		@include transform(scale(1) translate(1.55em, 14.2em));
 	}
-	> .git {
+	> .version-controll {
 	  font-weight: 700;
-		@include transform(scale(1.5) translate(1.2em, 10.6em));
+		@include transform(scale(1.5) translate(1.55em, 10.6em));
 	}
-	> .svn {
+	> .tools {
 		@include transform(scale(1) translate(1.55em, 17.5em));
 	}
 }
