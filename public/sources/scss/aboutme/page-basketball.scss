@@ -1,0 +1,27 @@
+/* basketball section */
+
+.page-basketball {
+	left: -100%;
+	top: 100%;
+	.basketball-desc {
+		left: 33%;
+		top: 15%;
+		width: 35%;
+		> span {
+			color: #fff;
+		}
+	}
+	.basketball-img1 {
+		left: 30%;
+		top: 30%;
+		width: 40%;
+		height: 50%;
+	  background: url($imgsrc + 'aboutme/aboutme-me5.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.basketball-goback {
+		left: 46%;
+		top: 82%;
+		font-size: 4em;
+	}
+}

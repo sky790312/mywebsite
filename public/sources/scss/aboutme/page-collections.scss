@@ -1,0 +1,51 @@
+/* collections section */
+
+.page-collections {
+	left: 200%;
+	top: 200%;
+	.collections-title {
+		left: 10%;
+		top: 15%;
+		width: 40%;
+		color: #3893F0;
+		font-size: 90px;
+		font-weight: bold;
+		text-align: center;
+	}
+	.collections-img1 {
+		left: 55%;
+		top: 20%;
+		width: 30%;
+		height: 30%;
+	  background: url($imgsrc + 'aboutme/aboutme-me6.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.collections-img2 {
+		left: 10%;
+		top: 40%;
+		width: 30%;
+		height: 30%;
+	  background: url($imgsrc + 'aboutme/aboutme-me1.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.collections-img3 {
+		left: 20%;
+		top: 50%;
+		width: 30%;
+		height: 30%;
+	  background: url($imgsrc + 'aboutme/aboutme-me1.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.collections-img4 {
+		left: 30%;
+		top: 60%;
+		width: 30%;
+		height: 30%;
+	  background: url($imgsrc + 'aboutme/aboutme-me1.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.collections-goback {
+		left: 75%;
+		top: 80%;
+	}
+}

@@ -1,0 +1,44 @@
+/* enjoylife section */
+
+.page-enjoylife {
+	left: 100%;
+	top: 100%;
+	.enjoylife-title {
+		left: 55%;
+		top: 12%;
+		width: 40%;
+		color: #3893F0;
+		font-size: 90px;
+		font-weight: bold;
+	}
+	.enjoylife-desc {
+		left: 13%;
+		top: 58%;
+		width: 32%;
+	}
+	.enjoylife-img1 {
+		left: 10%;
+		top: 10%;
+		width: 30%;
+		height: 40%;
+	  background: url($imgsrc + 'aboutme/aboutme-me3.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.enjoylife-img2 {
+		left: 50%;
+		top: 30%;
+		width: 35%;
+		height: 45%;
+	  background: url($imgsrc + 'aboutme/aboutme-me4.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.enjoylife-goback {
+		left: 10%;
+		top: 80%;
+	}
+	.go-collections {
+		left: 35%;
+		top: 80%;
+		width: 350px;
+	}
+}

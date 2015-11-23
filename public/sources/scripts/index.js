@@ -152,8 +152,6 @@ class index {
       return;
 
     if(window.app.aboutme) {
-      window.app.aboutme.settings.active = '';
-      window.app.aboutme.settings.prev = '';
       window.app.aboutme.method.stop();
       window.app.aboutme.unbind.offhashchange();
     }
@@ -174,7 +172,7 @@ class index {
         break;
       case 'aboutme':
         if(window.app.aboutme) {
-          window.location.hash = "#main-page";
+          window.location.hash = "#who-i-am";
           window.app.aboutme.method.run();
           window.app.aboutme.bind.onhashchange();
         } else {

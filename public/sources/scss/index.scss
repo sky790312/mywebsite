@@ -21,6 +21,12 @@
 @import "aboutme";
 @import "skills";
 
+/* aboutme page component */
+@import "aboutme/page-basketball";
+@import "aboutme/page-dance";
+@import "aboutme/page-enjoylife";
+@import "aboutme/page-collections";
+
 /* skills page component */
 @import "skills/skill-wall";
 @import "skills/skill-level";

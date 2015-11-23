@@ -1,0 +1,28 @@
+/* dance section */
+
+.page-dance {
+	left: -100%;
+	top: -100%;
+	.dance-desc {
+		left: 30%;
+		top: 10%;
+		width: 40%;
+		> span {
+			color: #fff;
+		}
+	}
+	.dance-img1 {
+		position: absolute;
+		left: 35%;
+		top: 25%;
+		width: 16%;
+		width: 22%;
+		height: 65%;
+	  background: url($imgsrc + 'aboutme/aboutme-me2.jpg') no-repeat center center;
+	  background-size: 100%;
+	}
+	.dance-goback {
+		left: 60%;
+		top: 60%;
+	}
+}

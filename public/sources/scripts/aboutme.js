@@ -57,6 +57,8 @@ class aboutme {
 					},
 					// stop the parallax animation
 					stop: function() {
+      			aboutme.settings.active = '';
+      			aboutme.settings.prev = '';
 						if (aboutme.settings.animateId) {
 		      		window.cancelAnimationFrame(aboutme.settings.animateId);
 			    		aboutme.settings.animateStop = true;
@@ -92,7 +94,9 @@ class aboutme {
 				bind: {
 					// window mousemove event
 					mousemove: function() {
-						window.addEventListener("mousemove", function(e) {
+						document.getElementById('parallax').addEventListener("mousemove", function(e) {
+						// window.addEventListener("mousemove", function(e) {
+							// if(e.target.id === 'header' || )
 							e.preventDefault();
 							aboutme.settings.pointer.x = e.clientX - aboutme.settings.screen.w * 0.5;
 							aboutme.settings.pointer.y = e.clientY - aboutme.settings.screen.h * 0.5;
@@ -152,11 +156,11 @@ class aboutme {
 					if (location.hash !== '' && location.hash !== "#")
 						aboutme.method.goto(location.hash);
 					else
-						window.location.hash = "#main-page";
+						window.location.hash = "#who-i-am";
 
 					// mobile handle 再想想
-					if($('html').hasClass('touch'))
-						aboutme.method.stop();
+					// if($('html').hasClass('touch'))
+						// aboutme.method.stop();
 				}
 			}
 
