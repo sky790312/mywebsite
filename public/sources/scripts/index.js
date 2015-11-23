@@ -72,6 +72,8 @@ class index {
     $(window).on("popstate", ()=>{
       let url = history.state ?
         history.state.page : $(location).attr('pathname').slice(1);
+      if(url === 'aboutme')
+        return;
       this.showPage(this.$app.find('#' + url), ()=> {
         // this.$app.find('.' + history.state.page).addClass('active');
         this.afterPage(url);
@@ -112,6 +114,8 @@ class index {
     });
   }
 
+// change page => show page => after page
+
 /* about page control - 未來移出js */
   showPage($page, callback) {
     // $from.fadeOut();
@@ -127,6 +131,9 @@ class index {
   // click and change page
   changePage($page, $trigger, callback) {
     $trigger.off('click').on('click', ()=>{
+      if($trigger.hasClass('active'))
+        return;
+
       this.showPage($page);
       // history push
       if(!history.state || history.state.page !== $trigger.text())
@@ -143,13 +150,16 @@ class index {
     let $ele = this.$app.find('.' + page);
     if($ele.hasClass('active'))
       return;
-    // only listen hashchange when aboutme page
+
     if(window.app.aboutme) {
+      window.app.aboutme.settings.active = '';
+      window.app.aboutme.settings.prev = '';
       window.app.aboutme.method.stop();
       window.app.aboutme.unbind.offhashchange();
     }
     this.$app.find('.KevinHu').removeClass('active');
     this.$app.find('.menu a').removeClass('active');
+
     $ele.addClass('active');
 
     switch (page) {
@@ -164,6 +174,7 @@ class index {
         break;
       case 'aboutme':
         if(window.app.aboutme) {
+          window.location.hash = "#main-page";
           window.app.aboutme.method.run();
           window.app.aboutme.bind.onhashchange();
         } else {
