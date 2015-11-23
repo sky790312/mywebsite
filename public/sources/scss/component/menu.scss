@@ -23,6 +23,7 @@ $animate-duration: .3s;
     cursor: default;
   }
   &:hover {
+    opacity: 1;
     font-size: 32px;
     @include transition(font-size .2s linear);
   }

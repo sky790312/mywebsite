@@ -2,7 +2,7 @@
 
 $projects-bg-color: #101524; // black
 
-$items: 4; // profolio numbers
+$items: 3; // profolio numbers
 
 
 // body {
@@ -290,7 +290,7 @@ $items: 4; // profolio numbers
 	visibility: hidden;
 	opacity: 0;
 	margin-top: 100vh;
-	padding: 4em 0;
+	padding: 4em 0 8em 0;
 	cursor: auto;
 	background-color: $main-text-color;
 	color: lighten($projects-bg-color, 30%);
