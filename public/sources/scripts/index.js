@@ -6,9 +6,11 @@ window.app = {};
 
 class index {
   constructor($ele) {
-    // Single Source of Truth
-    // this.state = {
-    // };
+    // settings
+    this.state = {
+      prevPage: '',
+      currentPage: ''
+    };
 
     // //選取元素
     this.$app = $ele;
@@ -72,8 +74,8 @@ class index {
     $(window).on("popstate", ()=>{
       let url = history.state ?
         history.state.page : $(location).attr('pathname').slice(1);
-      if(url === 'aboutme')
-        return;
+      // if(url === 'aboutme')
+        // return;
       this.showPage(this.$app.find('#' + url), ()=> {
         // this.$app.find('.' + history.state.page).addClass('active');
         this.afterPage(url);
@@ -150,7 +152,9 @@ class index {
     let $ele = this.$app.find('.' + page);
     if($ele.hasClass('active'))
       return;
-
+    if(window.app.projects) {
+      window.app.projects.method.closeProfolio(window.app.projects.$section.find('.inside'));
+    }
     if(window.app.aboutme) {
       window.app.aboutme.method.stop();
       window.app.aboutme.unbind.offhashchange();

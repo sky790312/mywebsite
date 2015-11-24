@@ -1,9 +1,9 @@
-/* enjoylife section */
+/* working section */
 
-.page-enjoylife {
+.page-working {
 	left: 100%;
 	top: 100%;
-	.enjoylife-title {
+	.working-title {
 		left: 55%;
 		top: 12%;
 		width: 40%;
@@ -11,12 +11,12 @@
 		font-size: 90px;
 		font-weight: bold;
 	}
-	.enjoylife-desc {
+	.working-desc {
 		left: 13%;
 		top: 58%;
 		width: 32%;
 	}
-	.enjoylife-img1 {
+	.working-img1 {
 		left: 10%;
 		top: 10%;
 		width: 30%;
@@ -24,7 +24,7 @@
 	  background: url($imgsrc + 'aboutme/aboutme-me3.jpg') no-repeat center center;
 	  background-size: 100%;
 	}
-	.enjoylife-img2 {
+	.working-img2 {
 		left: 50%;
 		top: 30%;
 		width: 35%;
@@ -32,7 +32,7 @@
 	  background: url($imgsrc + 'aboutme/aboutme-me4.jpg') no-repeat center center;
 	  background-size: 100%;
 	}
-	.enjoylife-goback {
+	.working-goback {
 		left: 10%;
 		top: 80%;
 	}
