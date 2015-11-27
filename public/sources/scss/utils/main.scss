@@ -8,6 +8,8 @@
 // .icons-twitter {  background-position: 0 -32px; }
 // .icons-yahoo {  background-position: 0 -64px; }
 
+$main-bg-color: $black-opacity;
+
 a {
   text-decoration: none;
 }
@@ -16,7 +18,7 @@ body {
   overflow-x: hidden;
 //   background: $main-bg-color;
 }
-// 
+
 #preloader {
   position: absolute;
   top: 0;

@@ -182,7 +182,7 @@ $items: 3; // profolio numbers
 				opacity: 1;
 
 				&::after {
-					opacity: 1;
+					opacity: .5;
 				}
 			}
 
@@ -204,11 +204,10 @@ $items: 3; // profolio numbers
   	}
 
   	.profolio.loaded::after {
-		opacity: 0;
-	}
-
-    .no-touch & .profolio:hover::after, .profolio.inside.loaded::after {
-    	opacity: 1;
+			opacity: 0;
+		}
+		.profolio:hover::after, .profolio.inside.loaded::after {
+    	opacity: .5;
     	@include transform(scale(1));
     }
   }
@@ -228,7 +227,7 @@ $items: 3; // profolio numbers
   text-align: center;
 
   .inside & {
-		top: 50vh;
+		top: 40vh;
 		@include transition(opacity 0s, top 0.4s);
 	}
 
@@ -252,10 +251,10 @@ $items: 3; // profolio numbers
 	}
 
 	@include mediaQuires(ML) {
-		top: 50vh;
+		top: 40vh;
 		width: 100vw / $items;
 		opacity: 0;
-		@include transform(translateY(-50%) translateX(-20px));
+		@include transform(translateY(-40%) translateX(-20px));
 
 		.loaded & {
 			opacity: 1;
@@ -269,6 +268,8 @@ $items: 3; // profolio numbers
 		}
 
 		.profolio-brief {
+			position: absolute;
+			top: 120px;
 			display: block;
 		}
 	}
@@ -306,6 +307,14 @@ $items: 3; // profolio numbers
 		max-width: 800px;
 		margin: 0 auto;
 		line-height: 2;
+
+		a {
+			color: blue;
+			opacity: .8;
+			&:hover {
+				opacity: 1;
+			}
+		}
 	}
 
 	@include mediaQuires(ML) {
@@ -318,80 +327,33 @@ $items: 3; // profolio numbers
  * component close & scroll
  */
 
-.profolios-section .close,
-.profolios-section .scroll {
-	display: block;
-	z-index: 1;
-	width: 44px;
-	height: 44px;
-
-	/* image replacement */
-	overflow: hidden;
-	text-indent: 100%;
-	white-space: nowrap;
-
-	visibility: hidden;
-	@include transition(transform 1s 0s, visibility 0s 1s);
+.profolios-section .close-section {
+	padding: 40px 0 20px 0;
+	text-align: center;
+  text-transform: uppercase;
 }
-
 .profolios-section .close {
-	position: fixed;
-	top: 15%;
-	right: 5%;
-	background: url($imgsrc + 'projects/icon-close-s.svg') no-repeat center center;
-	@include transform(scale(0));
-	@include mediaQuires(L) {
-		background-image: url($imgsrc + 'projects/icon-close-l.svg');
+	position: relative;
+  color: #ddd;
+  opacity: .8;
+  &:hover {
+  	opacity: 1;
+  }
+	&:before, &:after {
+		top: 2px;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px
 	}
-}
-
-.profolios-section .scroll {
-	position: absolute;
-	bottom: 30px;
-	left: 50%;
-	background: url($imgsrc + 'projects/icon-arrow-s.svg') no-repeat center center;
-	@include transform(translateX(-50%) scale(0));
-	@include mediaQuires(L) {
-		background-image: url($imgsrc + 'projects/icon-arrow-l.svg');
+	&:before{
+    left: -12px;
+    transform: rotate(135deg)
 	}
-}
-
-.opening .close, .opening .scroll {
-	visibility: visible;
-	@include transform(scale(1));
-	@include transition(transform 0.4s 0s, visibility 0s 0s);
-}
-
-.opening > .scroll {
-	@include transform(translateX(-50%) scale(1));
-	@include animation(arrow-down 1.2s 0.4s infinite);
-}
-
-.no-touch {
-	.opening > .close:hover {
-		@include transform(scale(1.2));
-	}
-
-	.opening > .scroll:hover {
-		@include transform(translateX(-50%) scale(1.2));
-	}
-}
-
-/*
- * keyframes
- */
-
-// @include keyframes(arrow-down) {
-@include keyframes(arrow-down) {
-	0% {
-		@include transform(translateX(-50%) scale(1));
-	}
-
-	50% {
-		@include transform(translateY(10px) translateX(-50%) scale(1));
-	}
-
-	100% {
-		@include transform(translateX(-50%) scale(1));
+	&:after{
+    right: -12px;
+    transform: rotate(-45deg)
 	}
 }

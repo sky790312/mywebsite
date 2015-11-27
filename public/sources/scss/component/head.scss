@@ -1,8 +1,8 @@
 /* component - head-boy */
 
-$head-boy-color: #ccc;
-$head-boy-eyes-color: #444;
-$head-boy-feets-color: #444;
+$head-boy-color: $dark-gray;
+$head-boy-eyes-color: $drak-black;
+$head-boy-feets-color: $drak-black;
 
 .head-boy {
   float: right;
@@ -54,7 +54,7 @@ $head-boy-feets-color: #444;
     height: 6px;
     border-radius: 50%;
     background-color: $head-boy-eyes-color;
-    box-shadow: 20px 0 0 #444444;
+    box-shadow: 20px 0 0 $head-boy-eyes-color;
     @include animation(eyes 2.5s infinite);
   }
 }

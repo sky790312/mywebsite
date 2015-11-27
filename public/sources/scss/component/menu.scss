@@ -1,13 +1,14 @@
 /* component - menu */
 
-$menu-hover-color: #4380BE;
+$menu-hover-color: $light-blue;
+$menu-active-color: $light-blue2;
 
-$icon-menu-color: #4380BE;
-$icon-menu-checked-color: rgba(255, 255, 255, 0);
-$icon-menu-cancel-color: #FFF;
+$icon-menu-color: $light-blue;
+$icon-menu-checked-color: $black;
+$icon-menu-cancel-color: $white;
 $icon-menu-border-radius: 10px;
 $icon-menu-line-height: 2px;
-$menu-bg-color: rgba(27, 139, 255, 0.8);
+$menu-bg-color: $blue-opacity;
 $animate-duration: .3s;
 
 .KevinHu {
@@ -233,7 +234,7 @@ $animate-duration: .3s;
       }
       &.active {
         cursor: default;
-        color: #47A1FF;
+        color: $menu-active-color;
           &:after {
           max-width: 0;
         }

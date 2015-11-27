@@ -1,3 +1,4 @@
+
 $title-photo-linear-gradient: linear-gradient(to right, $main-bg-color, rgba(0, 0, 0, 0.6), $main-bg-color);
 $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
 
@@ -86,7 +87,7 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
         top: 2.5em;
         right: 8em;
         width: 7em;
-        color: $main-title-color;
+        color: $main-color;
         opacity: 0;
         font-size: 1.7em;
         @include animation(show-left-title .8s ease-out .5s);
@@ -116,7 +117,7 @@ $title-photo-bgimg-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
     white-space: nowrap;
     overflow: hidden;
     text-align: left;
-    color: $main-text-color;
+    color: $main-color;
     font-size: 16px;
     @include animation(typing 2.5s steps(50, end) 1.3s);
     @include animation-fill-mode(forwards);

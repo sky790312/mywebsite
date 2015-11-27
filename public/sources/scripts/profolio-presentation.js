@@ -33,7 +33,6 @@ class projects {
 						// fade out this profolio
 						thisProfolio.animate({opacity: 0}, 500, function(){
 							thisProfolio.removeClass('loaded');
-							profolio.$section.find('.scroll').attr('style', '');
 							setTimeout(function(){
 								thisProfolio.attr('style', '').removeClass('inside').find('.profolio-outside').attr('style', '');
 							}, delay);
@@ -44,7 +43,6 @@ class projects {
 					changeOpacity: function() {
 						// change opacity when scroll profolio inside
 						var newOpacity = 1 - (profolio.$section.scrollTop()) / 300;
-						profolio.$section.find('.scroll').css('opacity', newOpacity);
 						profolio.$section.find('.inside .profolio-outside').css('opacity', newOpacity);
 					},
 		    	throttle: function(fn, threshhold, scope) {
@@ -85,12 +83,6 @@ class projects {
 							profolio.method.closeProfolio(profolio.$section.find('.inside'));
 						});
 		    	},
-		    	down: function() {
-						// bind profolio inside - down
-						profolio.$section.find('.scroll').off('click').on('click', function(){
-							profolio.$section.animate({'scrollTop':$(window).height()}, 500);
-						});
-		    	},
 		    	scrolling: function() {
 						// bind profolio section - scrolling
 						profolio.$section.on('scroll', profolio.method.throttle(function(e){
@@ -102,7 +94,7 @@ class projects {
 					 // binding function
 		      profolio.bind.open();
 		      profolio.bind.close();
-		      profolio.bind.down();
+		      // profolio.bind.down();
 		      profolio.bind.scrolling();
 					profolio.method.showProfolios(profolio.$section.find('li').eq(0));
 		    },
