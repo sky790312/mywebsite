@@ -16,7 +16,7 @@ $animate-duration: .3s;
   margin: 26px 0;
   cursor: pointer;
   opacity: 0.7;
-  color: $main-title-color;
+  color: $main-color;
   font-size: 30px;
   &.active {
     opacity: 1;
@@ -141,7 +141,7 @@ $animate-duration: .3s;
     > .menu-background {
       width: 0;
       height: 0;
-      color: $main-title-color;
+      color: $main-color;
       background-color: $menu-bg-color;
       border-radius: 50%;
       @include transition(all $animate-duration ease);
@@ -173,7 +173,7 @@ $animate-duration: .3s;
         position: relative;
         display: inline;
         cursor: pointer;
-        color: $main-title-color;
+        color: $main-color;
         @include transition(color $animate-duration ease);
         &:after {
           content: '';
@@ -183,7 +183,7 @@ $animate-duration: .3s;
           left: 0;
           width: 0;
           height: 2px;
-          background-color: $main-title-color;
+          background-color: $main-color;
           @include transition(width $animate-duration ease);
         }
         &:hover:after, &:active:after, &:focus:after{
@@ -213,7 +213,7 @@ $animate-duration: .3s;
       position: relative;
       display: inline-block;
       cursor: pointer;
-      color: $main-title-color;
+      color: $main-color;
       &:after {
         content: '';
         position: absolute;

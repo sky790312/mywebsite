@@ -1,3 +1,4 @@
+$skill-level-title: $white;
 $skill-level-bar: linear-gradient(to right, rgba(168,204,237,1) 0%, rgba(58,142,233,1) 60%);
 
 .bar {
@@ -10,7 +11,7 @@ $skill-level-bar: linear-gradient(to right, rgba(168,204,237,1) 0%, rgba(58,142,
     position: absolute;
     top: -15px;
     padding: 10px;
-    color: white;
+    color: $skill-level-title;
     font-style: italic;
     font-weight: bolder;
   }
