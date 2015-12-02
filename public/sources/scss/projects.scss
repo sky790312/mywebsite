@@ -1,13 +1,13 @@
 // $imgsrc: '/images/mywebsite/projects/'; // img common src
 
-$projects-bg-color: #101524; // black
+$projects-bg-color: $dark-black; // black
 
 $items: 3; // profolio numbers
 
 
 // body {
 // 	font-size: 1.6rem;
-// 	color: $main-text-color;
+// 	color: $main-color;
 // 	background-color: $projects-bg-color;
 // }
 
@@ -20,7 +20,7 @@ $items: 3; // profolio numbers
 	width: 100vw;
 	position: relative;
 	background-color: $projects-bg-color;
-	color: $main-text-color;
+	color: $main-color;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
 
@@ -293,7 +293,7 @@ $items: 3; // profolio numbers
 	margin-top: 100vh;
 	padding: 4em 0 8em 0;
 	cursor: auto;
-	background-color: $main-text-color;
+	background-color: $main-color;
 	color: lighten($projects-bg-color, 30%);
 	@include transition(opacity 0.4s 0s, visibility 0s 0.4s);
 

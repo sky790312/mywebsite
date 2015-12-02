@@ -37,11 +37,11 @@
 	text-transform: uppercase;
 	text-decoration: none;
 	font-size: 2em;
+	color: #BBBBBB;
 	@include mediaQuires(ML) {
 		font-size: 3em;
 		min-width: 200px;
 	}
-	color: #BBBBBB;
 	&:hover {
 		color: #F80;
 	}
@@ -123,16 +123,16 @@
 			left: 50%;
 			top: 50%;
 		}
-		.main-bkgtitle {
-			width: 280px;
-	    height: 60px;
-	    margin: -125px 0 0 30px;
-		}
+		// .main-bkgtitle {
+		// 	width: 280px;
+	 //    	height: 60px;
+	 //    	margin: -125px 0 0 35px;
+		// }
 		.main-ftitle {
-    	margin: -60px 0 0 10px;
+    		margin: -60px 0 0 15px;
 		}
 		.main-btitle {
-			margin: -40px 0 0 -145px;
+			margin: -40px 0 0 -140px;
 		}
 		// .mainpage-img1 {
 		// 	width: 450px;
