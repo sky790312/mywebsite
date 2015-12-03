@@ -1,8 +1,43 @@
+/* extroverted section */
+
 .page-extroverted {
 	left: 100%;
 	top: -100%;
+	.extroverted-title {
+		top: 17%;
+		width: 100%;
+		text-align: center;
+	}
+	.extroverted-desc {
+		top: 27%;
+		left: 15%;
+		width: 70%;
+		@include mediaQuires(ML) {
+			top: 32%;
+		}
+	}
+	.extroverted-img1 {
+		left: 50%;
+		top: 48%;
+		width: 34%;
+		height: 50%;
+	  background-image: url($imgsrc + 'aboutme/extroverted-img1.jpg');
+	  @include mediaQuires(ML) {
+			top: 44%;
+		}
+	}
+	.extroverted-img2 {
+		top: 48%;
+		left: 32%;
+		width: 13%;
+		height: 50%;
+	  background-image: url($imgsrc + 'aboutme/extroverted-img2.jpg');
+		@include mediaQuires(ML) {
+			top: 44%;
+		}
+	}
 	.extroverted-goback {
-		left: 10%;
-		top: 80%;
+		left: 18%;
+		top: 73%;
 	}
 }
