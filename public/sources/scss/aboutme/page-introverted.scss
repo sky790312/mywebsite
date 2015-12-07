@@ -3,25 +3,60 @@
 .page-introverted {
 	left: -100%;
 	top: 100%;
-	.introverted-desc {
-		left: 33%;
-		top: 15%;
-		width: 35%;
-		> span {
-			color: #fff;
+	.introverted-title {
+		@include mediaQuires(ML) {
+			width: auto;
+			top: 17%;
+			left: 10%;
 		}
 	}
+	.introverted-desc {
+		@include mediaQuires(ML) {
+    	left: 48%;
+    	top: 52%;
+    	width: 48%;
+    }
+	}
 	.introverted-img1 {
-		left: 30%;
-		top: 30%;
-		width: 40%;
-		height: 50%;
-	  background: url($imgsrc + 'aboutme/aboutme-me5.jpg') no-repeat center center;
-	  background-size: 100%;
+	  background: url($imgsrc + 'aboutme/introverted-img1.jpg') no-repeat center center;
+	  width: 20%;
+    height: 30%;
+    left: 25%;
+    top: 56%;
+		@include mediaQuires(ML) {
+	    width: 35%;
+	  	left: 53%;
+	    top: 17%;
+	  }
+	}
+	.introverted-img2 {
+		background: url($imgsrc + 'aboutme/introverted-img2.jpg') no-repeat center center;
+	  width: 20%;
+	  height: 50%;
+	  left: 50%;
+    top: 45%;
+		@include mediaQuires(ML) {
+			width: 35%;
+			left: 8%;
+	    top: 33%;
+	  }
+	}
+	.go-collections {
+		top: 80%;
+		width: 100%;
+		text-align: center;
+		@include mediaQuires(ML) {
+			width: auto;
+			left: 53%;
+			top: 78%;
+		}
 	}
 	.introverted-goback {
-		left: 46%;
-		top: 82%;
-		font-size: 4em;
+		top: 72%;
+    left: 72%;
+		@include mediaQuires(ML) {
+			left: 78%;
+			top: 78%;
+		}
 	}
 }

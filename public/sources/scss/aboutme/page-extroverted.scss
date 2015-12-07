@@ -3,15 +3,7 @@
 .page-extroverted {
 	left: 100%;
 	top: -100%;
-	.extroverted-title {
-		top: 17%;
-		width: 100%;
-		text-align: center;
-	}
 	.extroverted-desc {
-		top: 27%;
-		left: 15%;
-		width: 70%;
 		@include mediaQuires(ML) {
 			top: 32%;
 		}

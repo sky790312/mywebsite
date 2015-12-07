@@ -73,6 +73,19 @@ $aboutme-ftitle: $white;
 	}
 }
 
+.page-family, .page-extroverted, .page-working, .page-introverted, .page-collections {
+	.title {
+		top: 17%;
+		width: 100%;
+		text-align: center;
+	}
+	.desc {
+		top: 27%;
+		left: 15%;
+		width: 70%;
+	}
+}
+
 #parallax {
 	/* mainpage section */
 	.page-main {
