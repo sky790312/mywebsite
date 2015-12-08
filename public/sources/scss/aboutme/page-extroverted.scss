@@ -3,20 +3,12 @@
 .page-extroverted {
 	left: 100%;
 	top: -100%;
-	.extroverted-desc {
-		@include mediaQuires(ML) {
-			top: 32%;
-		}
-	}
 	.extroverted-img1 {
 		left: 50%;
 		top: 48%;
 		width: 34%;
 		height: 50%;
 	  background-image: url($imgsrc + 'aboutme/extroverted-img1.jpg');
-	  @include mediaQuires(ML) {
-			top: 44%;
-		}
 	}
 	.extroverted-img2 {
 		top: 48%;
@@ -24,12 +16,17 @@
 		width: 13%;
 		height: 50%;
 	  background-image: url($imgsrc + 'aboutme/extroverted-img2.jpg');
-		@include mediaQuires(ML) {
-			top: 44%;
-		}
 	}
 	.extroverted-goback {
 		left: 18%;
 		top: 73%;
+	}
+	@include mediaQuires(ML) {
+		.extroverted-desc {
+			top: 32%;
+		}
+		.extroverted-img1, .extroverted-img2{
+			top: 44%;
+		}
 	}
 }

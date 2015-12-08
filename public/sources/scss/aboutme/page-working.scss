@@ -3,37 +3,50 @@
 .page-working {
 	left: 100%;
 	top: 100%;
-	.working-title {
-		left: 55%;
-		top: 12%;
-		width: 40%;
-		color: #3893F0;
-		font-size: 90px;
-		font-weight: bold;
-	}
-	.working-desc {
-		left: 13%;
-		top: 58%;
-		width: 32%;
-	}
 	.working-img1 {
-		left: 10%;
-		top: 10%;
-		width: 30%;
-		height: 40%;
-	  background: url($imgsrc + 'aboutme/aboutme-me3.jpg') no-repeat center center;
-	  background-size: 100%;
+	  background-image: url($imgsrc + 'aboutme/working-img1.jpg');
+		left: 30%;
+    top: 72%;
+    width: 20%;
+    height: 8%;
 	}
 	.working-img2 {
-		left: 50%;
-		top: 30%;
-		width: 35%;
-		height: 45%;
-	  background: url($imgsrc + 'aboutme/aboutme-me4.jpg') no-repeat center center;
-	  background-size: 100%;
+	  background-image: url($imgsrc + 'aboutme/working-img2.jpg');
+    left: 52%;
+    top: 70%;
+    width: 20%;
+    height: 15%;
 	}
 	.working-goback {
-		left: 10%;
-		top: 80%;
+		top: 76%;
+    left: 15%;
+	}
+	@include mediaQuires(ML) {
+		.working-title {
+			left: 62%;
+	    top: 15%;
+	    width: auto;
+		}
+		.working-desc {
+			left: 10%;
+	    top: 55%;
+	    width: 40%;
+		}
+		.working-img1 {
+			left: 15%;
+	    top: 20%;
+	    width: 30%;
+	    height: 27%;
+		}
+		.working-img2 {
+			left: 55%;
+			top: 30%;
+			width: 30%;
+			height: 54%;
+		}
+		.working-goback {
+			top: 80%;
+    	left: 10%;
+		}
 	}
 }

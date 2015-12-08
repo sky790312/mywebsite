@@ -107,14 +107,14 @@ $aboutme-ftitle: $white;
 			> div, a {
 				top: 50%;
 			}
-			.main-ftitle, .main-btitle {
+			.main-btitle, .main-ftitle {
 				left: 50%;
-			}
-			.main-ftitle {
-		    margin: -60px 0 0 25px;
 			}
 			.main-btitle {
 		    margin: -40px 0 0 -125px;
+			}
+			.main-ftitle {
+		    margin: -60px 0 0 25px;
 			}
 			.go-family {
 				left: 20px;
@@ -140,11 +140,11 @@ $aboutme-ftitle: $white;
 				left: 50%;
 				top: 50%;
 			}
-			.main-ftitle {
-	    		margin: -60px 0 0 15px;
-			}
 			.main-btitle {
 				margin: -40px 0 0 -140px;
+			}
+			.main-ftitle {
+	    	margin: -60px 0 0 15px;
 			}
 			.go-family {
 				margin: -130px 0 0 -270px;

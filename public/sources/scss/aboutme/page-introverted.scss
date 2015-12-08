@@ -3,58 +3,58 @@
 .page-introverted {
 	left: -100%;
 	top: 100%;
-	.introverted-title {
-		@include mediaQuires(ML) {
-			width: auto;
-			top: 17%;
-			left: 10%;
-		}
-	}
-	.introverted-desc {
-		@include mediaQuires(ML) {
-    	left: 48%;
-    	top: 52%;
-    	width: 48%;
-    }
-	}
 	.introverted-img1 {
-	  background: url($imgsrc + 'aboutme/introverted-img1.jpg') no-repeat center center;
+	  background-image: url($imgsrc + 'aboutme/introverted-img1.jpg');
 	  width: 20%;
-    height: 30%;
+    height: 11%;
     left: 25%;
-    top: 56%;
-		@include mediaQuires(ML) {
-	    width: 35%;
-	  	left: 53%;
-	    top: 17%;
-	  }
+    top: 66%;
 	}
 	.introverted-img2 {
-		background: url($imgsrc + 'aboutme/introverted-img2.jpg') no-repeat center center;
-	  width: 20%;
-	  height: 50%;
-	  left: 50%;
-    top: 45%;
-		@include mediaQuires(ML) {
-			width: 35%;
-			left: 8%;
-	    top: 33%;
-	  }
+		background-image: url($imgsrc + 'aboutme/introverted-img2.jpg');
+		width: 20%;
+    height: 15%;
+    left: 50%;
+    top: 63%;
 	}
 	.go-collections {
 		top: 80%;
 		width: 100%;
 		text-align: center;
-		@include mediaQuires(ML) {
-			width: auto;
-			left: 53%;
-			top: 78%;
-		}
 	}
 	.introverted-goback {
 		top: 72%;
     left: 72%;
-		@include mediaQuires(ML) {
+	}
+	@include mediaQuires(ML) {
+		.introverted-title {
+			width: auto;
+			top: 20%;
+			left: 9%;
+		}
+		.introverted-desc {
+    	left: 48%;
+    	top: 52%;
+    	width: 48%;
+		}
+		.introverted-img1 {
+	    width: 35%;
+    	height: 30%;
+	  	left: 53%;
+	    top: 17%;
+		}
+		.introverted-img2 {
+			width: 35%;
+	    height: 38%;
+	    left: 8%;
+	    top: 36%;
+		}
+		.go-collections {
+			width: auto;
+			left: 53%;
+			top: 78%;
+		}
+		.introverted-goback {
 			left: 78%;
 			top: 78%;
 		}
