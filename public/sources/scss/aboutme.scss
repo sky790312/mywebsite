@@ -167,3 +167,10 @@ $aboutme-ftitle: $white;
    from {opacity: 0;}
    to {opacity: 1;}
 }
+
+/* aboutme page component */
+@import "aboutme/page-family";
+@import "aboutme/page-extroverted";
+@import "aboutme/page-working";
+@import "aboutme/page-introverted";
+@import "aboutme/page-collections";

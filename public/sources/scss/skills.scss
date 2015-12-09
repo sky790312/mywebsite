@@ -77,3 +77,9 @@ $skill-background-unfill: $light-gray;
 	  left: 75%;
 	}
 }
+
+/* skills page component */
+@import "skills/skill-wall";
+@import "skills/skill-level";
+@import "skills/background-bubble";
+// @import "skills/background-cloud";
