@@ -1,15 +1,12 @@
-// $imgsrc: '/images/mywebsite/projects/'; // img common src
+$project-default-bg-color: $dark-black;
+$project-outside-desc-color: $main-color;
 
-$projects-bg-color: $dark-black;
+$project-inside-bg-color: $main-color;
+$project-inside-desc-color: $dark-gray2;
+$project-inside-link-color: blue;
+$project-close-color: $light-blue;
 
 $items: 3; // profolio numbers
-
-
-// body {
-// 	font-size: 1.6rem;
-// 	color: $main-color;
-// 	background-color: $projects-bg-color;
-// }
 
 /*
  * main profolios section
@@ -19,8 +16,8 @@ $items: 3; // profolio numbers
 	height: 100vh;
 	width: 100vw;
 	position: relative;
-	background-color: $projects-bg-color;
-	color: $main-color;
+	background-color: $project-default-bg-color;
+	color: $project-outside-desc-color;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
 
@@ -51,7 +48,7 @@ $items: 3; // profolio numbers
     	left: 0;
     	height: 100vh / $items;
     	width: 100%;
-			background: url($imgsrc + 'projects/img-1-s.jpg') no-repeat center center;
+			background: url($imgsrc + 'projects/project-bkg1.jpg') no-repeat center center;
 			background-size: cover;
 			@include transition(opacity 0.5s, height 0.4s);
     }
@@ -65,33 +62,16 @@ $items: 3; // profolio numbers
 		&:nth-of-type(2) {
 			top: 100vh / $items;
 
-			// &::before {
-			// 	content: 'images/img-2-small.jpg';
-			// }
 			&::after {
-				background-image: url($imgsrc + 'projects/img-2-s.jpg');
+				background-image: url($imgsrc + 'projects/project-bkg2.jpg');
 			}
 		}
 
 		&:nth-of-type(3) {
 			top: 100vh * 2 / $items;
 
-			// &::before {
-			// 	content: 'images/img-3-small.jpg';
-			// }
 			&::after {
-				background-image: url($imgsrc + 'projects/img-3-s.jpg');
-			}
-		}
-
-		&:nth-of-type(4) {
-			top: 100vh * 3 / $items;
-
-			// &::before {
-			// 	content: 'images/img-4-small.jpg';
-			// }
-			&::after {
-				background-image: url($imgsrc + 'projects/img-4-s.jpg');
+				background-image: url($imgsrc + 'projects/project-bkg3.jpg');
 			}
 		}
 
@@ -128,47 +108,14 @@ $items: 3; // profolio numbers
 			@include transform(translateX(0));
 			@include transition(width 0s);
 
-			// &:first-of-type::before {
-			// 	content: 'images/img-1-large.jpg';
-			// }
-			&:first-of-type::after {
-				background-image: url($imgsrc + 'projects/img-1-l.jpg');
-			}
-
 			&:nth-of-type(2) {
 				top: 0;
 				left: 100vw / $items;
-
-				// &::before {
-				// 	content: 'images/img-2-large.jpg';
-				// }
-				&::after {
-					background-image: url($imgsrc + 'projects/img-2-l.jpg');
-				}
 			}
 
 			&:nth-of-type(3) {
 				top: 0;
 				left: 100vw * 2 / $items;
-
-				// &::before {
-				// 	content: 'images/img-3-large.jpg';
-				// }
-				&::after {
-					background-image: url($imgsrc + 'projects/img-3-l.jpg');
-				}
-			}
-
-			&:nth-of-type(4) {
-				top: 0;
-				left: 100vw * 3 / $items;
-
-				// &::before {
-				// 	content: 'images/img-4-large.jpg';
-				// }
-				&::after {
-					background-image: url($imgsrc + 'projects/img-4-l.jpg');
-				}
 			}
 
 			&::after {
@@ -207,7 +154,7 @@ $items: 3; // profolio numbers
 			opacity: 0;
 		}
 		.profolio:hover::after, .profolio.inside.loaded::after {
-    	opacity: .5;
+    	opacity: .7;
     	@include transform(scale(1));
     }
   }
@@ -231,14 +178,37 @@ $items: 3; // profolio numbers
 		@include transition(opacity 0s, top 0.4s);
 	}
 
-	> * {
-		text-shadow: 0 1px 4px rgba(#000, .2);
-	}
+	// > * {
+	// 	text-shadow: 0 1px 4px rgba(#000, .2);
+	// }
 
 	.profolio-title {
-		font-size: 2.5rem;
-		line-height: 1.5;
-		font-weight: 700;
+	  width: 200px;
+	  height: 80px;
+		background-repeat: no-repeat;
+		background-position: center center;
+	  background-size: 100%;
+	  margin: auto;
+	  &.aite {
+			background-image: url($imgsrc + 'projects/project-title1.png');
+	  }
+	  &.side-project {
+			background-image: url($imgsrc + 'projects/project-title2.png');
+	  }
+	  &.eztravel {
+			background-image: url($imgsrc + 'projects/project-title3.png');
+	  }
+		@include mediaQuires(S) {
+	  	&.aite {
+	  		margin-top: 85px;
+	  	}
+	  	&.eztravel {
+	  		margin-top: -85px;
+	  	}
+		}
+		// font-size: 2.5rem;
+		// line-height: 1.5;
+		// font-weight: 700;
 	}
 
 	.profolio-brief {
@@ -247,7 +217,7 @@ $items: 3; // profolio numbers
 		line-height: 1.2;
 		padding: .4em 2em;
 		display: none;
-		opacity: .6;
+		// opacity: .6;
 	}
 
 	@include mediaQuires(ML) {
@@ -273,13 +243,6 @@ $items: 3; // profolio numbers
 			display: block;
 		}
 	}
-
-	@include mediaQuires(L) {
-
-		.profolio-title {
-			font-size: 3.6rem;
-		}
-	}
 }
 
 /*
@@ -293,8 +256,8 @@ $items: 3; // profolio numbers
 	margin-top: 100vh;
 	padding: 4em 0 8em 0;
 	cursor: auto;
-	background-color: $main-color;
-	color: lighten($projects-bg-color, 30%);
+	background-color: $project-inside-bg-color;
+	color: $project-inside-desc-color;
 	@include transition(opacity 0.4s 0s, visibility 0s 0.4s);
 
 	.inside & {
@@ -304,12 +267,12 @@ $items: 3; // profolio numbers
 
 	.profolio-desc {
 		width: 90%;
-		max-width: 800px;
+		max-width: 920px;
 		margin: 0 auto;
 		line-height: 2;
 
 		a {
-			color: blue;
+			color: $project-inside-link-color;
 			opacity: .8;
 			&:hover {
 				opacity: 1;
@@ -334,7 +297,7 @@ $items: 3; // profolio numbers
 }
 .profolios-section .close {
 	position: relative;
-  color: #ddd;
+  color: $project-close-color;
   opacity: .8;
   &:hover {
   	opacity: 1;

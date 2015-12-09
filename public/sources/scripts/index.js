@@ -1,7 +1,7 @@
 'use strict';
 
 // import dynamicLoading from '../scripts/dynamicLoading'; // 進頁面才load好像沒有比較好
-import projectJs from '../scripts/profolio-presentation.js';
+import projectJs from '../scripts/project.js';
 import aboutmeJs from '../scripts/aboutme.js';
 
 window.app = {};
@@ -114,7 +114,7 @@ class index {
     });
   }
 
-// change page => show page => after page
+// change page => show page => after page => start page
 
 /* about page control - 未來移出js */
 
