@@ -107,12 +107,14 @@ class aboutme {
 						window.addEventListener("resize", aboutme.method.resize, false);
 					},
 					onhashchange: function() {
-						window.addEventListener("hashchange", aboutme.method.goto, false);
+						if(location.pathname === '/aboutme')
+							window.addEventListener("hashchange", aboutme.method.goto, false);
 					}
 				},
 				unbind: {
 					offhashchange: function() {
-						window.removeEventListener("hashchange", aboutme.method.goto, false);
+						if(!location.pathname === '/aboutme')
+							window.removeEventListener("hashchange", aboutme.method.goto, false);
 					}
 				},
 				init: function() {

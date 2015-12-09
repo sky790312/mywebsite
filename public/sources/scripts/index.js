@@ -1,21 +1,21 @@
 'use strict';
 
-import dynamicLoading from '../scripts/dynamicLoading';
+// import dynamicLoading from '../scripts/dynamicLoading'; // 進頁面才load好像沒有比較好
+import projectJs from '../scripts/profolio-presentation.js';
+import aboutmeJs from '../scripts/aboutme.js';
 
 window.app = {};
 
 class index {
   constructor($ele) {
-    // settings
-    this.state = {
-      prevPage: '',
-      currentPage: ''
-    };
 
-    // //選取元素
+    // this.state = {
+    //   prevPage: '',
+    //   currentPage: ''
+    // };
+
     this.$app = $ele;
 
-    // 方法
     this.init();
     this.eventListener();
   }
@@ -31,16 +31,15 @@ class index {
 
     // });
 
-    // new page url check
+    // first into page
     if($(location).attr('pathname')){
-      let url = $(location).attr('pathname').slice(1);
-      this.showPage(this.$app.find('#' + url), ()=>{
-        // dom ready
-        $(()=>{
-          this.afterPage(url);
-        })
-      });
+      let url = $(location).attr('pathname').replace('/', '');
+      this.showPage(this.$app.find('#' + url));
+      this.$app.find('.' + url).addClass('active');
+
+      this.startPage(url);
     }
+
     // history url
     // if(history.state){
     //   this.showPage(this.$app.find('#' + history.state.page), ()=>{
@@ -73,11 +72,10 @@ class index {
     // history listen
     $(window).on("popstate", ()=>{
       let url = history.state ?
-        history.state.page : $(location).attr('pathname').slice(1);
+        history.state.page : $(location).attr('pathname').replace('/', '');
       // if(url === 'aboutme')
         // return;
       this.showPage(this.$app.find('#' + url), ()=> {
-        // this.$app.find('.' + history.state.page).addClass('active');
         this.afterPage(url);
       });
     });
@@ -119,16 +117,6 @@ class index {
 // change page => show page => after page
 
 /* about page control - 未來移出js */
-  showPage($page, callback) {
-    // $from.fadeOut();
-    // $to.fadeIn();
-    this.$app.find('section').addClass('hide');
-    $page.removeClass('hide');
-
-    if (typeof callback === 'function') {
-      callback();
-    }
-  }
 
   // click and change page
   changePage($page, $trigger, callback) {
@@ -147,7 +135,19 @@ class index {
     });
   }
 
-  // page setting
+  // show page..need to be first
+  showPage($page, callback) {
+    // $from.fadeOut();
+    // $to.fadeIn();
+    this.$app.find('section').addClass('hide');
+    $page.removeClass('hide');
+
+    if (typeof callback === 'function') {
+      callback();
+    }
+  }
+
+  // page state init
   afterPage(page) {
     let $ele = this.$app.find('.' + page);
     if($ele.hasClass('active'))
@@ -164,6 +164,11 @@ class index {
 
     $ele.addClass('active');
 
+    this.startPage(page);
+  }
+
+  // start page init or restart setting
+  startPage(page) {
     switch (page) {
       default:
         break;
@@ -171,7 +176,8 @@ class index {
         if(window.app.projects) {
           window.app.projects.start();
         } else {
-          dynamicLoading('projects');
+          new projectJs();
+          // dynamicLoading('projects');
         }
         break;
       case 'aboutme':
@@ -180,11 +186,14 @@ class index {
           window.app.aboutme.method.run();
           window.app.aboutme.bind.onhashchange();
         } else {
-          dynamicLoading('aboutme');
+          new aboutmeJs();
+          // dynamicLoading('aboutme');
         }
         break;
     }
   }
+
 }
+
 
 export default index;
