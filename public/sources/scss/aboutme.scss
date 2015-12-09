@@ -1,4 +1,4 @@
-$aboutme-bg-color: $dark-black;
+$aboutme-bg-color: $dark-blue-black;
 $aboutme-title: $light-blue2;
 $aboutme-desc: $white;
 $aboutme-link: $dark-gray;
@@ -136,6 +136,7 @@ $aboutme-ftitle: $white;
 	}
 	@include mediaQuires(ML) {
 		.page-main {
+  		@include animation(fadein .5s linear);
 			> div, a {
 				left: 50%;
 				top: 50%;
@@ -160,4 +161,9 @@ $aboutme-ftitle: $white;
 			}
 		}
 	}
+}
+
+@include keyframes(fadein) {
+   from {opacity: 0;}
+   to {opacity: 1;}
 }
