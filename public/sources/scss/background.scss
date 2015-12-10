@@ -1,0 +1,64 @@
+$years-height: 200px;
+
+#background {
+	> main {
+		padding-top: 85px;
+	}
+	> .background-years {
+		padding-bottom: 85px;
+	}
+}
+
+// background title
+
+.background-title {
+	position: relative;
+}
+
+@include mediaQuires(ML) {
+	.background-title {
+		width: 100%;
+		margin: 0 auto;
+		> .cover-img {
+	  	float: right;
+			width: 50%;
+		}
+		> .info {
+			position: absolute;
+			top: 50%;
+			width: 45%;
+			@include transform(translateY(-50%));
+			text-align: left;
+		}
+	}
+}
+
+// background years parallax
+
+.years {
+  height: $years-height;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed; // most important controll
+  @include background-size(cover);
+  > h1 {
+	  color: rgba(255, 255, 255, 0.8);
+	  font-size: 36px;
+	  line-height: $years-height;
+	  text-align: center;
+	  text-transform: uppercase;
+	  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	}
+	small {
+		font-size: 20px;
+	}
+	&.years-now {
+		background-image: url($imgsrc + 'projects/project-bkg1.jpg');
+	}
+	&.years-aite {
+		background-image: url($imgsrc + 'projects/project-bkg2.jpg');
+	}
+	&.years-student {
+		background-image: url($imgsrc + 'projects/project-bkg3.jpg');
+	}
+}

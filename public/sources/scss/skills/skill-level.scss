@@ -85,11 +85,7 @@ $skill-level-bar: linear-gradient(to right, rgba(168,204,237,1) 0%, rgba(58,142,
     width: 100%;
   }
 }
-@keyframes percentage-flow {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
+@include keyframes(percentage-flow) {
+  from {width: 0;}
+  to {width: 100%;}
 }

@@ -54,7 +54,7 @@ $dash-color-5: #3D72CA;
    from {opacity: 0;}
    to {opacity: 1;}
 }
-@keyframes stroke {
+@include keyframes(stroke) {
   100% {
     stroke-dashoffset: -400;
   }
