@@ -9,6 +9,7 @@
   font-family: 'Oswald', sans-serif;
   font-size: 100%;
   text-transform: uppercase;
+  z-index: 1;
   @include animation(fadein 1s linear);
 	@include mediaQuires(S) {
 		width: auto;
