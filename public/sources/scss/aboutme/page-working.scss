@@ -4,18 +4,18 @@
 	left: 100%;
 	top: 100%;
 	.working-img1 {
-	  background-image: url($imgsrc + 'aboutme/working-img1.jpg');
 		left: 30%;
     top: 72%;
     width: 20%;
     height: 8%;
+	  background-image: url($imgsrc + 'aboutme/working-img1.jpg');
 	}
 	.working-img2 {
-	  background-image: url($imgsrc + 'aboutme/working-img2.jpg');
     left: 52%;
     top: 70%;
     width: 20%;
     height: 15%;
+	  background-image: url($imgsrc + 'aboutme/working-img2.jpg');
 	}
 	.working-goback {
 		top: 76%;

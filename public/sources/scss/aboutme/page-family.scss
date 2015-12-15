@@ -3,26 +3,31 @@
 .page-family {
 	left: -100%;
 	top: -100%;
-	.family-desc {
-		left: 30%;
-		top: 10%;
-		width: 40%;
-		> span {
-			color: #fff;
-		}
-	}
 	.family-img1 {
-		position: absolute;
-		left: 35%;
-		top: 25%;
-		width: 16%;
-		width: 22%;
-		height: 65%;
-	  // background: url($imgsrc + 'aboutme/aboutme-me2.jpg') no-repeat center center;
-	  background-size: 100%;
+		top: 59%;
+		left: 17%;
+		width: 19%;
+		height: 15%;
+	  background-image: url($imgsrc + 'aboutme/family-img1.jpg');
+	}
+	.family-img2 {
+		left: 40%;
+		top: 60%;
+		width: 34%;
+		height: 14%;
+	  background-image: url($imgsrc + 'aboutme/family-img2.jpg');
 	}
 	.family-goback {
-		left: 60%;
-		top: 60%;
+		left: 77%;
+		top: 70%;
+	}
+	@include mediaQuires(ML) {
+		.family-desc {
+			top: 32%;
+		}
+		.family-img1, .family-img2{
+			top: 46%;
+			height: 41%;
+		}
 	}
 }

@@ -4,18 +4,18 @@
 	left: -100%;
 	top: 100%;
 	.introverted-img1 {
-	  background-image: url($imgsrc + 'aboutme/introverted-img1.jpg');
 	  width: 20%;
     height: 11%;
     left: 25%;
     top: 66%;
+	  background-image: url($imgsrc + 'aboutme/introverted-img1.jpg');
 	}
 	.introverted-img2 {
-		background-image: url($imgsrc + 'aboutme/introverted-img2.jpg');
 		width: 20%;
     height: 15%;
     left: 50%;
     top: 63%;
+		background-image: url($imgsrc + 'aboutme/introverted-img2.jpg');
 	}
 	.go-collections {
 		top: 80%;

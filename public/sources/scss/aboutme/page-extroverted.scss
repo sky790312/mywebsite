@@ -4,29 +4,30 @@
 	left: 100%;
 	top: -100%;
 	.extroverted-img1 {
-		left: 50%;
-		top: 48%;
+		left: 48%;
+		top: 60%;
 		width: 34%;
-		height: 50%;
+		height: 13%;
 	  background-image: url($imgsrc + 'aboutme/extroverted-img1.jpg');
 	}
 	.extroverted-img2 {
-		top: 48%;
+		top: 60%;
 		left: 32%;
 		width: 13%;
-		height: 50%;
+		height: 13%;
 	  background-image: url($imgsrc + 'aboutme/extroverted-img2.jpg');
 	}
 	.extroverted-goback {
 		left: 18%;
-		top: 73%;
+		top: 69%;
 	}
 	@include mediaQuires(ML) {
 		.extroverted-desc {
 			top: 32%;
 		}
 		.extroverted-img1, .extroverted-img2{
-			top: 44%;
+			top: 50%;
+			height: 37%;
 		}
 	}
 }

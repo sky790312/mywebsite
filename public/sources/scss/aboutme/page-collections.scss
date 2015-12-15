@@ -12,37 +12,50 @@
 		font-weight: bold;
 		text-align: center;
 	}
+	.img {
+		width: 20%;
+		height: 20%;
+		margin: 2.5%;
+	}
 	.collections-img1 {
-		left: 55%;
-		top: 20%;
-		width: 30%;
-		height: 30%;
-	  // background: url($imgsrc + 'aboutme/aboutme-me6.jpg') no-repeat center center;
-	  background-size: 100%;
+		left: 12.5%;
+		top: 12.5%;
+	  background-image: url($imgsrc + 'aboutme/collections-img1.jpg');
 	}
 	.collections-img2 {
-		left: 10%;
-		top: 40%;
-		width: 30%;
-		height: 30%;
-	  // background: url($imgsrc + 'aboutme/aboutme-me1.jpg') no-repeat center center;
-	  background-size: 100%;
+		left: 37.5%;
+		top: 12.5%;
+	  background-image: url($imgsrc + 'aboutme/collections-img2.jpg');
 	}
 	.collections-img3 {
-		left: 20%;
-		top: 50%;
-		width: 30%;
-		height: 30%;
-	  // background: url($imgsrc + 'aboutme/aboutme-me1.jpg') no-repeat center center;
-	  background-size: 100%;
+		left: 62.5%;
+		top: 12.5%;
+	  background-image: url($imgsrc + 'aboutme/collections-img3.jpg');
 	}
 	.collections-img4 {
-		left: 30%;
-		top: 60%;
-		width: 30%;
-		height: 30%;
-	  // background: url($imgsrc + 'aboutme/aboutme-me1.jpg') no-repeat center center;
-	  background-size: 100%;
+		left: 12.5%;
+		top: 37.5%;
+	  background-image: url($imgsrc + 'aboutme/collections-img4.jpg');
+	}
+	.collections-img5 {
+		left: 37.5%;
+		top: 37.5%;
+	  background-image: url($imgsrc + 'aboutme/collections-img5.jpg');
+	}
+	.collections-img6 {
+		left: 62.5%;
+		top: 37.5%;
+	  background-image: url($imgsrc + 'aboutme/collections-img6.jpg');
+	}
+	.collections-img7 {
+		left: 12.5%;
+		top: 62.5%;
+	  background-image: url($imgsrc + 'aboutme/collections-img7.jpg');
+	}
+	.collections-img8 {
+		left: 37.5%;
+		top: 62.5%;
+	  background-image: url($imgsrc + 'aboutme/collections-img8.jpg');
 	}
 	.collections-goback {
 		left: 75%;
