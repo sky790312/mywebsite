@@ -60,10 +60,52 @@ body {
   height: 85px;
   bottom: 0;
   z-index: 10;
+  color: $main-color;
   background-color: $main-bg-color;
   // &.relative-bottom {
   //   position: relative;
   // }
+  .footer {
+    padding: 18px 0;
+  }
+  .contact-info {
+    a {
+      color: $main-color;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  iframe {
+    margin: 6px 5px 0 5px;
+    width: 80px;
+    height: 20px;
+  }
+  @include mediaQuires(S) {
+    .contact-info {
+      text-align: center;
+    }
+    .social-info {
+      float: left;
+      margin-top: -105px;
+    }
+  }
+  @include mediaQuires(ML) {
+    .contact-info {
+      float: left;
+      text-align: left;
+    }
+    .social-info {
+      float: right;
+      display: flex;
+      align-items: center;
+      height: 49px;
+      > div {
+        float: left;
+        padding: 0 10px;
+      }
+    }
+  }
 }
 
 .clearfix {

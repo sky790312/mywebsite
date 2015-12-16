@@ -1,0 +1,34 @@
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+
+.social-link {
+  position: relative;
+  display: inline-block;
+  padding: 0 8px;
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.25s;
+  &:hover {
+    transform: scale(1.2);
+    color: $light-blue2;
+    &:after{
+      opacity: 1;
+      transform: scale(1) translate(-50%, 0);
+    }
+  }
+  &:active {
+    transform: scale(1.1);
+  }
+  // &:after {
+  //   content: "@" attr(data-user);
+  //   font-size: 12px;
+  //   position: absolute;
+  //   top: 100%;
+  //   left: 50%;
+  //   text-align: center;
+  //   opacity: 0;
+  //   transform-origin: 0 0;
+  //   transform: scale(0) translate(-50%, -100px);
+  //   transition: transform 0.25s ease 0.25s, opacity 0.25s;
+  // }
+}
