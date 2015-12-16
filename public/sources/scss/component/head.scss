@@ -9,22 +9,36 @@ $head-boy-feets-color: $light-gray2;
   margin-top: -65px;
   z-index: 0;
   cursor: pointer;
-  @include transition(all .2s linear);
-  &.hide-body {
-    height: 65px;
-    overflow: hidden;
+  height: 65px;
+  overflow: hidden;
+  @include transition(height .2s linear, margin-top .2s linear);
+  &.show-helper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -42px 0 0 -42px;
+    height: 85px;
+    overflow: inherit;
+    // &:hover {
+    //   margin-top: auto;
+    //   height: auto;
+    // }
+    @include animation(show-helper .6s linear);
   }
-  &:hover {
-    margin-top: -75px;
-    height: 75px;
-  }
+  // &:hover {
+  //   margin-top: -75px;
+  //   height: 75px;
+  // }
   > .head {
     position: relative;
     width: 85px;
     height: 85px;
     border-radius: 50%;
     background-color: $head-boy-color;
-    // @include animation(head 1.2s infinite);
+    @include animation(head 1.2s infinite);
+    &.stop{
+      @include animation-play-state(paused);
+    }
   }
   > .feets {
     position: relative;
@@ -38,12 +52,17 @@ $head-boy-feets-color: $light-gray2;
       border-radius: 50%;
       background-color: $head-boy-feets-color;
       content: '';
-      // @include animation(feets-left 1.2s infinite);
+      @include animation(feets-left 1.2s infinite);
     }
     &:after {
       left: 45px;
       z-index: -1;
-      // @include animation(feets-right 1.2s infinite);
+      @include animation(feets-right 1.2s infinite);
+    }
+    &.stop{
+      &:before, &:after {
+        @include animation-play-state(paused);
+      }
     }
   }
   .eyes {
@@ -60,11 +79,10 @@ $head-boy-feets-color: $light-gray2;
 }
 
 @include keyframes(head) {
-   0% { top: 3px; }
+   0% { top: 3px;}
    50% { top: -3px;}
-  100% { top: 3px; }
+  100% { top: 3px;}
 }
-
 @include keyframes(eyes) {
   0 { opacity: 1;}
   15% { opacity: 0;}
@@ -72,14 +90,17 @@ $head-boy-feets-color: $light-gray2;
   45% { opacity: 0}
   100% { opacity: 1;}
 }
-
 @include keyframes(feets-left) {
    0% { z-index: 1;}
    50% {  z-index: -1;}
   100% {  /* z-index: 1; */ }
 }
 @include keyframes(feets-right) {
-   0% { z-index: -1; }
+   0% { z-index: -1;}
    50% {  z-index: 1;}
   100% {  /* z-index: -1; */ }
+}
+@include keyframes(show-helper) {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }

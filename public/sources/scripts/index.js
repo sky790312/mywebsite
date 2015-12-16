@@ -69,8 +69,10 @@ class index {
     const $goBackground = this.$app.find('.background');
     const $goSkills = this.$app.find('.skills');
 
+    const $helper = this.$app.find('.head-boy');
+
     // history listen
-    $(window).on("popstate", ()=>{
+    $(window).on('popstate', ()=>{
       let url = history.state ?
         history.state.page : $(location).attr('pathname').replace('/', '');
       // if(url === 'aboutme')
@@ -92,6 +94,24 @@ class index {
         $ele.find('.tags-skill').removeClass('hide');
       }
     });
+
+
+
+    // about the helper
+    $helper.off('click').on('click', ()=>{
+      if($helper.hasClass('show-helper')){
+        this.$app.find('#preloader').addClass('hide');
+        $helper.removeClass('show-helper');
+        $helper.children().addClass('stop');
+      }else{
+        this.$app.find('#preloader').removeClass('hide');
+        $helper.addClass('show-helper');
+        $helper.children().removeClass('stop');
+      }
+    });
+
+
+
     // go index kevinhu
     this.changePage($indexSection, $goIndex, ()=> {
       this.afterPage('KevinHu');
