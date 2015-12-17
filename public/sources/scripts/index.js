@@ -69,7 +69,7 @@ class index {
     const $goBackground = this.$app.find('.background');
     const $goSkills = this.$app.find('.skills');
 
-    const $helper = this.$app.find('.head-boy');
+    const $helper = this.$app.find('#helper');
 
     // history listen
     $(window).on('popstate', ()=>{
@@ -98,15 +98,15 @@ class index {
 
 
     // about the helper
-    $helper.off('click').on('click', ()=>{
+    $helper.find('.head-boy').off('click').on('click', ()=>{
       if($helper.hasClass('show-helper')){
         this.$app.find('#preloader').addClass('hide');
         $helper.removeClass('show-helper');
-        $helper.children().addClass('stop');
+        // $helper.children().addClass('stop');
       }else{
         this.$app.find('#preloader').removeClass('hide');
         $helper.addClass('show-helper');
-        $helper.children().removeClass('stop');
+        // $helper.children().removeClass('stop');
       }
     });
 

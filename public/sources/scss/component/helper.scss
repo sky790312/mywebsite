@@ -4,46 +4,59 @@ $head-boy-color: $dark-gray;
 $head-boy-eyes-color: $light-gray2;
 $head-boy-feets-color: $light-gray2;
 
+#helper {
+  position: fixed;
+  bottom: 60px;
+  width: 100%;
+  z-index: 10;
+}
+
+.equip-section, .padding-section {
+  position: fixed;
+  width: 10%;
+  top: 50%;
+  @include transition(all .2s linear);
+  @include transform(translateY(-50%));
+}
+.equip-section {
+  left: -10%;
+}
+.padding-section {
+  right: -10%;
+}
+
+.equip {
+  padding: 6px;
+  margin: 10px;
+  overflow: hidden;
+  color: cornflowerblue;
+  cursor: pointer;
+  border: 2px solid #964514;
+  border-radius: 20px;
+  text-align: center;
+}
+
 .head-boy {
   float: right;
-  margin-top: -65px;
+  margin-bottom: 5px;
   z-index: 0;
   cursor: pointer;
-  height: 65px;
-  overflow: hidden;
-  @include transition(height .2s linear, margin-top .2s linear);
-  &.show-helper {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin: -42px 0 0 -42px;
-    height: 85px;
-    overflow: inherit;
-    // &:hover {
-    //   margin-top: auto;
-    //   height: auto;
-    // }
-    @include animation(show-helper .6s linear);
+  @include transition(margin-bottom .2s linear);
+  &:hover {
+    margin-bottom: 10px;
   }
-  // &:hover {
-  //   margin-top: -75px;
-  //   height: 75px;
-  // }
   > .head {
     position: relative;
     width: 85px;
     height: 85px;
     border-radius: 50%;
     background-color: $head-boy-color;
-    @include animation(head 1.2s infinite);
-    &.stop{
-      @include animation-play-state(paused);
-    }
   }
   > .feets {
     position: relative;
     top: -10px;
     &:before, &:after {
+      content: '';
       position: absolute;
       width: 20px;
       height: 20px;
@@ -51,19 +64,16 @@ $head-boy-feets-color: $light-gray2;
       z-index: 1;
       border-radius: 50%;
       background-color: $head-boy-feets-color;
-      content: '';
-      @include animation(feets-left 1.2s infinite);
     }
     &:after {
       left: 45px;
       z-index: -1;
-      @include animation(feets-right 1.2s infinite);
     }
-    &.stop{
-      &:before, &:after {
-        @include animation-play-state(paused);
-      }
-    }
+    // &.stop{
+      // &:before, &:after {
+        // @include animation-play-state(paused);
+      // }
+    // }
   }
   .eyes {
     position: absolute;
@@ -75,6 +85,35 @@ $head-boy-feets-color: $light-gray2;
     background-color: $head-boy-eyes-color;
     box-shadow: 20px 0 0 $head-boy-eyes-color;
     @include animation(eyes 2.5s infinite);
+  }
+}
+
+// show helper
+.show-helper {
+  .equip-section {
+    left: 10%;
+  }
+  .padding-section {
+    right: 10%;
+  }
+  .head-boy {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -42px 0 0 -42px;
+    height: 85px;
+    @include animation(show-helper .6s linear);
+  }
+  .head {
+    @include animation(head 1.2s infinite);
+  }
+  .feets {
+    &:before{
+      @include animation(feets-left 1.2s infinite);
+    }
+    &:after{
+      @include animation(feets-right 1.2s infinite);
+    }
   }
 }
 
