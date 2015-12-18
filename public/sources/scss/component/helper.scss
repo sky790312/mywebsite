@@ -36,10 +36,19 @@ $head-boy-feets-color: $light-gray2;
   text-align: center;
 }
 
+.help-desc {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: 85px 0 0 -100px;
+  color: white;
+  opacity: 0;
+}
+
 .head-boy {
   float: right;
   margin-bottom: 5px;
-  z-index: 0;
+  z-index: 1;
   cursor: pointer;
   @include transition(margin-bottom .2s linear);
   &:hover {
@@ -88,6 +97,8 @@ $head-boy-feets-color: $light-gray2;
   }
 }
 
+
+
 // show helper
 .show-helper {
   .equip-section {
@@ -95,6 +106,9 @@ $head-boy-feets-color: $light-gray2;
   }
   .padding-section {
     right: 10%;
+  }
+  .help-desc {
+    opacity: 1;
   }
   .head-boy {
     position: fixed;
