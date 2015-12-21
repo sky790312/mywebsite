@@ -16,11 +16,18 @@
     <div class="container clearfix">
       <h1 class="KevinHu">KevinHu</h1>
       <div class="menu-assemble">
-        <select data-menu="<%= menu.en() %>">
-          <%= menu.en() %>
-          <% for( var i = 0; i < menu.en().length; i++) { %>
-            <option value="<%= menu.tw()[i].name %>">
-              <%= menu.en()[i].name %>
+        <select>
+          <% for( var i = 0; i < menuObj.menu().length; i++) { %>
+            <option value="<%= menuObj.menu()[i].showEN %>">
+              <%= menuObj.menu()[i].showEN %>
+            </option>
+          <% } %>
+        </select>
+        <select>
+          <%= menuObj.en() %>
+          <% for( var i = 0; i < menuObj.en().length; i++) { %>
+            <option value="<%= menuObj.tw()[i].name %>">
+              <%= menuObj.en()[i].name %>
             </option>
           <% } %>
         </select>

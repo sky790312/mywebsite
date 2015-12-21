@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  en: function(){
+  en: function() {
     return [
       {
         name: 'projects'
@@ -14,7 +14,7 @@ module.exports = {
       }
     ];
   },
-  tw: function(){
+  tw: function() {
     return [
       {
         name: '作品集'
@@ -24,6 +24,23 @@ module.exports = {
         name: '學經歷'
       }, {
         name: '職技能'
+      }
+    ];
+  },
+  menu: function() {
+    return [
+      {
+        showEN: 'projects',
+        showTW: '作品集'
+      }, {
+        showEN: 'aboutme',
+        showTW: '關於我'
+      }, {
+        showEN: 'background',
+        showTW: '學經歷'
+      }, {
+        showEN: 'skills',
+        showTW: '職技能'
       }
     ];
   }

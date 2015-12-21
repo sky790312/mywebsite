@@ -6,7 +6,7 @@ var menu = require('../models/mywebsite/menu');
 // router部分
 exports.index = function(req, res){
   var data = {
-    	menu: menu
+    	menuObj: menu
   };
   res.render('./mywebsite/index', data);
   res.end();
