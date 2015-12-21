@@ -86,10 +86,10 @@ body {
     .contact-info {
       text-align: center;
     }
-    .social-info {
-      float: left;
-      margin-top: -105px;
-    }
+    // .social-info {
+    //   float: left;
+    //   margin-top: -105px;
+    // }
   }
   @include mediaQuires(ML) {
     .contact-info {

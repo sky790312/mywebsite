@@ -16,6 +16,15 @@
     <div class="container clearfix">
       <h1 class="KevinHu">KevinHu</h1>
       <div class="menu-assemble">
+        <select data-menu="<%= menu.en() %>">
+          <%= menu.en() %>
+          <% for( var i = 0; i < menu.en().length; i++) { %>
+            <option value="<%= menu.tw()[i].name %>">
+              <%= menu.en()[i].name %>
+            </option>
+          <% } %>
+        </select>
+
         <ul class="menu">
           <li><a class="projects">projects</a></li>
           <!-- <li><a href="">profolio</a></li> -->

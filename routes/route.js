@@ -1,13 +1,12 @@
 'use strict';
 
 // 取資料部分
-var myModel = require('../models/mywebsite/myModel');
+var menu = require('../models/mywebsite/menu');
 
 // router部分
 exports.index = function(req, res){
   var data = {
-    departures: myModel.getDeparture(),
-    dest: myModel.getDest()
+    	menu: menu
   };
   res.render('./mywebsite/index', data);
   res.end();
