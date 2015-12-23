@@ -42,64 +42,61 @@ $item-transition: .5s;
 }
 
 @for $i from 0 through $item-count-subtract1 {
-  .menu-item:nth-child(#{$i + 1}) a {
-    transform: rotate(-180deg / $item-count-subtract1 * $i);
+  .helper-menu {
+    li:nth-child(#{$i + 1}) a {
+      transform: rotate(-180deg / $item-count-subtract1 * $i);
+    }
   }
 }
 
-.menu-item {
-  @include absolute-center;
-  @include size($item-size);
-  display: block;
-  opacity: 0;
-  transition: $item-transition;
-  a {
+.helper-menu {
+  li {
+    @include absolute-center;
+    @include size($item-size);
     display: block;
-    width: inherit;
-    height: inherit;
-    // line-height: $item-size;
-    color: rgba($item-color, 0.7);
-    background: rgba($light-blue, 0.8);
-    border-radius: 50%;
-    text-align: center;
-    text-decoration: none;
-    font-size: 12px;
-    // pointer-events: none;
-    transition: .2s;
-    &:hover {
-      box-shadow: 0 0 0 $item-size/40 rgba(white, 0.3);
-      color: $item-color;
-      background: rgba($light-blue, 0.3);
-      // font-size: $item-size/6;
-    }
-    > strong {
+    opacity: 0;
+    transition: $item-transition;
+    .menu-item {
       display: block;
-      position: relative;
-      top: 50%;
-      width: $item-size - 10px;
-      margin: auto;
-      word-wrap: break-word;
-      @include transform(translateY(-50%));
+      width: inherit;
+      height: inherit;
+      // line-height: $item-size;
+      color: rgba($item-color, 0.7);
+      background: rgba($light-blue, 0.8);
+      border-radius: 50%;
+      text-align: center;
+      text-decoration: none;
+      font-size: 12px;
+      cursor: pointer;
+      transition: .2s;
+      &:hover {
+        box-shadow: 0 0 0 $item-size/40 rgba(white, 0.3);
+        color: $item-color;
+        background: rgba($light-blue, 0.3);
+        // font-size: $item-size/6;
+      }
+      > strong {
+        display: block;
+        position: relative;
+        top: 50%;
+        width: $item-size - 10px;
+        margin: auto;
+        word-wrap: break-word;
+        @include transform(translateY(-50%));
+      }
     }
   }
 }
-
 .show-helper {
   .helper-menu {
     opacity: 1;
-  }
-  ul {
-    .menu-item {
+    li{
       opacity: 1;
     }
-
     @for $i from 0 through $item-count-subtract1 {
-      .menu-item:nth-child(#{$i + 1}) {
+      li:nth-child(#{$i + 1}) {
         transform: rotate(180deg / $item-count-subtract1 * $i) translateX(-$item-size - 50px);
       }
     }
-    // .menu-item a {
-    //   pointer-events: auto;
-    // }
   }
 }

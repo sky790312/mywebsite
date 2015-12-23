@@ -32,13 +32,19 @@ class index {
     // });
 
     // first into page
-    if($(location).attr('pathname')){
+    if($(location).attr('pathname')) {
       let url = $(location).attr('pathname').replace('/', '');
       this.showPage(this.$app.find('#' + url));
       this.$app.find('.' + url).addClass('active');
 
       this.startPage(url);
     }
+    // this.setCookie('lg', 'en');
+    //   console.log(this.getCookie('lg'));
+    if(!this.getCookie('lg')) {
+      this.setCookie('lg', 'en');
+    }
+    this.setLanguage(this.getCookie('lg'));
 
     // history url
     // if(history.state){
@@ -69,7 +75,7 @@ class index {
     // const $goBackground = this.$app.find('.background');
     // const $goSkills = this.$app.find('.skills');
 
-    const $helper = this.$app.find('#helper');
+    // const $helper = this.$app.find('#helper');
 
     // history listen
     $(window).on('popstate', ()=>{
@@ -96,27 +102,71 @@ class index {
       }
     });
 
-    // about the helper
-    $helper.find('.head-boy').off('click').on('click', ()=>{
-      if($helper.hasClass('show-helper')){
-        this.$app.find('#preloader').addClass('hide');
-        $helper.removeClass('show-helper');
-      }else{
-        this.$app.find('#preloader').removeClass('hide');
-        $helper.addClass('show-helper');
-      }
+    // bind helper
+    this.bindHelper();
+
+    // bind helper menu
+    this.$app.find('.helper-menu .menu-item').each((i, e) =>{
+      this.bindHelperMenu($(e).prop('id'));
     });
 
-    // go menu
+    // bind page menu
     this.bindPage($goIndex.data('menu'));
     this.$app.find('.menu a').each((i, e) =>{
       this.bindPage($(e).data('menu'));
     });
   }
 
-// show page => after page => start page
+/* about helper control - 未來移出js */
+
+  // show helper
+  showHelper() {
+    this.$app.find('#preloader').removeClass('hide');
+    this.$app.find('#helper').addClass('show-helper');
+  }
+
+  // hide helper
+  hideHelper() {
+    this.$app.find('#preloader').addClass('hide');
+    this.$app.find('#helper').removeClass('show-helper');
+  }
+
+  // helper
+  bindHelper() {
+    let $helper = this.$app.find('#helper');
+    $helper.find('.head-boy').off('click').on('click', ()=>{
+      ($helper.hasClass('show-helper') ? this.hideHelper() : this.showHelper());
+    });
+  }
+
+  // helper menu
+  bindHelperMenu(triggerValue) {
+    let $triggerMenu = this.$app.find('#' + triggerValue);
+
+    $triggerMenu.off('click').on('click', ()=>{
+      switch (triggerValue) {
+        default:
+          break;
+        case 'lang':
+          (this.getCookie('lg') === 'en') ? this.setCookie('lg', 'tw') : this.setCookie('lg', 'en');
+          this.setLanguage(this.getCookie('lg'));
+          this.hideHelper();
+          break;
+      }
+    });
+  }
+
+  // helper menu - set language
+  setLanguage(lang) {
+    this.$app.find('.lg').each((i, e) =>{
+      let $ele = $(e);
+      (lang === 'en') ? $ele.text($ele.data('en')) : $ele.text($ele.data('tw'));
+    });
+  }
 
 /* about page control - 未來移出js */
+
+  // show page => after page => start page
 
   // click and change page
   bindPage(triggerValue) {
@@ -201,6 +251,33 @@ class index {
     }
   }
 
+/* about cookie control - 未來移出js */
+  setCookie(name, value, days) {
+    let expires;
+    if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    } else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+  getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        let c_start = document.cookie.indexOf(c_name + "=");
+        let c_end;
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
+  }
 }
 
 

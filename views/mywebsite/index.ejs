@@ -16,28 +16,10 @@
     <div class="container clearfix">
       <h1 class="kevinhu" data-menu="kevinhu">KevinHu</h1>
       <div class="menu-assemble">
-        <select>
-          <% for( var i = 0; i < menuObj.menu().length; i++) { %>
-            <option value="<%= menuObj.menu()[i].showEN %>">
-              <%= menuObj.menu()[i].showEN %>
-            </option>
-          <% } %>
-        </select>
-        <select>
-          <%= menuObj.en() %>
-          <% for( var i = 0; i < menuObj.en().length; i++) { %>
-            <option value="<%= menuObj.tw()[i].name %>">
-              <%= menuObj.en()[i].name %>
-            </option>
-          <% } %>
-        </select>
-
         <ul class="menu">
-          <li><a class="projects" data-menu="projects">projects</a></li>
-          <!-- <li><a href="">profolio</a></li> -->
-          <li><a class="aboutme" data-menu="aboutme">aboutme</a></li>
-          <li><a class="background" data-menu="background">background</a></li>
-          <li><a class="skills" data-menu="skills">skills</a></li>
+          <% for( var i = 0; i < menuObj.menu().length; i++) { %>
+            <li><a class="<%= menuObj.menu()[i].showEN %> lg" data-menu="<%= menuObj.menu()[i].showEN %>" data-en="<%= menuObj.menu()[i].showEN %>" data-tw="<%= menuObj.menu()[i].showTW %>"></a></li>
+          <% } %>
         </ul>
         <div class="mobile-menu">
           <input class="checkbox-toggle" type="checkbox" />
@@ -48,11 +30,9 @@
             <div class="menu-background">
               <div class="menu-list">
                 <ul>
-                  <li><a class="projects" data-menu="projects">projects</a></li>
-                  <!-- <li><a href="">profolio</a></li> -->
-                  <li><a class="aboutme" data-menu="aboutme">aboutme</a></li>
-                  <li><a class="background" data-menu="background">background</a></li>
-                  <li><a class="skills" data-menu="skills">skills</a></li>
+                  <% for( var i = 0; i < menuObj.menu().length; i++) { %>
+                    <li><a class="<%= menuObj.menu()[i].showEN %> lg" data-menu="<%= menuObj.menu()[i].showEN %>" data-en="<%= menuObj.menu()[i].showEN %>" data-tw="<%= menuObj.menu()[i].showTW %>"></a></li>
+                  <% } %>
                 </ul>
               </div>
             </div>
@@ -441,20 +421,20 @@
 <!--       <input checked='checked' class='menu-toggler' id='menu-toggler' type='checkbox'>
       <label for='menu-toggler'></label> -->
       <ul>
-        <li class="menu-item">
-          <a href=""><strong>中 / En</strong></a>
+        <li>
+          <a id="lang" class="menu-item"><strong>中 / En</strong></a>
         </li>
-        <li class="menu-item">
-          <a href=""><strong>about website</strong></a>
+        <li>
+          <a id="aboutsite" class="menu-item"><strong>about website</strong></a>
         </li>
-        <li class="menu-item">
-          <a href=""><strong>message board</strong></a>
+        <li>
+          <a id="msgboard" class="menu-item"><strong>message board</strong></a>
         </li>
-        <li class="menu-item">
-          <a href=""><strong>blog</strong></a>
+        <li>
+          <a id="blog" class="menu-item"><strong>blog</strong></a>
         </li>
-        <li class="menu-item">
-          <a href=""><strong>CV</strong></a>
+        <li>
+          <a id="cv" class="menu-item"><strong>CV</strong></a>
         </li>
       </ul>
     </div>
