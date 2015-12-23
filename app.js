@@ -81,7 +81,7 @@ appRouter.get('/', mywebsite.index);
 // appRouter.get('/api', mywebsite.testapi); // 測試api
 
 // app.use('/', appRouter);
-app.use('/KevinHu', appRouter);
+app.use('/kevinhu', appRouter);
 // app.use('/mywebsite', appRouter);
 app.use('/projects', appRouter);
 app.use('/aboutme', appRouter);

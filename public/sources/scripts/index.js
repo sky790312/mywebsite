@@ -58,16 +58,16 @@ class index {
    */
 
   eventListener() {
-    const $indexSection = this.$app.find('#KevinHu');
-    const $projectsSection = this.$app.find('#projects');
-    const $aboutmeSection = this.$app.find('#aboutme');
-    const $backgroundSection = this.$app.find('#background');
-    const $skillsSection = this.$app.find('#skills');
-    const $goIndex = this.$app.find('.KevinHu');
-    const $goProjects = this.$app.find('.projects');
-    const $goAboutme = this.$app.find('.aboutme');
-    const $goBackground = this.$app.find('.background');
-    const $goSkills = this.$app.find('.skills');
+    const $indexSection = this.$app.find('#kevinhu');
+    // const $projectsSection = this.$app.find('#projects');
+    // const $aboutmeSection = this.$app.find('#aboutme');
+    // const $backgroundSection = this.$app.find('#background');
+    // const $skillsSection = this.$app.find('#skills');
+    const $goIndex = this.$app.find('.kevinhu');
+    // const $goProjects = this.$app.find('.projects');
+    // const $goAboutme = this.$app.find('.aboutme');
+    // const $goBackground = this.$app.find('.background');
+    // const $goSkills = this.$app.find('.skills');
 
     const $helper = this.$app.find('#helper');
 
@@ -81,6 +81,7 @@ class index {
         this.afterPage(url);
       });
     });
+
     // change photo title
     $indexSection.off('click').on('click','.photo', (e)=> {
       let $ele = $(e.target).parent();
@@ -95,63 +96,49 @@ class index {
       }
     });
 
-
-
     // about the helper
     $helper.find('.head-boy').off('click').on('click', ()=>{
       if($helper.hasClass('show-helper')){
         this.$app.find('#preloader').addClass('hide');
         $helper.removeClass('show-helper');
-        // $helper.children().addClass('stop');
       }else{
         this.$app.find('#preloader').removeClass('hide');
         $helper.addClass('show-helper');
-        // $helper.children().removeClass('stop');
       }
     });
 
-
-
-    // go index kevinhu
-    this.changePage($indexSection, $goIndex, ()=> {
-      this.afterPage('KevinHu');
-    });
-    // go projects
-    this.changePage($projectsSection, $goProjects, ()=> {
-      this.afterPage('projects');
-    });
-    // go aboutme
-    this.changePage($aboutmeSection, $goAboutme, ()=> {
-      this.afterPage('aboutme');
-    });
-    // go background
-    this.changePage($backgroundSection, $goBackground, ()=> {
-      this.afterPage('background');
-    });
-    // go skills
-    this.changePage($skillsSection, $goSkills, ()=> {
-      this.afterPage('skills');
+    // go menu
+    this.bindPage($goIndex.data('menu'));
+    this.$app.find('.menu a').each((i, e) =>{
+      this.bindPage($(e).data('menu'));
     });
   }
 
-// change page => show page => after page => start page
+// show page => after page => start page
 
 /* about page control - 未來移出js */
 
   // click and change page
-  changePage($page, $trigger, callback) {
-    $trigger.off('click').on('click', ()=>{
-      if($trigger.hasClass('active'))
+  bindPage(triggerValue) {
+    let $triggerSection = this.$app.find('#' + triggerValue);
+    let $triggerMenu = this.$app.find('.' + triggerValue);
+
+    $triggerMenu.off('click').on('click', ()=>{
+      if($triggerMenu.hasClass('active')){
         return;
-
-      this.showPage($page);
-      // history push
-      if(!history.state || history.state.page !== $trigger.text())
-        history.pushState({ 'page': $trigger.text() }, '', $trigger.text());
-
-      if (typeof callback === 'function') {
-        callback();
       }
+
+      this.showPage($triggerSection);
+
+      // history push
+      if(!history.state || history.state.page !== triggerValue)
+        history.pushState({ 'page': triggerValue }, '', triggerValue);
+
+      this.afterPage(triggerValue);
+
+      // if (typeof callback === 'function') {
+      //   callback();
+      // }
     });
   }
 
@@ -179,8 +166,9 @@ class index {
       window.app.aboutme.method.stop();
       window.app.aboutme.unbind.offhashchange();
     }
-    this.$app.find('.KevinHu').removeClass('active');
+    this.$app.find('.kevinhu').removeClass('active');
     this.$app.find('.menu a').removeClass('active');
+    this.$app.find('.menu-list a').removeClass('active');
 
     $ele.addClass('active');
 

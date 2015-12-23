@@ -14,7 +14,7 @@
 <body id="app">
   <header id="header">
     <div class="container clearfix">
-      <h1 class="KevinHu">KevinHu</h1>
+      <h1 class="kevinhu" data-menu="kevinhu">KevinHu</h1>
       <div class="menu-assemble">
         <select>
           <% for( var i = 0; i < menuObj.menu().length; i++) { %>
@@ -33,11 +33,11 @@
         </select>
 
         <ul class="menu">
-          <li><a class="projects">projects</a></li>
+          <li><a class="projects" data-menu="projects">projects</a></li>
           <!-- <li><a href="">profolio</a></li> -->
-          <li><a class="aboutme">aboutme</a></li>
-          <li><a class="background">background</a></li>
-          <li><a class="skills">skills</a></li>
+          <li><a class="aboutme" data-menu="aboutme">aboutme</a></li>
+          <li><a class="background" data-menu="background">background</a></li>
+          <li><a class="skills" data-menu="skills">skills</a></li>
         </ul>
         <div class="mobile-menu">
           <input class="checkbox-toggle" type="checkbox" />
@@ -48,11 +48,11 @@
             <div class="menu-background">
               <div class="menu-list">
                 <ul>
-                  <li><a href="">projects</a></li>
+                  <li><a class="projects" data-menu="projects">projects</a></li>
                   <!-- <li><a href="">profolio</a></li> -->
-                  <li><a href="">aboutme</a></li>
-                  <li><a href="">background</a></li>
-                  <li><a href="">skills</a></li>
+                  <li><a class="aboutme" data-menu="aboutme">aboutme</a></li>
+                  <li><a class="background" data-menu="background">background</a></li>
+                  <li><a class="skills" data-menu="skills">skills</a></li>
                 </ul>
               </div>
             </div>
@@ -61,7 +61,7 @@
       </div>
     </div>
   </header>
-  <section id="KevinHu" class="hide">
+  <section id="kevinhu" class="hide">
     <div class="container">
       <div class="title-photo about-skill">
         <div class="photo"></div>
