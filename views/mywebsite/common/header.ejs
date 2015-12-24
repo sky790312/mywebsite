@@ -1,6 +1,6 @@
 <header id="header">
   <div class="container clearfix">
-    <h1 class="kevinhu" data-menu="kevinhu">KevinHu</h1>
+    <h1 class="<%= menuObj.name()[0].menu %> lg" data-menu="kevinhu" data-en="<%= menuObj.name()[0].showEN %>" data-tw="<%= menuObj.name()[0].showTW %>"></h1>
     <div class="menu-assemble">
       <ul class="menu">
         <% for( var i = 0; i < menuObj.menu().length; i++) { %>
