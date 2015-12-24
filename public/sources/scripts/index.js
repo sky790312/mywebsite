@@ -56,7 +56,7 @@ class index {
     // }
 
     // ready and show
-    this.$app.find('#preloader').addClass('hide');
+    this.$app.find('#helper-background').addClass('hide');
   }
 
   /*
@@ -121,13 +121,13 @@ class index {
 
   // show helper
   showHelper() {
-    this.$app.find('#preloader').removeClass('hide');
+    this.$app.find('#helper-background').removeClass('hide');
     this.$app.find('#helper').addClass('show-helper');
   }
 
   // hide helper
   hideHelper() {
-    this.$app.find('#preloader').addClass('hide');
+    this.$app.find('#helper-background').addClass('hide');
     this.$app.find('#helper').removeClass('show-helper');
   }
 

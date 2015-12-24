@@ -4,6 +4,16 @@ $head-boy-color: $dark-gray;
 $head-boy-eyes-color: $light-gray2;
 $head-boy-feets-color: $light-gray2;
 
+#helper-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100vw;
+  height: 100vh;
+  background-color: $preloader-color;
+}
+
 #helper {
   position: fixed;
   bottom: 60px;

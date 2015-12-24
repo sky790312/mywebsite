@@ -20,16 +20,6 @@ body {
 //   background: $main-bg-color;
 }
 
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9;
-  width: 100vw;
-  height: 100vh;
-  background-color: $preloader-color;
-}
-
 .container {
   margin: auto;
 	padding : 0 15px;

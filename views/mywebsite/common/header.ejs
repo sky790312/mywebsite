@@ -1,0 +1,29 @@
+<header id="header">
+  <div class="container clearfix">
+    <h1 class="kevinhu" data-menu="kevinhu">KevinHu</h1>
+    <div class="menu-assemble">
+      <ul class="menu">
+        <% for( var i = 0; i < menuObj.menu().length; i++) { %>
+          <li><a class="<%= menuObj.menu()[i].showEN %> lg" data-menu="<%= menuObj.menu()[i].showEN %>" data-en="<%= menuObj.menu()[i].showEN %>" data-tw="<%= menuObj.menu()[i].showTW %>"></a></li>
+        <% } %>
+      </ul>
+      <div class="mobile-menu">
+        <input class="checkbox-toggle" type="checkbox" />
+        <div class="icon-menu">
+          <div></div>
+        </div>
+        <div class="mobile-menu-in">
+          <div class="menu-background">
+            <div class="menu-list">
+              <ul>
+                <% for( var i = 0; i < menuObj.menu().length; i++) { %>
+                  <li><a class="<%= menuObj.menu()[i].showEN %> lg" data-menu="<%= menuObj.menu()[i].showEN %>" data-en="<%= menuObj.menu()[i].showEN %>" data-tw="<%= menuObj.menu()[i].showTW %>"></a></li>
+                <% } %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
