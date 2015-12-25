@@ -160,7 +160,7 @@ class index {
   setLanguage(lang) {
     this.$app.find('.lg').each((i, e) =>{
       let $ele = $(e);
-      (lang === 'en') ? $ele.text($ele.data('en')) : $ele.text($ele.data('tw'));
+      (lang === 'en') ? $ele.html($ele.data('en')) : $ele.html($ele.data('tw'));
     });
   }
 

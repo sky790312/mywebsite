@@ -6,17 +6,17 @@ module.exports = {
       {
       	title:   'aite',
         briefEN: 'spotme, spotrainer, CMS projects, any other things..',
-        briefTW: '新創公司的步調, 專注於自己的產品與額外的專案',
+        briefTW: 'startup 專注於自己的產品與額外的專案',
         descEN:  'Handling all of things about FrontEnd. Basic version controll use SVN. Learning about Web relative skill from seniors. Had bulid api to use and build CMS website projects by wordpress, joomla.\
         					Learn about Amazon EC2, NodeJs MySQL relative BackEnd skill. Runing Agile, eye-opener in startup and others startup in co-working space.\
 		              use Angularjs to build <a href="http://spotme.com.tw/kevin" target="_blank">Spotme</a> business social network website.\
 		              use Wordpress to build <a href="http://trainer.spotme.com.tw" target="_blank">Spotrainer</a> website by myself.',
-        descTW:  '前端主要使用 angularjs, 後端使用 nodeJs 開發各個專案, 獨自處理前端大小事, 並從其他資深工程師身上學習 web 相關技能＆知識 ex: LAMP, amazon EC2, MYSQL.. 使用 SVN 版控 ＆ run agle步調,\
+        descTW:  '前端主要使用 angularjs, 後端使用 nodeJs 開發各個專案, 獨自處理前端大小事, 並從其他資深工程師身上學習 web 相關技能＆知識 ex: LAMP, amazon EC2, MYSQL.. 使用 SVN 版控 ＆ agle 步調, 在co-space 與其他 startup 互相交流學習,\
         					公司主要專注於 <a href="http://spotme.com.tw/kevin" target="_blank">spotme</a> 商務社交平台的開發, 期望每位使用者都能在平台上建立自己的專業形象頁與活絡供需平台.\
         					另一主要專案 <a href="http://trainer.spotme.com.tw" target="_blank">spotrainer</a> 為獨自開發的CMS wordpress專案, 與實體活動結合, 期望建立一個較為公正的講師網站.'
       }, {
       	title:   'side-project',
-        briefEN: 'learning, practicing to implement all front end skills by myself',
+        briefEN: 'learning, practicing to implement all front end skills and web',
         briefTW: '不斷的實作與練習 web & 前端 大小事',
         descEN:  'First, i just wanna to implemenet some web effect plugin like carousel, slider, parallax, one page scroll, css icon, animation, canvas and svg and some practicing like <a href="https://github.com/sky790312/pure-javascript-jquery-implementation" target="_blank">jquery implementation</a>.\
         					After then, i start to connect some implementation to me like <a href="https://github.com/sky790312/full-screen-presentation-website" target="_blank">full-screen-presentation-website</a>. Now i stay competitive to keep in touch like react, webpack, es6, gulp.. any others.\
@@ -27,8 +27,8 @@ module.exports = {
       }, {
       	title:   'eztravel',
         briefEN: 'involve in Coupon, Homepage revision, new Ucar projects',
-        briefTW: '參與期望大翻站, 跟上時代的eztravel專案, coupon, homepage, ucar專案..等等',
-        descEN:  'Projects in here base on Java Play MVC framework. Use jQuery and less css to build all the new website. Collaborate with others by git version and correct work flow to production.\
+        briefTW: '逐步汰舊換新 eztravel 各個線別大小專案',
+        descEN:  'Projects in here all base on Java Play MVC framework. Use jQuery and less css to build all the new website. Collaborate with others by git version and correct work flow to production.\
         					Learn knowledge about nginx, jboss and jenkins. Sometimes i should even focus on Play application side. Had develop the new <a href="http://trip.eztravel.com.tw/hsrucar" target="_blank">Ucar</a> project and others.',
         descTW:  '前端主要使用 jquery less, 後端使用 Java Play MVC framework 並使用git進行多人共同開發各個線別的改版與新專案. 並從其他資深工程師身上學習 web 相關技能＆知識 ex: nginx, jboss jenkins ..等等,\
         					有時我也得幫忙play端的應用層, 了解一些關於java的知識. 不時的與PM端開會開發新的專案像是<a href="http://trip.eztravel.com.tw/hsrucar" target="_blank">Ucar</a>.. 與一些改版中的專案等等..'
