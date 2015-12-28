@@ -38,7 +38,7 @@ $item-transition: .5s;
   top: 50%;
   left: 50%;
   margin: -10px 0 0 -35px;
-  opacity: 0;
+  visibility: hidden;
 }
 
 @for $i from 0 through $item-count-subtract1 {
@@ -69,11 +69,17 @@ $item-transition: .5s;
       font-size: 12px;
       cursor: pointer;
       transition: .2s;
-      &:hover {
-        box-shadow: 0 0 0 $item-size/40 rgba(white, 0.3);
-        color: $item-color;
-        background: rgba($light-blue, 0.3);
-        // font-size: $item-size/6;
+      &.completed {
+        &:hover {
+          box-shadow: 0 0 0 $item-size/40 rgba(white, 0.3);
+          color: $item-color;
+          background: rgba($light-blue, 0.3);
+          // font-size: $item-size/6;
+        }
+      }
+      &.padding {
+        opacity: .5;
+        cursor: default;
       }
       > strong {
         display: block;
@@ -88,8 +94,9 @@ $item-transition: .5s;
   }
 }
 .show-helper {
+  z-index: 10;
   .helper-menu {
-    opacity: 1;
+    visibility: visible;
     li{
       opacity: 1;
     }

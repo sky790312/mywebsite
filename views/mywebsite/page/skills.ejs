@@ -59,19 +59,16 @@
   </div>
   <div id="skills-desc" class="container">
     <ul>
-      <li>Explain and Clarify problems, ability to get the Heart of the Matter.</li>
-      <li>Basic design thinking, knowledge about backend, linux, computer science, web's world.</li>
-      <li>Familiarity with Object-Oriented Programming, pure javaScript, design pattern, librarys, frameworks.</li>
-      <li>Soft communication to works closely with designers, backend developers and product owners.</li>
-      <li>Knowledge of relative buildng tools to make strong front end development.</li>
+      <% for( var i = 0; i < skillsObj.desc().length; i++) { %>
+        <li class="lg" data-en="<%= skillsObj.desc()[i].briefEN %>" data-tw="<%= skillsObj.desc()[i].briefTW %>"></li>
+      <% } %>
     </ul>
   </div>
   <div id="skills-detail">
     <div class="levels clearfix">
-      <div class="begineer">Begineer</div>
-      <div class="familiar">Familiar</div>
-      <div class="proficient">Proficient</div>
-      <div class="expert">Expert</div>
+      <% for( var i = 0; i < skillsObj.level().length; i++) { %>
+        <div class="lg" data-en="<%= skillsObj.level()[i].briefEN %>" data-tw="<%= skillsObj.level()[i].briefTW %>"></div>
+      <% } %>
     </div>
     <div class="skill-level">
       <div class="junior"></div>
