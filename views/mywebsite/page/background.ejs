@@ -8,41 +8,20 @@
         <!-- <img class="logo" src="/images/mywebsite/me.jpg" alt="Google Cultural&amp;nbsp;Institute" title="Google Cultural&amp;nbsp;Institute" src="img/projects/culturalinstitute/logo.png"> -->
       </figure>
       <div class="info">
-        <h1>I'm a creative FrontEnd developer with 2-3 years of professional experience, based in Taiwan now.</h1>
-        <h3 >I develop modern, interactive, responsive <strong>websites</strong>. keep in touch to cutting edge technologies such as <strong>AngularJS</strong>, <strong>React</strong> and other tools.<br><br>My <strong>BackEnd background</strong> allows me to take care of a project through to <strong>execution</strong> and delivery.</h3>
+        <h1 class="lg" data-en="<%= backgroundObj.main()[0].titleEN %>" data-tw="<%= backgroundObj.main()[0].titleTW %>"></h1>
+        <h3 class="lg" data-en="<%= backgroundObj.main()[0].briefEN %>" data-tw="<%= backgroundObj.main()[0].briefTW %>"></h3>
       </div>
     </article>
   </main>
   <div class="background-years">
-    <div class="years years-now">
-        <h1>eztravel
-          <small>( 2014/12 - Current )</small>
-        </h1>
-    </div>
-    <div class="container">
-        <h2>a large company with about 100 IT employees</h2>
-        <p>All the projects wanna revision, it's why i am here. I have involved in multiple projects and lead the FrontEnd developers in homepage projects. Had joined UED team to communicate with PM and marketing team, trying to do the right things and make work flow better. It's a big company and differents form startup. There are many kind of person, some help me in my future, some even don't know who they are. I always happy to teach others and appreciate to learn form others no matter in job or life. <br> About why i wanna leave ? It's just time to be profession and keep going on my road.</p>
-    </div>
-    <div class="years years-aite">
-        <h1>
-          aite
-          <small>( 2013/8 - 2014/11 )</small>
-        </h1>
-    </div>
-    <div class="container">
-        <h2>freshman go to small startup company</h2>
-        <p>When i was a freshman, i seek only startup to join. I think it's a way to get on the track. The first day on the job also the first day to the compnay. It's very interesting to discuss and bulid all the things a company need with colleagues and co-founder. Like logo, product, what we wanna to do and ideas. At that time, i'm a junior freshman and co-work with all seniors. It's tough at first, but i just survive and win the trust. There are many kinds of trouble my startup face, no body know what will happen. It's a short time the company have only my boss and me. No matter what, i never regret going to Aite. As it turned out, it's very helpful experience to me.</p>
-    </div>
-    <div class="years years-student">
-        <h1>
-          fu jen university
-          <small> - computer science bachelor</small>
-        </h1>
-    </div>
-    <div class="container">
-        <h2>focus on lessons, club and pt-work all</h2>
-        <p>Computer Science Bachelor background make me to have solid knowledge about computer also web's world. I believe it's why i can get the hang of work real quick. Knowing about BackEnd, Database, Network, Computer, Linux's world. It helps me a lot in future.<br>
-        I always focus on not only school lessons but other side. I was the core member of sign language club and dancing club before. Experiences in club are very important for me that complete me make me better. I also have multiple experiences about PT-work. The longest is at the Starbucks, i had been there about 2 years. Different field have different profession and different difficulties. All of these are me. Enjoy life always the top.</p>
-    </div>
+    <% for( var i = 0; i < backgroundObj.bkgs().length; i++) { %>
+      <div class="years lg years-<%= backgroundObj.bkgs()[i].identity %>">
+          <h1 class="lg" data-en="<%= backgroundObj.bkgs()[i].titleEN %>" data-tw="<%= backgroundObj.bkgs()[i].titleTW %>"></h1>
+      </div>
+      <div class="container">
+          <h2 class="lg" data-en="<%= backgroundObj.bkgs()[i].briefEN %>" data-tw="<%= backgroundObj.bkgs()[i].briefTW %>"></h2>
+          <p class="lg" data-en="<%= backgroundObj.bkgs()[i].descEN %>" data-tw="<%= backgroundObj.bkgs()[i].descTW %>"></p>
+      </div>
+    <% } %>
   </div>
 </section>
