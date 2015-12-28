@@ -37,35 +37,35 @@ $tag-text-color: $white;
 		}
 	}
 }
-.tags .tags-brief {
-	> .tags-left {
-	  @include mediaQuires(M) {
-			top: 7em;
-			left: 5em;
-		}
-	  @include mediaQuires(L) {
-			top: 7em;
-			left: 14.5em;
-		}
-	}
-	> .tags-right {
-	  @include mediaQuires(M) {
-			top: 7em;
-			right: 5em;
-		}
-	  @include mediaQuires(L) {
-			top: 7em;
-			right: 14em;
-		}
-	}
-}
+// .tags .tags-brief {
+// 	> .tags-left {
+// 	  @include mediaQuires(M) {
+// 			top: 7em;
+// 			left: 5em;
+// 		}
+// 	  @include mediaQuires(L) {
+// 			top: 7em;
+// 			left: 14.5em;
+// 		}
+// 	}
+// 	> .tags-right {
+// 	  @include mediaQuires(M) {
+// 			top: 7em;
+// 			right: 5em;
+// 		}
+// 	  @include mediaQuires(L) {
+// 			top: 7em;
+// 			right: 14em;
+// 		}
+// 	}
+// }
 .tags .tag {
 	float: left;
 	margin: 5px;
 	padding: 5px 8px;
 	color: $tag-text-color;
 	background-color: $tag-bg-color;
-	cursor: pointer;
+	cursor: default;
 	@include border-radius(5px);
 
 	&:hover {

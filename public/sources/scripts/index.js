@@ -89,18 +89,18 @@ class index {
     });
 
     // change photo title
-    $indexSection.off('click').on('click','.photo', (e)=> {
-      let $ele = $(e.target).parent();
-      if($ele.hasClass('about-skill')){
-        $ele.removeClass('about-skill').addClass('about-brief');
-        $ele.find('.tags-brief').removeClass('hide');
-        $ele.find('.tags-skill').addClass('hide');
-      }else{
-        $ele.removeClass('about-brief').addClass('about-skill');
-        $ele.find('.tags-brief').addClass('hide');
-        $ele.find('.tags-skill').removeClass('hide');
-      }
-    });
+    // $indexSection.off('click').on('click','.photo', (e)=> {
+    //   let $ele = $(e.target).parent();
+    //   if($ele.hasClass('about-skill')){
+    //     $ele.removeClass('about-skill').addClass('about-brief');
+    //     $ele.find('.tags-brief').removeClass('hide');
+    //     $ele.find('.tags-skill').addClass('hide');
+    //   }else{
+    //     $ele.removeClass('about-brief').addClass('about-skill');
+    //     $ele.find('.tags-brief').addClass('hide');
+    //     $ele.find('.tags-skill').removeClass('hide');
+    //   }
+    // });
 
     // bind helper
     this.bindHelper();

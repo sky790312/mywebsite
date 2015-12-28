@@ -61,7 +61,7 @@ $photo-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
     margin: 0 auto;
     height: 10em;
     width: 10em;
-    cursor: pointer;
+    // cursor: pointer;
     z-index: 1;
     background-color: $light-gray;
     background-position: 80% 0%;
@@ -70,9 +70,9 @@ $photo-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
     @include border-radius(50%);
     @include box-shadow($photo-outer-color);
     @include animation(swing-photo 1s linear 1.2s infinite);
-    &:hover {
-      @include border-radius(15%);
-    }
+    // &:hover {
+    //   @include border-radius(15%);
+    // }
   }
   .title {
     position: absolute;
@@ -84,7 +84,7 @@ $photo-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
       &:before, &:after {
         position: absolute;
         top: 2.5em;
-        right: 8em;
+        // right: 8em;
         width: 7em;
         color: $main-color;
         opacity: 0;
@@ -93,7 +93,7 @@ $photo-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
         @include animation-fill-mode(forwards);
       }
       &:after {
-        left: 8em;
+        // left: 8em;
         @include animation(show-right-title .8s ease-out .5s);
         @include animation-fill-mode(forwards);
       }
@@ -155,11 +155,29 @@ $photo-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
    from {top: -999px;}
    to {top: 0;}
 }
-@include keyframes(show-left-title) {
-   from {right: 999px; opacity: 0;}
-   to {right: 8em; opacity: 1;}
+
+/* hack */
+@keyframes show-left-title {
+  from {right: 999px; opacity: 0;}
+  to {right: 8em; opacity: 1;}
 }
-@include keyframes(show-right-title) {
-   from {left: 999px; opacity: 0;}
-   to {left: 8em; opacity: 1;}
+@-webkit-keyframes show-left-title {
+  from {right: 999px; opacity: 0;}
+  to {right: 8em; opacity: 1;}
+}
+@-moz-keyframes show-left-title {
+  from {right: 999px; opacity: 0;}
+  to {right: 9.5em; opacity: 1;}
+}
+@keyframes show-right-title {
+  from {left: 999px; opacity: 0;}
+  to {left: 8em; opacity: 1;}
+}
+@-webkit-keyframes show-right-title {
+  from {left: 999px; opacity: 0;}
+  to {left: 8em; opacity: 1;}
+}
+@-moz-keyframes show-right-title {
+  from {left: 999px; opacity: 0;}
+  to {left: 9.5em; opacity: 1;}
 }

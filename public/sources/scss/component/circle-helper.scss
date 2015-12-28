@@ -1,13 +1,9 @@
 // helpers
 
-$toggler-size: 35px;
-$toggler-color: white;
-$toggler-transition: transform .5s, top .5s;
-
 $item-count-subtract1: 4;
-$item-size: $toggler-size * 2;
-$item-color: white;
-$item-transition: .5s;
+$item-size: 70px;
+$item-color: $white;
+$item-background: $light-blue;
 
 @mixin size ($width, $height: $width) {
   width: $width;
@@ -24,15 +20,6 @@ $item-transition: .5s;
   margin: auto;
 }
 
-// @mixin line {
-//   @include size($toggler-size, $toggler-size / 8);
-//   display: block;
-//   z-index: 1;
-//   border-radius: $toggler-size/16;
-//   background: rgba($toggler-color, 0.7);
-//   transition: $toggler-transition;
-// }
-
 .helper-menu {
   position: fixed;
   top: 50%;
@@ -44,7 +31,7 @@ $item-transition: .5s;
 @for $i from 0 through $item-count-subtract1 {
   .helper-menu {
     li:nth-child(#{$i + 1}) a {
-      transform: rotate(-180deg / $item-count-subtract1 * $i);
+      @include transform(rotate(-180deg / $item-count-subtract1 * $i));
     }
   }
 }
@@ -55,26 +42,23 @@ $item-transition: .5s;
     @include size($item-size);
     display: block;
     opacity: 0;
-    transition: $item-transition;
+    @include transition(opacity .5s, transform .5s);
     .menu-item {
       display: block;
       width: inherit;
       height: inherit;
-      // line-height: $item-size;
-      color: rgba($item-color, 0.7);
-      background: rgba($light-blue, 0.8);
+      color: $item-color;
+      background: $item-background;
       border-radius: 50%;
       text-align: center;
       text-decoration: none;
       font-size: 12px;
       cursor: pointer;
-      transition: .2s;
+      @include transition(.2s);
       &.completed {
         &:hover {
-          box-shadow: 0 0 0 $item-size/40 rgba(white, 0.3);
-          color: $item-color;
-          background: rgba($light-blue, 0.3);
-          // font-size: $item-size/6;
+          box-shadow: 0 0 0 $item-size / 40 rgba($white, 0.3);
+          background: rgba($item-background, 0.3);
         }
       }
       &.padding {
@@ -102,7 +86,7 @@ $item-transition: .5s;
     }
     @for $i from 0 through $item-count-subtract1 {
       li:nth-child(#{$i + 1}) {
-        transform: rotate(180deg / $item-count-subtract1 * $i) translateX(-$item-size - 50px);
+        @include transform(rotate(180deg / $item-count-subtract1 * $i) translateX(-$item-size - 50px));
       }
     }
   }
