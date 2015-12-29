@@ -80,7 +80,7 @@ appRouter.get('/', mywebsite.index);
 // apis
 // appRouter.get('/api', mywebsite.testapi); // 測試api
 
-// app.use('/', appRouter);
+app.use('/', appRouter);
 app.use('/kevinhu', appRouter);
 // app.use('/mywebsite', appRouter);
 app.use('/projects', appRouter);
@@ -97,9 +97,8 @@ app.use(function(req, res) {
     });
 });
 
-// Handle 500
+//Handle 500
 app.use(function(error, req, res, next) {
-    //console.error(error);
     console.trace(error);
     res.status(500);
     res.render('systemUpdate', {

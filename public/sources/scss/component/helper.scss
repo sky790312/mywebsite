@@ -21,6 +21,22 @@ $head-boy-feets-color: $light-gray2;
   // z-index: 10;
 }
 
+.msg-board {
+  position: fixed;
+  top: -100%;
+  width: 100%;
+  height: calc(100% - 85px);
+  overflow-y: scroll;
+  background-color: ghostwhite;
+  @include transition(top .5s linear);
+  > .fb-comments {
+    width: 100%;
+  }
+  &.show-board {
+    top: 0;
+  }
+}
+
 .equip-section, .padding-section {
   position: fixed;
   width: 10%;

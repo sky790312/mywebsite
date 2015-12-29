@@ -23,7 +23,7 @@ module.exports = {
         showTW: "關於<br>這個網站"
       }, {
         title:  "msgboard",
-        state:  "padding",
+        state:  "completed",
         showEN: "message board",
         showTW: "留言板"
       }, {

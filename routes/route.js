@@ -9,9 +9,15 @@ var background = require('../models/mywebsite/background');
 var skills = require('../models/mywebsite/skills');
 var helper = require('../models/mywebsite/helper');
 
+// var test = require('../models/mywebsite/test');
+// 考慮hide data attribute
+
 // router部分
 exports.index = function(req, res){
   var data = {
+    // datatest: {
+      // menuObj: test.menu()
+    // },
     menuObj: menu,
   	kevinhuObj: kevinhu,
   	projectsObj: projects,

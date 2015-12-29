@@ -6,8 +6,7 @@ import utilsJs from '../scripts/utils.js';
 import pageJs from '../scripts/pageControll.js';
 import helperJs from '../scripts/helperControll.js';
 
-
-window.app = {};
+// window.app = {};
 
 class index {
   constructor($ele) {
@@ -38,14 +37,15 @@ class index {
 
     // });
 
-    // first into page
-    if($(location).attr('pathname')) {
-      let url = $(location).attr('pathname').replace('/', '');
-      this.pageControll.showPage(this.$app.find('#' + url));
-      this.$app.find('.' + url).addClass('active');
-
-      this.pageControll.startPage(url);
+    if($(location).attr('pathname') === '/') {
+      $(location).attr('pathname', '/kevinhu');
     }
+
+    let url = $(location).attr('pathname').replace('/', '');
+    this.pageControll.showPage(this.$app.find('#' + url));
+    this.$app.find('.' + url).addClass('active');
+
+    this.pageControll.startPage(url);
 
     if(!this.utils.getCookie('lg')) {
       this.utils.setCookie('lg', 'en');

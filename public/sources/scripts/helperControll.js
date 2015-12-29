@@ -6,7 +6,7 @@ import utilsJs from '../scripts/utils.js';
 class helperControll {
   constructor($app) {
     this.$app = $app;
-    // this.utils = new utilsJs();
+    this.utils = new utilsJs();
   }
 
   // show helper
@@ -42,6 +42,8 @@ class helperControll {
           this.setLanguage(this.utils.getCookie('lg'));
           this.hideHelper();
           break;
+        case 'msgboard':
+          this.$app.find('.msg-board').addClass('show-board');
       }
     });
   }
@@ -52,6 +54,11 @@ class helperControll {
       let $ele = $(e);
       (lang === 'en') ? $ele.html($ele.data('en')) : $ele.html($ele.data('tw'));
     });
+  }
+
+  //helper menu - show fb comments board
+  showCommentsBoard() {
+
   }
 }
 
