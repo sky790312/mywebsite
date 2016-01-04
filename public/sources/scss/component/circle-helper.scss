@@ -61,9 +61,21 @@ $item-background: $light-blue;
           background: rgba($item-background, 0.3);
         }
       }
-      &.padding {
+      &.active {
+          // @include transform(rotate(-90deg) scale(1.2));
+          font-size: 13px;
+        &:hover {
+          background: $item-background;
+          font-size: 12px;
+          // @include transform(rotate(-90deg));
+        }
+      }
+      &.padding, &.disabled {
         opacity: .5;
         cursor: default;
+        &:hover {
+          background: $item-background;
+        }
       }
       > strong {
         display: block;
@@ -89,5 +101,13 @@ $item-background: $light-blue;
         @include transform(rotate(180deg / $item-count-subtract1 * $i) translateX(-$item-size - 50px));
       }
     }
+  }
+}
+
+.show-board {
+  .helper-menu {
+    top: 80%;
+    left: 80%;
+    @include animation(show-helper 1s linear);
   }
 }

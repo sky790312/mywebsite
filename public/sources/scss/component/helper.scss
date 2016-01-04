@@ -28,12 +28,9 @@ $head-boy-feets-color: $light-gray2;
   height: calc(100% - 85px);
   overflow-y: scroll;
   background-color: ghostwhite;
-  @include transition(top .5s linear);
+  @include transition(top .4s linear);
   > .fb-comments {
     width: 100%;
-  }
-  &.show-board {
-    top: 0;
   }
 }
 
@@ -142,7 +139,7 @@ $head-boy-feets-color: $light-gray2;
     left: 50%;
     margin: -42px 0 0 -42px;
     height: 85px;
-    @include animation(show-helper .6s linear);
+    @include animation(show-helper .5s linear);
   }
   .head {
     @include animation(head 1.2s infinite);
@@ -154,6 +151,21 @@ $head-boy-feets-color: $light-gray2;
     &:after{
       @include animation(feets-right 1.2s infinite);
     }
+  }
+}
+
+.show-board {
+  .msg-board {
+    top: 0;
+  }
+  .head-boy {
+    top: 80%;
+    left: 80%;
+    cursor: default;
+    @include animation(show-helper 2s linear);
+  }
+  .help-desc {
+    display: none;
   }
 }
 

@@ -7,17 +7,17 @@
   font-size: 30px;
   color: #fff;
   text-decoration: none;
-  transition: all 0.25s;
+  @include transition(all 0.25s);
   &:hover {
-    transform: scale(1.2);
+    @include transform(scale(1.2));
     color: $light-blue2;
     &:after{
       opacity: 1;
-      transform: scale(1) translate(-50%, 0);
+      @include transform(scale(1) translate(-50%, 0));
     }
   }
   &:active {
-    transform: scale(1.1);
+    @include transform(scale(1.1));
   }
   // &:after {
   //   content: "@" attr(data-user);

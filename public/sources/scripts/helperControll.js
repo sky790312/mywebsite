@@ -25,6 +25,8 @@ class helperControll {
   bindHelper() {
     let $helper = this.$app.find('#helper');
     $helper.find('.head-boy').off('click').on('click', ()=>{
+      if($helper.hasClass('show-board'))
+        return;
       ($helper.hasClass('show-helper') ? this.hideHelper() : this.showHelper());
     });
   }
@@ -34,6 +36,8 @@ class helperControll {
     let $triggerMenu = this.$app.find('#' + triggerValue);
 
     $triggerMenu.off('click').on('click', ()=>{
+      if($triggerMenu.hasClass('padding') || $triggerMenu.hasClass('disabled'))
+        return;
       switch (triggerValue) {
         default:
           break;
@@ -43,7 +47,15 @@ class helperControll {
           this.hideHelper();
           break;
         case 'msgboard':
-          this.$app.find('.msg-board').addClass('show-board');
+          if($triggerMenu.hasClass('active')){
+            this.$app.find('#helper').removeClass('show-board');
+            this.$app.find('.helper-menu a').removeClass('disabled');
+            $triggerMenu.removeClass('active');
+          }else{
+            this.$app.find('#helper').addClass('show-board');
+            this.$app.find('.helper-menu a').addClass('disabled');
+            $triggerMenu.removeClass('disabled').addClass('active');
+          }
       }
     });
   }
