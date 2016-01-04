@@ -293,7 +293,7 @@ $items: 3; // profolio numbers
 .profolios-section .close-section {
 	padding: 40px 0 20px 0;
 	text-align: center;
-  text-transform: uppercase;
+  // text-transform: uppercase;
 }
 .profolios-section .close {
 	position: relative;
@@ -302,21 +302,21 @@ $items: 3; // profolio numbers
   &:hover {
   	opacity: 1;
   }
-	&:before, &:after {
-		top: 2px;
-    border-right: 2px solid;
-    border-bottom: 2px solid;
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px
-	}
-	&:before{
-    left: -12px;
-    transform: rotate(135deg)
-	}
-	&:after{
-    right: -12px;
-    transform: rotate(-45deg)
-	}
+	// &:before, &:after {
+	// 	top: 2px;
+ //    border-right: 2px solid;
+ //    border-bottom: 2px solid;
+ //    content: '';
+ //    position: absolute;
+ //    width: 10px;
+ //    height: 10px
+	// }
+	// &:before{
+ //    left: -12px;
+ //    transform: rotate(135deg)
+	// }
+	// &:after{
+ //    right: -12px;
+ //    transform: rotate(-45deg)
+	// }
 }

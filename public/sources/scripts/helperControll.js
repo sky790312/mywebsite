@@ -7,6 +7,10 @@ class helperControll {
   constructor($app) {
     this.$app = $app;
     this.utils = new utilsJs();
+
+    this.$app.find('.fb-close').off('click').on('click', ()=>{
+      this.$app.find('#helper').removeClass('show-board');
+    });
   }
 
   // show helper
@@ -25,8 +29,8 @@ class helperControll {
   bindHelper() {
     let $helper = this.$app.find('#helper');
     $helper.find('.head-boy').off('click').on('click', ()=>{
-      if($helper.hasClass('show-board'))
-        return;
+      // if($helper.hasClass('show-board'))
+        // return;
       ($helper.hasClass('show-helper') ? this.hideHelper() : this.showHelper());
     });
   }
@@ -47,15 +51,7 @@ class helperControll {
           this.hideHelper();
           break;
         case 'msgboard':
-          if($triggerMenu.hasClass('active')){
-            this.$app.find('#helper').removeClass('show-board');
-            this.$app.find('.helper-menu a').removeClass('disabled');
-            $triggerMenu.removeClass('active');
-          }else{
-            this.$app.find('#helper').addClass('show-board');
-            this.$app.find('.helper-menu a').addClass('disabled');
-            $triggerMenu.removeClass('disabled').addClass('active');
-          }
+          this.$app.find('#helper').addClass('show-board');
       }
     });
   }

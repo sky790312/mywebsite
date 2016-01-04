@@ -61,15 +61,15 @@ $item-background: $light-blue;
           background: rgba($item-background, 0.3);
         }
       }
-      &.active {
-          // @include transform(rotate(-90deg) scale(1.2));
-          font-size: 13px;
-        &:hover {
-          background: $item-background;
-          font-size: 12px;
-          // @include transform(rotate(-90deg));
-        }
-      }
+      // &.active {
+      //     // @include transform(rotate(-90deg) scale(1.2));
+      //     font-size: 13px;
+      //   &:hover {
+      //     background: $item-background;
+      //     font-size: 12px;
+      //     // @include transform(rotate(-90deg));
+      //   }
+      // }
       &.padding, &.disabled {
         opacity: .5;
         cursor: default;
@@ -90,7 +90,6 @@ $item-background: $light-blue;
   }
 }
 .show-helper {
-  z-index: 10;
   .helper-menu {
     visibility: visible;
     li{
@@ -106,8 +105,6 @@ $item-background: $light-blue;
 
 .show-board {
   .helper-menu {
-    top: 80%;
-    left: 80%;
-    @include animation(show-helper 1s linear);
+    visibility: hidden;
   }
 }

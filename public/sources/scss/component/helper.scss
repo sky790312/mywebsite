@@ -4,6 +4,8 @@ $head-boy-color: $dark-gray;
 $head-boy-eyes-color: $light-gray2;
 $head-boy-feets-color: $light-gray2;
 
+$msg-board-bkg-color: ghostwhite;
+
 #helper-background {
   position: fixed;
   top: 0;
@@ -18,7 +20,7 @@ $head-boy-feets-color: $light-gray2;
   position: fixed;
   bottom: 60px;
   width: 100%;
-  // z-index: 10;
+  z-index: 10;
 }
 
 .msg-board {
@@ -27,10 +29,23 @@ $head-boy-feets-color: $light-gray2;
   width: 100%;
   height: calc(100% - 85px);
   overflow-y: scroll;
-  background-color: ghostwhite;
-  @include transition(top .4s linear);
+  background-color: $msg-board-bkg-color;
+  @include transition(top .1s linear);
   > .fb-comments {
     width: 100%;
+  }
+  > .fb-close {
+    position: fixed;
+    bottom: 100px;
+    left: 80%;
+    z-index: 1;
+    visibility: hidden;
+    > a {
+      color: $light-blue;
+      &:hover {
+        color: $light-blue2;
+      }
+    }
   }
 }
 
@@ -158,14 +173,17 @@ $head-boy-feets-color: $light-gray2;
   .msg-board {
     top: 0;
   }
-  .head-boy {
-    top: 80%;
-    left: 80%;
-    cursor: default;
-    @include animation(show-helper 2s linear);
+  // .head-boy {
+  //   top: 80%;
+  //   left: 80%;
+  //   cursor: default;
+  //   @include animation(show-helper 2s linear);
+  // }
+  .head-boy, .help-desc {
+    visibility: hidden;
   }
-  .help-desc {
-    display: none;
+  .fb-close {
+    visibility: visible;
   }
 }
 
