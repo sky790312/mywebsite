@@ -33,7 +33,7 @@ module.exports = {
         showTW: "部落格"
       }, {
         title:  "cv",
-        state:  "padding",
+        state:  "completed",
         showEN: "CV",
         showTW: "簡歷"
       }

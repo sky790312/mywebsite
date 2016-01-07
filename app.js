@@ -34,8 +34,8 @@ var contentAge = 86400000 * 7; //1day = 86400000
 app.set('port', process.env.PORT || 5000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(favicon(__dirname + '/public/images/favicon/favicon.ico'));
 
+app.use(favicon(__dirname + '/public/images/favicon/favicon.ico'));
 /* app.use(logger()); */
 app.use(bodyParser());
 app.use(bodyParser.json({
@@ -61,7 +61,6 @@ if ('development' == env) {
     app.use(errorhandler());
 }
 
-
 app.get('/robots.txt', function(req, res){
     res.sendfile('public/assets/robots.txt');
 });
@@ -70,7 +69,9 @@ app.get('/robots.txt', function(req, res){
 
 // ******************************************************************************************************
 
-// web開始
+// pdf
+app.use('/pdf', express.static(__dirname + '/public'));
+
 var appRouter = express.Router();
 
 // pages
@@ -89,7 +90,7 @@ app.use('/background', appRouter);
 app.use('/skills', appRouter);
 
 
-// Handle 404
+// handle 404
 app.use(function(req, res) {
     res.status(400);
     res.render('pageNotFound', {
@@ -97,7 +98,7 @@ app.use(function(req, res) {
     });
 });
 
-//Handle 500
+// handle 500
 app.use(function(error, req, res, next) {
     console.trace(error);
     res.status(500);

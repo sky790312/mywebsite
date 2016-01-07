@@ -19,7 +19,12 @@ var config = {
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader')},
       { test: /\.scss$/, loader : ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader?includePaths[]=' +
         Path.resolve(__dirname, './node_modules/compass-mixins/lib'))},
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+      // {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?mimetype=image/svg+xml'},
+      // {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/font-woff"},
+      // {test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/font-woff"},
+      // {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/octet-stream"},
+      // {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader"}
     ]
   },
   plugins: [

@@ -39,7 +39,7 @@ class helperControll {
   bindHelperMenu(triggerValue) {
     let $triggerMenu = this.$app.find('#' + triggerValue);
 
-    $triggerMenu.off('click').on('click', ()=>{
+    $triggerMenu.off('click').on('click', (e)=>{
       if($triggerMenu.hasClass('padding') || $triggerMenu.hasClass('disabled'))
         return;
       switch (triggerValue) {
@@ -52,6 +52,10 @@ class helperControll {
           break;
         case 'msgboard':
           this.$app.find('#helper').addClass('show-board');
+          break;
+        case 'cv':
+          window.open('cv-english.pdf');
+          break;
       }
     });
   }

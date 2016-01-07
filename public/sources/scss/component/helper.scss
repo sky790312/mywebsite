@@ -30,7 +30,7 @@ $msg-board-bkg-color: ghostwhite;
   height: calc(100% - 85px);
   overflow-y: scroll;
   background-color: $msg-board-bkg-color;
-  @include transition(top .1s linear);
+  @include transition(top .25s linear);
   > .fb-comments {
     width: 100%;
   }

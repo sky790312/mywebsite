@@ -1,9 +1,12 @@
 {
-  "name": "practice",
+  "name": "mywebsite",
+  "author": "KevinHu",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "webpack -d",
+    "dist": "webpack -p"
   },
   "dependencies": {
     "async": "*",
@@ -22,7 +25,8 @@
     "sanitizer": "*",
     "serve-favicon": "*",
     "supervisor": "*",
-    "jquery": "1.11.3"
+    "jquery": "1.11.3",
+    "font-awesome" : "4.5.0"
   },
   "devDependencies": {
     "babel-loader": "~5.3.2",
