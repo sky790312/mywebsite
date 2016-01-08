@@ -1,6 +1,6 @@
 # welcome to mywebsite!
 
-nodejs express server & es6, scss, with webpack
+nodejs(0.x) express server & es6, scss, with webpack(0.10.x)
 
 # how to use :
 
@@ -10,7 +10,7 @@ it will run node server with default port 5000
 
 webpack --watch to gen source js/css..
 
-(make sure you had nodejs & webpack..and it seem to had some problem node-sass with nodejs version 4)
+(make sure you had nodejs & webpack..and it seem to had some problem node-sass with nodejs version 4 or wetpack upper version..)
 
 index page: /kevinhu .. enjoy and have fun!
 
