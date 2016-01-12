@@ -1,8 +1,22 @@
+$saying-border-color: $light-blue2;
+$saying-sign-color: $black;
+$saying-color: $green;
 $years-height: 200px;
 
 #background {
 	> main {
 		padding-top: 85px;
+	}
+	> .saying {
+		margin: 80px auto;
+	    border-bottom: 1px dashed $saying-border-color;
+	    border-top: 1px dashed $saying-border-color;
+	    color: $saying-color;
+	    h2 {
+	    	float: right;
+	    	color: $saying-sign-color;
+	    	margin: 0 0 20px;
+	    }
 	}
 	> .background-years {
 		padding-bottom: 170px;
@@ -40,7 +54,7 @@ $years-height: 200px;
 		margin: 0 auto;
 		> .cover-img {
 	  	float: right;
-			width: 50%;
+			width: 45%;
 		}
 		> .info {
 			position: absolute;

@@ -8,7 +8,7 @@
         <div class="cover-icon">
           <a href="" class="fa fa-user fa-5x"></a>
           <a href="" class="fa fa-user-secret fa-5x"> </a>
-          <a href="" class="fa fa-user-md fa-5x"></a>
+          <a href="" class="fa fa-user fa-5x"></a>
           <!-- <a href="" class="fa fa-users fa-5x"></a> -->
           <!-- <a href="" class="fa fa-users fa-5x"></a> -->
           <!-- <a href="" class="fa fa-user-md fa-5x"></a> -->
@@ -21,6 +21,10 @@
       </div>
     </article>
   </main>
+  <article class="container clearfix saying">
+    <h3 class="lg" data-en="<%= backgroundObj.saying()[0].descEN %>" data-tw="<%= backgroundObj.saying()[0].descTW %>"></h3>
+    <h2 class="lg" data-en="<%= backgroundObj.saying()[0].signEN %>" data-tw="<%= backgroundObj.saying()[0].signTW %>">by 胡哲維</h2>
+  </article>
   <div class="background-years">
     <% for( var i = 0; i < backgroundObj.bkgs().length; i++) { %>
       <div class="years lg years-<%= backgroundObj.bkgs()[i].identity %>">

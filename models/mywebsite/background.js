@@ -13,6 +13,16 @@ module.exports = {
       }
     ];
   },
+  saying: function() {
+    return [
+      {
+        descTW: "我深信要做為一個資深的前端工程師, 除了縱向能力的深入, 還必須具備橫向領域的domain. 了解後端＆設計的世界, 與後端＆設計緊密結合, 瞭解他們在想什麼與為什麼",
+        descEN: "I believe that being a senior FrontEnd developer, not only have to focus on how deep Front world is, but alse need to have relevant field domain. Knowing what BackEnd＆Design thinking and why.",
+        signTW: "By 胡哲維",
+        signEN: "By KevinHu"
+      }
+    ];
+  },
   bkgs: function() {
     return [
       {

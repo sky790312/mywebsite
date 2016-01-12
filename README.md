@@ -14,8 +14,17 @@ webpack --watch to gen source js/css..
 
 index page: /kevinhu .. enjoy and have fun!
 
+# padding :
 
-The MIT License (MIT)
+1. about webiste
+2. loading animate
+3. hidden keypress function
+4. blog
+5. ror server & nginx http server to control multiple port
+
+# thx watching..
+
+#The MIT License (MIT)
 
 Copyright (c) [2015] [Kevin Hu]
 
