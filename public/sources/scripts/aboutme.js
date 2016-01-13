@@ -4,7 +4,7 @@ class aboutme {
   constructor() {
 
 		(function(){
-			var aboutme = aboutme || {
+			const aboutme = aboutme || {
 				settings: {
 					pagesObj: [],
 					active: '',
@@ -43,12 +43,12 @@ class aboutme {
 						aboutme.settings.parallax.y += (aboutme.settings.pointer.y - aboutme.settings.parallax.y) * (aboutme.settings.timeStep * 0.5);
 						aboutme.settings.position.x += (aboutme.settings.target.x - aboutme.settings.position.x) * aboutme.settings.timeStep;
 						aboutme.settings.position.y += (aboutme.settings.target.y - aboutme.settings.position.y) * aboutme.settings.timeStep;
-						for (var i = 0, n = aboutme.settings.pagesObj.length; i < n; i++) {
-							var eachPage = aboutme.settings.pagesObj[i];
+						for (let i = 0, n = aboutme.settings.pagesObj.length; i < n; i++) {
+							let eachPage = aboutme.settings.pagesObj[i];
 							if (eachPage.visible) {
-								for (var j = 0, m = eachPage.nodes.length; j < m; j++) {
-									var eachPageElem = eachPage.nodes[j];
-									var transform = 'matrix(1, 0, 0, 1,' + ((eachPage.x - aboutme.settings.parallax.x * 0.5 - aboutme.settings.position.x) * eachPageElem.animateValue) + ',' +
+								for (let j = 0, m = eachPage.nodes.length; j < m; j++) {
+									let eachPageElem = eachPage.nodes[j];
+									let transform = 'matrix(1, 0, 0, 1,' + ((eachPage.x - aboutme.settings.parallax.x * 0.5 - aboutme.settings.position.x) * eachPageElem.animateValue) + ',' +
 																											((eachPage.y - aboutme.settings.parallax.y * 0.5 - aboutme.settings.position.y) * eachPageElem.animateValue) + ')';
 									eachPageElem.css.transform = eachPageElem.css.webkitTransform = transform;
 								}
@@ -71,8 +71,8 @@ class aboutme {
 					},
 					// go to next page
 					goto: function() {
-						var hashId = location.hash;
-						for (var i = 0, n = aboutme.settings.pagesObj.length; i < n; i++) {
+						const hashId = location.hash;
+						for (let i = 0, n = aboutme.settings.pagesObj.length; i < n; i++) {
 							if (aboutme.settings.pagesObj[i].id == hashId) {
 								aboutme.settings.prev = aboutme.settings.active;
 								aboutme.settings.active = aboutme.settings.pagesObj[i];
@@ -86,21 +86,22 @@ class aboutme {
 								}
 								aboutme.settings.active.elem.style.visibility = "visible";
 								aboutme.settings.active.visible = true;
+								// only mousemove with aboutme index page
+								(hashId === '#who-i-am') ? aboutme.bind.mousemove() : aboutme.unbind.offmousemove();
 								return;
 							}
 						}
+					},
+					move: function(e) {
+						e.preventDefault();
+						aboutme.settings.pointer.x = e.clientX - aboutme.settings.screen.w * 0.5;
+						aboutme.settings.pointer.y = e.clientY - aboutme.settings.screen.h * 0.5;
 					}
 				},
 				bind: {
 					// window mousemove event
 					mousemove: function() {
-						document.getElementById('parallax').addEventListener("mousemove", function(e) {
-						// window.addEventListener("mousemove", function(e) {
-							// if(e.target.id === 'header' || )
-							e.preventDefault();
-							aboutme.settings.pointer.x = e.clientX - aboutme.settings.screen.w * 0.5;
-							aboutme.settings.pointer.y = e.clientY - aboutme.settings.screen.h * 0.5;
-						}, false);
+						document.getElementById('parallax').addEventListener("mousemove", aboutme.method.move);
 					},
 					// window resize event
 					resize: function() {
@@ -112,6 +113,9 @@ class aboutme {
 					}
 				},
 				unbind: {
+					offmousemove: function() {
+						document.getElementById('parallax').removeEventListener("mousemove", aboutme.method.move);
+					},
 					offhashchange: function() {
 						if(!location.pathname === '/aboutme')
 							window.removeEventListener("hashchange", aboutme.method.goto, false);
@@ -123,11 +127,11 @@ class aboutme {
 					aboutme.bind.resize();
 					aboutme.bind.onhashchange();
 
-					var pages = document.querySelectorAll('.page');
+					const pages = document.querySelectorAll('.page');
 
-					for (var i = 0, n = pages.length; i < n; i++) {
-						var eachPage = pages[i];
-						var eachPageObj = {
+					for (let i = 0, n = pages.length; i < n; i++) {
+						let eachPage = pages[i];
+						let eachPageObj = {
 							elem: eachPage,
 							id: eachPage.id,
 							x: eachPage.offsetLeft,
@@ -139,10 +143,10 @@ class aboutme {
 						eachPage.style.position = 'static';
 
 						//get all elements inside pages to parallax animation
-						var elems = eachPage.getElementsByTagName('*');
+						let elems = eachPage.getElementsByTagName('*');
 
-						for (var j = 0, m = elems.length; j < m; j++) {
-							var eachElem = elems[j];
+						for (let j = 0, m = elems.length; j < m; j++) {
+							let eachElem = elems[j];
 							if (eachElem.className.indexOf('prx') >= 0) {
 								eachPageObj.nodes.push({
 									css: eachElem.style,
@@ -158,7 +162,7 @@ class aboutme {
 					if (location.hash !== '' && location.hash !== "#")
 						aboutme.method.goto(location.hash);
 					else
-						window.location.hash = "#who-i-am";
+						location.hash = "#who-i-am";
 
 					// mobile handle 再想想
 					// if($('html').hasClass('touch'))

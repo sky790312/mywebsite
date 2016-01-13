@@ -5,10 +5,10 @@ class projects {
 
 		// for mywebsite, 暫時先改成這樣.. 未來import export
 		(function($){
-		  var scrolling = false;
-		  var lastPos = 0;
+		  const scrolling = false;
+		  const lastPos = 0;
 
-			var profolio = profolio || {
+			const profolio = profolio || {
 			  $section: $(document.querySelector('#profolios-section')), // 作品集 section
 		    method: {
 		      showProfolios: function(firstProfolio) {
@@ -26,7 +26,7 @@ class projects {
 
 		    	},
 		      closeProfolio: function(thisProfolio) {
-						var mq = window.getComputedStyle(document.querySelector('.profolios-section'), '::before').getPropertyValue('content').replace(/"/g, "").replace(/'/g, ""),
+						const mq = window.getComputedStyle(document.querySelector('.profolios-section'), '::before').getPropertyValue('content').replace(/"/g, "").replace(/'/g, ""),
 								delay = ( mq == 'mobile' ) ? 100 : 0; //check media query
 
 						profolio.$section.removeClass('opening');
@@ -42,19 +42,19 @@ class projects {
 		      },
 					changeOpacity: function() {
 						// change opacity when scroll profolio inside
-						var newOpacity = 1 - (profolio.$section.scrollTop()) / 300;
+						const newOpacity = 1 - (profolio.$section.scrollTop()) / 300;
 						profolio.$section.find('.inside .profolio-outside').css('opacity', newOpacity);
 					},
 		    	throttle: function(fn, threshhold, scope) {
 						// throttle event function
-			      var last,
-			          deferTimer;
+			      let last;
+			      let deferTimer = 0;
 			      // default 250 ms if not setting
 			      threshhold = threshhold || 250;
 			      return function () {
-			        var context = scope || this;
+			        let context = scope || this;
 
-			        var now = +new Date,
+			        let now = +new Date,
 			            args = arguments;
 			        if (last && now < last + threshhold) {
 			          // hold on to it
@@ -83,8 +83,8 @@ class projects {
 							profolio.method.closeProfolio(profolio.$section.find('.inside'));
 						});
 		    	},
-		    	scrolling: function() {
-						// bind profolio section - scrolling
+		    	scroll: function() {
+						// bind profolio section - scroll
 						profolio.$section.on('scroll', profolio.method.throttle(function(e){
 							window.requestAnimationFrame(profolio.method.changeOpacity);
 						}, 150));
@@ -95,7 +95,7 @@ class projects {
 		      profolio.bind.open();
 		      profolio.bind.close();
 		      // profolio.bind.down();
-		      profolio.bind.scrolling();
+		      profolio.bind.scroll();
 					profolio.method.showProfolios(profolio.$section.find('li').eq(0));
 		    },
 		    start: function() {
