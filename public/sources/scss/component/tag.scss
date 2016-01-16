@@ -17,23 +17,23 @@ $tag-text-color: $white;
 }
 .tags .tags-skill {
 	> .tags-left {
-		@include mediaQuires(M) {
+		// @include mediaQuires(M) {
 			top: 8.5em;
-			left: 1em;
-		}
+			left: 2em;
+		// }
 	  @include mediaQuires(L) {
 			top: 7em;
-			left: 6.5em;
+			left: 7.2em;
 		}
 	}
 	> .tags-right {
-		@include mediaQuires(M) {
+		// @include mediaQuires(M) {
 			top: 8.5em;
-			right: 2.8em;
-		}
+			right: 3.5em;
+		// }
 	  @include mediaQuires(L) {
 			top: 7em;
-			right: 9.6em;
+			right: 10.5em;
 		}
 	}
 }
@@ -68,12 +68,12 @@ $tag-text-color: $white;
 	cursor: default;
 	@include border-radius(5px);
 
-	&:hover {
-		background-color: $tag-bg-hover-color;
-		padding: 7px 10px;
-		// font-size: 17px;
-		margin: 3px;
-	}
+	// &:hover {
+	// 	background-color: $tag-bg-hover-color;
+	// 	padding: 7px 10px;
+	// 	// font-size: 17px;
+	// 	margin: 3px;
+	// }
 }
 
 @include keyframes(show-tags) {

@@ -41,7 +41,7 @@ class index {
       $(location).attr('pathname', '/kevinhu');
     }
 
-    let url = $(location).attr('pathname').replace('/', '');
+    let url = $(location).attr('pathname').replace('/', '').toLowerCase();
     this.pageControll.showPage(this.$app.find('#' + url));
     this.$app.find('.' + url).addClass('active');
 
@@ -72,6 +72,11 @@ class index {
       this.pageControll.showPage(this.$app.find('#' + url), ()=> {
         this.pageControll.afterPage(url);
       });
+
+      // hide helper
+      if(this.$app.find('#helper').hasClass('show-helper')){
+        this.helperControll.hideHelper();
+      }
     });
 
     // bind helper

@@ -28,7 +28,6 @@ class projects {
 		      closeProfolio: function(thisProfolio) {
 						const mq = window.getComputedStyle(document.querySelector('.profolios-section'), '::before').getPropertyValue('content').replace(/"/g, "").replace(/'/g, ""),
 								delay = ( mq == 'mobile' ) ? 100 : 0; //check media query
-
 						profolio.$section.removeClass('opening');
 						// fade out this profolio
 						thisProfolio.animate({opacity: 0}, 500, function(){
@@ -74,7 +73,10 @@ class projects {
 		    	open: function() {
 						// bind profolio outside - open
 						profolio.$section.find('.profolio').off('click').on('click', function(){
-							profolio.method.openProfolio($(this));
+							let $this = $(this);
+							if($this.hasClass('inside'))
+								return;
+							profolio.method.openProfolio($this);
 						});
 		    	},
 		    	close: function() {

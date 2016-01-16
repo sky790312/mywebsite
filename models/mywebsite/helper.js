@@ -5,7 +5,7 @@ module.exports = {
     return [
       {
         showEN: "hello, wanna know more !?",
-        showTW: "您好, 想要挖掘更多資訊媽 !?"
+        showTW: "您好, 想要挖掘更多資訊嗎 !?"
       }
     ]
   },

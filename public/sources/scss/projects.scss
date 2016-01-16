@@ -286,17 +286,36 @@ $items: 3; // profolio numbers
 	}
 }
 
+.profolio-down {
+	position: absolute;
+    bottom: 120px;
+    left: 50%;
+    z-index: 1;
+    margin: auto;
+    margin-left: 15px;
+    opacity: 0;
+	@include transition(opacity 0.8s);
+	@include transform(translateX(-50%));
+}
+
+.opening .profolio-down {
+	opacity: 1;
+    // @include animation(show-helper .5s linear infinite);
+}
+
 /*
  * component close
  */
 
 .profolios-section .close-section {
 	padding: 40px 0 20px 0;
+	z-index: 11;
 	text-align: center;
   // text-transform: uppercase;
 }
 .profolios-section .close {
 	position: relative;
+    margin-left: 25px;
   color: $project-close-color;
   opacity: .8;
   &:hover {
@@ -319,4 +338,9 @@ $items: 3; // profolio numbers
  //    right: -12px;
  //    transform: rotate(-45deg)
 	// }
+}
+
+@include keyframes(show-helper) {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
