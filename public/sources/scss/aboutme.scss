@@ -23,7 +23,9 @@ $aboutme-ftitle: $white;
 	background: $aboutme-bg-color;
 	position: absolute;
 	width: 100%;
-	height: 100%;
+	// height: 100%;
+    height: calc(100% - 170px);
+	margin-top: 85px;
 	overflow: hidden;
 	.page {
 		position: absolute;
@@ -71,18 +73,25 @@ $aboutme-ftitle: $white;
 		background-position: center center;
 	  background-size: 100%;
 	}
+	i {
+		color: $white;
+		font-size: 20px;
+	}
 }
 
 .page-family, .page-extroverted, .page-working, .page-introverted, .page-collections {
 	.title {
-		top: 17%;
+		top: 40px;
 		width: 100%;
 		text-align: center;
 	}
 	.desc {
-		top: 27%;
+		top: 100px;
 		left: 15%;
 		width: 70%;
+		@include mediaQuires(ML) {
+			top: 150px;
+		}
 	}
 }
 

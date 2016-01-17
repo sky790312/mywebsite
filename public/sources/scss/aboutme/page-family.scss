@@ -4,29 +4,26 @@
 	left: -100%;
 	top: -100%;
 	.family-img1 {
-		top: 59%;
 		left: 17%;
+		bottom: 60px;
 		width: 19%;
 		height: 15%;
 	  background-image: url($imgsrc + 'aboutme/family-img1.jpg');
 	}
 	.family-img2 {
 		left: 40%;
-		top: 60%;
+		bottom: 60px;
 		width: 34%;
 		height: 14%;
 	  background-image: url($imgsrc + 'aboutme/family-img2.jpg');
 	}
 	.family-goback {
 		left: 77%;
-		top: 70%;
+		bottom: 60px;
 	}
 	@include mediaQuires(ML) {
-		.family-desc {
-			top: 32%;
-		}
 		.family-img1, .family-img2{
-			top: 46%;
+			// top: 46%;
 			height: 41%;
 		}
 	}

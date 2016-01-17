@@ -5,26 +5,27 @@
 	top: 100%;
 	.working-img1 {
 		left: 30%;
-    top: 72%;
+    // top: 72%;
     width: 20%;
     height: 8%;
 	  background-image: url($imgsrc + 'aboutme/working-img1.jpg');
 	}
 	.working-img2 {
     left: 52%;
-    top: 70%;
+    // top: 70%;
+    bottom: 10px;
     width: 20%;
     height: 15%;
 	  background-image: url($imgsrc + 'aboutme/working-img2.jpg');
 	}
 	.working-goback {
-		top: 76%;
-    left: 15%;
+		bottom: 10px;
+    left: 25%;
 	}
 	@include mediaQuires(ML) {
 		.working-title {
 			left: 62%;
-	    top: 15%;
+	    // top: 15%;
 	    width: auto;
 		}
 		.working-desc {
@@ -34,18 +35,18 @@
 		}
 		.working-img1 {
 			left: 12%;
-	    top: 17%;
+	    top: 60px;
 	    width: 28%;
 	    height: 30%;
 		}
 		.working-img2 {
 			left: 57.5%;
-			top: 30%;
+	    	top: 200px;
 			width: 25%;
 			height: 54%;
 		}
 		.working-goback {
-			top: 80%;
+		bottom: 40px;
     	left: 23%;
 		}
 	}

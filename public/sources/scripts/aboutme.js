@@ -87,7 +87,7 @@ class aboutme {
 								aboutme.settings.active.elem.style.visibility = "visible";
 								aboutme.settings.active.visible = true;
 								// only mousemove with aboutme index page
-								(hashId === '#who-i-am') ? aboutme.bind.mousemove() : aboutme.unbind.offmousemove();
+								// (hashId === '#who-i-am') ? aboutme.bind.mousemove() : aboutme.unbind.offmousemove();
 								return;
 							}
 						}
@@ -123,7 +123,8 @@ class aboutme {
 				},
 				init: function() {
 
-					aboutme.bind.mousemove();
+					// thinking..
+					// aboutme.bind.mousemove();
 					aboutme.bind.resize();
 					aboutme.bind.onhashchange();
 

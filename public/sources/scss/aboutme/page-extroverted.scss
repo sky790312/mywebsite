@@ -5,28 +5,24 @@
 	top: -100%;
 	.extroverted-img1 {
 		left: 48%;
-		top: 60%;
+		bottom: 60px;
 		width: 34%;
 		height: 13%;
 	  background-image: url($imgsrc + 'aboutme/extroverted-img1.jpg');
 	}
 	.extroverted-img2 {
-		top: 60%;
 		left: 32%;
+		bottom: 60px;
 		width: 13%;
 		height: 13%;
 	  background-image: url($imgsrc + 'aboutme/extroverted-img2.jpg');
 	}
 	.extroverted-goback {
-		left: 18%;
-		top: 69%;
+		left: 15%;
+		bottom: 60px;
 	}
 	@include mediaQuires(ML) {
-		.extroverted-desc {
-			top: 32%;
-		}
 		.extroverted-img1, .extroverted-img2{
-			top: 50%;
 			height: 37%;
 		}
 	}

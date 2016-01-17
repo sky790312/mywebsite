@@ -18,18 +18,18 @@
 		background-image: url($imgsrc + 'aboutme/introverted-img2.jpg');
 	}
 	.go-collections {
-		top: 80%;
-		width: 100%;
+		bottom: 60px;
+		left: 20%;
 		text-align: center;
 	}
 	.introverted-goback {
-		top: 72%;
-    left: 72%;
+		bottom: 60px;
+    left: 60%;
 	}
 	@include mediaQuires(ML) {
 		.introverted-title {
 			width: auto;
-			top: 20%;
+			top: 40px;
 			left: 12%;
 		}
 		.introverted-desc {
@@ -41,22 +41,19 @@
 	    width: 28%;
 	    height: 34%;
 	    left: 58%;
-	    top: 15%;
+		top: 60px;
 		}
 		.introverted-img2 {
 			width: 32%;
 	    height: 51%;
 	    left: 8%;
-	    top: 35%;
+	    top: 200px;
 		}
 		.go-collections {
-			width: auto;
 			left: 53%;
-			top: 78%;
 		}
 		.introverted-goback {
 			left: 78%;
-			top: 78%;
 		}
 	}
 }
