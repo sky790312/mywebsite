@@ -24,6 +24,9 @@ class index {
 
     this.init();
     this.eventListener();
+
+    window.app.loading = 100;
+    // console.log(window.app.loading)
   }
 
   /*
@@ -53,7 +56,7 @@ class index {
     this.helperControll.setLanguage(this.utils.getCookie('lg'));
 
     // ready and show
-    this.$app.find('#helper-background').addClass('hide');
+    // this.$app.find('#helper-background').addClass('hide');
   }
 
   /*
@@ -108,6 +111,5 @@ class index {
     // });
   }
 }
-
 
 export default index;

@@ -3,6 +3,8 @@
 // show page => after page => start page
 class utils {
   constructor() {
+    window.app.loading = 25;
+    // console.log(window.app.loading)
   }
 
   // set cookie
@@ -36,5 +38,15 @@ class utils {
   }
 
 }
+
+// var everythingLoaded = setInterval(function() {
+//  console.log(document.readyState);
+//  // console.log(window.app.loading);
+//   if (/loaded|complete/.test(document.readyState)) {
+//     clearInterval(everythingLoaded);
+//     $('#helper-background').addClass('hide');
+//     // init(); // this is the function that gets called when everything is loaded
+//   }
+// }, 10);
 
 export default utils;

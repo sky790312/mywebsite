@@ -11,6 +11,9 @@ class helperControll {
     this.$app.find('.fb-close').off('click').on('click', ()=>{
       this.$app.find('#helper').removeClass('show-board');
     });
+
+    window.app.loading = 75;
+    // console.log(window.app.loading)
   }
 
   // show helper

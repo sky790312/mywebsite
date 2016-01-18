@@ -6,7 +6,10 @@ import aboutmeJs from '../scripts/aboutme.js';
 // show page => after page => start page
 class pageControll {
   constructor($app) {
-      this.$app = $app;
+    this.$app = $app;
+
+    window.app.loading = 50;
+    // console.log(window.app.loading)
   }
 
   // click and change page
