@@ -43,12 +43,12 @@
     var checkState = setInterval(function() {
       var jsloaded, fbLoaded;
       // js loaded then show
-      if (window.app.loading === 100) {
+      if (window.app.loading === 100 && !jsloaded) {
         jsloaded = true;
         document.getElementById("helper-background").className += " hide";
       }
       // all ready then load fb
-      if (/loaded|complete/.test(document.readyState)) {
+      if (/loaded|complete/.test(document.readyState) && !fbLoaded) {
         var d = document;
         var s = 'script';
         var id = 'facebook-jssdk';
