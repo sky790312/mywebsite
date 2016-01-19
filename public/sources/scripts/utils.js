@@ -37,6 +37,17 @@ class utils {
     return "";
   }
 
+  // fb init
+  initFb() {
+    var d = document;
+    var s = 'script';
+    var id = 'facebook-jssdk';
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = '//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.5&appId=808398882620079';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
 }
 
 // var everythingLoaded = setInterval(function() {

@@ -38,30 +38,13 @@
   <meta property="og:image"         content="http://www.sky790312.tk/images/fb-me.jpg">
   <link rel="stylesheet" href="/css/mywebsite.css">
   <script>
-    // loaded fb is out controll, maybe click helper trigger fb loading is better
+    // js loaded check
     window.app = {};
     var checkState = setInterval(function() {
-      var jsloaded, fbLoaded;
-      // js loaded then show
-      if (window.app.loading === 100 && !jsloaded) {
-        jsloaded = true;
-        document.getElementById("helper-background").className += " hide";
-      }
-      // all ready then load fb
-      if (/loaded|complete/.test(document.readyState) && !fbLoaded) {
-        var d = document;
-        var s = 'script';
-        var id = 'facebook-jssdk';
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = '//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.5&appId=808398882620079';
-        fjs.parentNode.insertBefore(js, fjs);
-
-        fbLoaded = true;
-      }
-      if(jsloaded && fbLoaded)
+      if (window.app.loading === 100) {
+        document.getElementById("helper-background").className += "hide";
         clearInterval(checkState);
+      }
     }, 10);
   </script>
 </head>

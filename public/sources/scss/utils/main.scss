@@ -118,6 +118,10 @@ body {
 .show {
   display: block!important;
 }
+
+.hide-scroll {
+  overflow-y: hidden;
+}
 // .pull-left {
 //   float: left;
 // }

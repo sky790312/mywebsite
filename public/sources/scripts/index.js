@@ -83,7 +83,7 @@ class index {
     });
 
     // bind helper
-    this.helperControll.bindHelper();
+    // this.helperControll.bindHelper();
 
     // bind helper menu
     this.$app.find('.helper-menu .menu-item').each((i, e) =>{

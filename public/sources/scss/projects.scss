@@ -317,6 +317,7 @@ $items: 3; // profolio numbers
 	position: relative;
     margin-left: 25px;
   color: $project-close-color;
+  cursor: pointer;
   opacity: .8;
   &:hover {
   	opacity: 1;

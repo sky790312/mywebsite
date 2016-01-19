@@ -34,19 +34,30 @@ $msg-board-bkg-color: ghostwhite;
   > .fb-comments {
     width: 100%;
   }
-  > .fb-like, .fb-close {
+  .like-section, .close-section {
     position: fixed;
-    right: 10%;
+    left: 50%;
     z-index: 1;
-    opacity: 0;
+    display: none;
+    @include transform(translateX(-50%));
+    > div {
+      float: right;
+    }
   }
-  > .fb-like {
-    bottom: 180px;
-    border: 1px solid black;
+  > .like-section {
+    bottom: 105px;
   }
-  > .fb-close {
-    bottom: 120px;
+  > .close-section {
+    bottom: 220px;
+  }
+  .fb-like {
+    padding: 20px 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  .fb-close {
     > a {
+      cursor: pointer;
       color: $light-blue;
       &:hover {
         color: $light-blue2;
@@ -190,8 +201,8 @@ $msg-board-bkg-color: ghostwhite;
   .head-boy, .help-desc {
     opacity: 0;
   }
-  .fb-like, .fb-close {
-    opacity: 1;
+  .like-section, .close-section {
+    display: block;
   }
 }
 

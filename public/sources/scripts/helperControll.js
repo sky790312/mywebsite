@@ -8,9 +8,8 @@ class helperControll {
     this.$app = $app;
     this.utils = new utilsJs();
 
-    this.$app.find('.fb-close').off('click').on('click', ()=>{
-      this.$app.find('#helper').removeClass('show-board');
-    });
+    this.bindHelper();
+    this.bindBoard();
 
     window.app.loading = 75;
     // console.log(window.app.loading)
@@ -21,14 +20,28 @@ class helperControll {
     this.$app.find('#helper-background').removeClass('hide');
     this.$app.find('#helper').addClass('show-helper');
   }
-
   // hide helper
   hideHelper() {
     this.$app.find('#helper-background').addClass('hide');
     this.$app.find('#helper').removeClass('show-helper');
   }
-
-  // helper
+  // show board
+  showBoard() {
+    this.$app.addClass('hide-scroll');
+    this.$app.find('#helper').addClass('show-board');
+  }
+  // hide board
+  hideBoard() {
+    this.$app.removeClass('hide-scroll');
+    this.$app.find('#helper').removeClass('show-board');
+  }
+  // bind board close
+  bindBoard() {
+    this.$app.find('.fb-close').off('click').on('click', ()=>{
+      this.hideBoard();
+    });
+  }
+  // bind helper
   bindHelper() {
     let $helper = this.$app.find('#helper');
     $helper.find('.head-boy').off('click').on('click', ()=>{
@@ -37,8 +50,7 @@ class helperControll {
       ($helper.hasClass('show-helper') ? this.hideHelper() : this.showHelper());
     });
   }
-
-  // helper menu
+  // bind helper menu
   bindHelperMenu(triggerValue) {
     let $triggerMenu = this.$app.find('#' + triggerValue);
 
@@ -54,7 +66,18 @@ class helperControll {
           this.hideHelper();
           break;
         case 'msgboard':
-          this.$app.find('#helper').addClass('show-board');
+          if (typeof FB === 'undefined') {
+            this.utils.initFb();
+
+            let fbCheck = setInterval(()=>{
+                if (typeof FB !== 'undefined' && !$('.fb-like').is(':empty') && !$('.fb-comments').is(':empty')) {
+                  this.showBoard();
+                  clearInterval(fbCheck);
+                }
+            }, 100);
+          } else {
+            this.showBoard();
+          }
           break;
         case 'cv':
           window.open('cv-english.pdf');
