@@ -76,25 +76,20 @@ class index {
         this.pageControll.afterPage(url);
       });
 
-      // hide helper
+      // hide helper if showing
       if(this.$app.find('#helper').hasClass('show-helper')){
         this.helperControll.hideHelper();
       }
     });
 
-    // bind helper
-    // this.helperControll.bindHelper();
-
-    // bind helper menu
-    this.$app.find('.helper-menu .menu-item').each((i, e) =>{
-      this.helperControll.bindHelperMenu($(e).prop('id'));
-    });
-
-    // bind page menu
-    this.pageControll.bindPage($goIndex.data('menu'));
-    this.$app.find('.menu a').each((i, e) =>{
-      this.pageControll.bindPage($(e).data('menu'));
-    });
+    // bind page - pageControll
+    this.pageControll.bindPage();
+    // bind helper - helperControll
+    this.helperControll.bindHelper();
+    // bind helper menu - helperControll
+    this.helperControll.bindHelperMenu();
+    // bind helper msg board - helperControll
+    this.helperControll.bindMsgBoard();
 
     // change photo title
     // $indexSection.off('click').on('click','.photo', (e)=> {

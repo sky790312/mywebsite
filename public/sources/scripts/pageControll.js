@@ -8,17 +8,21 @@ class pageControll {
   constructor($app) {
     this.$app = $app;
 
+    // bind event - all move to index.js controll
+    // this.bindPage();
+
     window.app.loading = 50;
     // console.log(window.app.loading)
   }
 
   // click and change page
-  bindPage(triggerValue) {
-    let $triggerSection = this.$app.find('#' + triggerValue);
-    let $triggerMenu = this.$app.find('.' + triggerValue);
+  bindPage() {
+    this.$app.find('#header').on('click', '.main-menu', (e)=>{
+      let $ele = $(e.target);
+      let triggerValue = $ele.data('menu');
+      let $triggerSection = this.$app.find('#' + triggerValue);
 
-    $triggerMenu.off('click').on('click', ()=>{
-      if($triggerMenu.hasClass('active')){
+      if($ele.hasClass('active')){
         return;
       }
 
@@ -30,9 +34,9 @@ class pageControll {
 
       this.afterPage(triggerValue);
 
-      if (typeof callback === 'function') {
-        callback();
-      }
+      // if (typeof callback === 'function') {
+      //   callback();
+      // }
     });
   }
 

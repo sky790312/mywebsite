@@ -8,8 +8,10 @@ class helperControll {
     this.$app = $app;
     this.utils = new utilsJs();
 
-    this.bindHelper();
-    this.bindBoard();
+    // bind event - all move to index.js controll
+    // this.bindHelper();
+    // this.bindBoard();
+    // this.bindHelperMenu();
 
     window.app.loading = 75;
     // console.log(window.app.loading)
@@ -26,19 +28,19 @@ class helperControll {
     this.$app.find('#helper').removeClass('show-helper');
   }
   // show board
-  showBoard() {
+  showMsgBoard() {
     this.$app.addClass('hide-scroll');
     this.$app.find('#helper').addClass('show-board');
   }
   // hide board
-  hideBoard() {
+  hideMsgBoard() {
     this.$app.removeClass('hide-scroll');
     this.$app.find('#helper').removeClass('show-board');
   }
   // bind board close
-  bindBoard() {
+  bindMsgBoard() {
     this.$app.find('.fb-close').off('click').on('click', ()=>{
-      this.hideBoard();
+      this.hideMsgBoard();
     });
   }
   // bind helper
@@ -51,13 +53,12 @@ class helperControll {
     });
   }
   // bind helper menu
-  bindHelperMenu(triggerValue) {
-    let $triggerMenu = this.$app.find('#' + triggerValue);
-
-    $triggerMenu.off('click').on('click', (e)=>{
-      if($triggerMenu.hasClass('padding') || $triggerMenu.hasClass('disabled'))
+  bindHelperMenu() {
+    this.$app.find('.helper-menu').off('click').on('click', '.menu-item', (e)=>{
+      let $ele = $(e.target.parentNode);
+      if($ele.hasClass('padding') || $ele.hasClass('disabled'))
         return;
-      switch (triggerValue) {
+      switch ($ele.attr('id')) {
         default:
           break;
         case 'lang':
@@ -71,12 +72,12 @@ class helperControll {
 
             let fbCheck = setInterval(()=>{
                 if (typeof FB !== 'undefined' && !$('.fb-like').is(':empty') && !$('.fb-comments').is(':empty')) {
-                  this.showBoard();
+                  this.showMsgBoard();
                   clearInterval(fbCheck);
                 }
             }, 100);
           } else {
-            this.showBoard();
+            this.showMsgBoard();
           }
           break;
         case 'cv':
@@ -92,11 +93,6 @@ class helperControll {
       let $ele = $(e);
       (lang === 'en') ? $ele.html($ele.data('en')) : $ele.html($ele.data('tw'));
     });
-  }
-
-  //helper menu - show fb comments board
-  showCommentsBoard() {
-
   }
 }
 
