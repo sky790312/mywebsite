@@ -2,7 +2,7 @@
 
 // show page => after page => start page
 class utils {
-  constructor() {
+  constructor(window) {
     window.app.loading = 25;
     // console.log(window.app.loading)
   }

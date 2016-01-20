@@ -1,7 +1,7 @@
 'use strict';
 
 class aboutme {
-  constructor() {
+  constructor(window) {
 
 		(function(){
 			const aboutme = aboutme || {

@@ -5,7 +5,7 @@ import aboutmeJs from '../scripts/aboutme.js';
 
 // show page => after page => start page
 class pageControll {
-  constructor($app) {
+  constructor($app, window) {
     this.$app = $app;
 
     // bind event - all move to index.js controll
@@ -80,7 +80,7 @@ class pageControll {
         if(window.app.projects) {
           window.app.projects.start();
         } else {
-          new projectJs();
+          new projectJs(window);
           // dynamicLoading('projects');
         }
         break;
@@ -90,7 +90,7 @@ class pageControll {
           window.app.aboutme.method.run();
           window.app.aboutme.bind.onhashchange();
         } else {
-          new aboutmeJs();
+          new aboutmeJs(window);
           // dynamicLoading('aboutme');
         }
         break;

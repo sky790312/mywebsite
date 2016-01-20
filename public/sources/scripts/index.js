@@ -9,7 +9,7 @@ import helperJs from '../scripts/helperControll.js';
 // window.app = {};
 
 class index {
-  constructor($ele) {
+  constructor($ele, window) {
 
     // this.state = {
     //   prevPage: '',
@@ -18,9 +18,9 @@ class index {
 
     this.$app = $ele;
 
-    this.utils = new utilsJs();
-    this.pageControll = new pageJs(this.$app);
-    this.helperControll = new helperJs(this.$app);
+    this.utils = new utilsJs(window);
+    this.pageControll = new pageJs(this.$app, window);
+    this.helperControll = new helperJs(this.$app, window);
 
     this.init();
     this.eventListener();
@@ -40,11 +40,11 @@ class index {
 
     // });
 
-    if($(location).attr('pathname') === '/') {
-      $(location).attr('pathname', '/kevinhu');
+    if($(window.location).attr('pathname') === '/') {
+      $(window.location).attr('pathname', '/kevinhu');
     }
 
-    let url = $(location).attr('pathname').replace('/', '').toLowerCase();
+    let url = $(window.location).attr('pathname').replace('/', '').toLowerCase();
     this.pageControll.showPage(this.$app.find('#' + url));
     this.$app.find('.' + url).addClass('active');
 
@@ -70,7 +70,7 @@ class index {
     // history listen
     $(window).on('popstate', ()=>{
       let url = history.state ?
-        history.state.page : $(location).attr('pathname').replace('/', '').toLowerCase();
+        history.state.page : $(window.location).attr('pathname').replace('/', '').toLowerCase();
 
       this.pageControll.showPage(this.$app.find('#' + url), ()=> {
         this.pageControll.afterPage(url);

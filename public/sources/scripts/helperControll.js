@@ -4,9 +4,9 @@ import utilsJs from '../scripts/utils.js';
 
 // show page => after page => start page
 class helperControll {
-  constructor($app) {
+  constructor($app, window) {
     this.$app = $app;
-    this.utils = new utilsJs();
+    this.utils = new utilsJs(window);
 
     // bind event - all move to index.js controll
     // this.bindHelper();

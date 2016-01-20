@@ -10,7 +10,7 @@ import index from '../scripts/index.js';
 
 window.index = index;
 
-new index($('#app'));
+new index($('#app'), window);
 
 // style console
 let consoleText = "welcome to KevinHu's website!";
