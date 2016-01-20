@@ -145,7 +145,7 @@ $photo-outer-color: 0 0 0 0.8em rgba(255, 255, 255, 0.5);
 }
 @include keyframes(typing) {
     from {width: 0;}
-    to {width: 360px;}
+    to {width: 330px;}
 }
 @include keyframes(typing-underline) {
     from {opacity: 0;}

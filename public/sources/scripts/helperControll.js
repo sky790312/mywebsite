@@ -7,7 +7,11 @@ class helperControll {
   constructor($app, window) {
     this.$app = $app;
     this.utils = new utilsJs(window);
+    this.clicked = this.utils.getCookie('clicked') || 0;
 
+    if(this.clicked) {
+      this.$app.find('.remind-click').addClass('hide');
+    }
     // bind event - all move to index.js controll
     // this.bindHelper();
     // this.bindBoard();
@@ -49,13 +53,19 @@ class helperControll {
     $helper.find('.head-boy').off('click').on('click', ()=>{
       // if($helper.hasClass('show-board'))
         // return;
+      if(!this.clicked) {
+        this.clicked = 1;
+        this.utils.setCookie('clicked', this.clicked);
+        $helper.find('.remind-click').addClass('hide');
+      }
       ($helper.hasClass('show-helper') ? this.hideHelper() : this.showHelper());
     });
   }
   // bind helper menu
   bindHelperMenu() {
     this.$app.find('.helper-menu').off('click').on('click', '.menu-item', (e)=>{
-      let $ele = $(e.target.parentNode);
+      let $ele = (e.target.classList.contains('lg')) ? $(e.target.parentNode) : $(e.target);
+
       if($ele.hasClass('padding') || $ele.hasClass('disabled'))
         return;
       switch ($ele.attr('id')) {

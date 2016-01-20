@@ -1,5 +1,6 @@
 /* component - head-boy */
 
+$remind-color: $dark-gray;
 $head-boy-color: $dark-gray;
 $head-boy-eyes-color: $light-gray2;
 $head-boy-feets-color: $light-gray2;
@@ -111,6 +112,19 @@ $msg-board-bkg-color: ghostwhite;
   &:hover {
     margin-bottom: 10px;
   }
+  > .remind-click {
+    width: 85px;
+    text-align: center;
+    color: $remind-color;
+    font-size: 20px;
+    padding-bottom: 30px;
+    @include animation(remind 1.5s infinite);
+    &:before {
+      position: absolute;
+      left: 50%;
+      margin: 20px 0 0 -6px;
+    }
+  }
   > .head {
     position: relative;
     width: 85px;
@@ -216,6 +230,11 @@ $msg-board-bkg-color: ghostwhite;
 //   background-color: blue;
 // }
 
+@include keyframes(remind) {
+   0% { margin-bottom: 3px;}
+   50% { margin-bottom: -3px;}
+  100% { margin-bottom: 3px;}
+}
 @include keyframes(head) {
    0% { top: 3px;}
    50% { top: -3px;}
