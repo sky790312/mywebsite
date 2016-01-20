@@ -64,10 +64,8 @@ class pageControll {
       window.app.aboutme.method.stop();
       window.app.aboutme.unbind.offhashchange();
     }
-    this.$app.find('.kevinhu').removeClass('active');
-    this.$app.find('.menu a').removeClass('active');
-    this.$app.find('.menu-list a').removeClass('active');
 
+    this.$app.find('.main-menu').removeClass('active');
     $ele.addClass('active');
 
     this.startPage(page);

@@ -13,16 +13,20 @@ module.exports = {
   menu: function() {
     return [
       {
-        showEN: "projects",
+        menu:   "projects",
+        showEN: "Projects",
         showTW: "作品集"
       }, {
-        showEN: "aboutme",
+        menu:   "aboutme",
+        showEN: "About",
         showTW: "關於我"
       }, {
-        showEN: "background",
+        menu:   "background",
+        showEN: "Background",
         showTW: "學經歷"
       }, {
-        showEN: "skills",
+        menu:   "skills",
+        showEN: "Skills",
         showTW: "職技能"
       }
     ];

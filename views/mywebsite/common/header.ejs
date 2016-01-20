@@ -1,10 +1,10 @@
 <header id="header">
   <div class="container clearfix">
-    <h1 class="<%= menuObj.name()[0].menu %> lg main-menu" data-menu="kevinhu" data-en="<%= menuObj.name()[0].showEN %>" data-tw="<%= menuObj.name()[0].showTW %>"></h1>
+    <h1 class="<%= menuObj.name()[0].menu %> lg main-menu" data-menu="<%= menuObj.name()[0].menu %>" data-en="<%= menuObj.name()[0].showEN %>" data-tw="<%= menuObj.name()[0].showTW %>"></h1>
     <div class="menu-assemble">
       <ul class="menu">
         <% for( var i = 0; i < menuObj.menu().length; i++) { %>
-          <li><a class="<%= menuObj.menu()[i].showEN %> lg main-menu" data-menu="<%= menuObj.menu()[i].showEN %>" data-en="<%= menuObj.menu()[i].showEN %>" data-tw="<%= menuObj.menu()[i].showTW %>"></a></li>
+          <li><a class="<%= menuObj.menu()[i].menu %> lg main-menu" data-menu="<%= menuObj.menu()[i].menu %>" data-en="<%= menuObj.menu()[i].showEN %>" data-tw="<%= menuObj.menu()[i].showTW %>"></a></li>
         <% } %>
       </ul>
       <div class="mobile-menu">
@@ -17,7 +17,7 @@
             <div class="menu-list">
               <ul>
                 <% for( var i = 0; i < menuObj.menu().length; i++) { %>
-                  <li><a class="<%= menuObj.menu()[i].showEN %> lg main-menu" data-menu="<%= menuObj.menu()[i].showEN %>" data-en="<%= menuObj.menu()[i].showEN %>" data-tw="<%= menuObj.menu()[i].showTW %>"></a></li>
+                  <li><a class="<%= menuObj.menu()[i].menu %> lg main-menu" data-menu="<%= menuObj.menu()[i].menu %>" data-en="<%= menuObj.menu()[i].showEN %>" data-tw="<%= menuObj.menu()[i].showTW %>"></a></li>
                 <% } %>
               </ul>
             </div>

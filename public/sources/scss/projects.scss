@@ -300,7 +300,9 @@ $items: 3; // profolio numbers
 
 .opening .profolio-down {
 	opacity: 1;
-    // @include animation(show-helper .5s linear infinite);
+    @include animation(remind-down .8s linear infinite);
+    @include animation-iteration-count(2);
+    @include animation-fill-mode(forwards);
 }
 
 /*
@@ -341,7 +343,8 @@ $items: 3; // profolio numbers
 	// }
 }
 
-@include keyframes(show-helper) {
-  from {opacity: 0;}
-  to {opacity: 1;}
+@include keyframes(remind-down) {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
 }
