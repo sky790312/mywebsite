@@ -64,13 +64,13 @@ class index {
    */
 
   eventListener() {
-    const $indexSection = this.$app.find('#kevinhu');
-    const $goIndex = this.$app.find('.kevinhu');
+    // const $indexSection = this.$app.find('#kevinhu');
+    // const $goIndex = this.$app.find('.kevinhu');
 
     // history listen
     $(window).on('popstate', ()=>{
       let url = history.state ?
-        history.state.page : $(location).attr('pathname').replace('/', '');
+        history.state.page : $(location).attr('pathname').replace('/', '').toLowerCase();
 
       this.pageControll.showPage(this.$app.find('#' + url), ()=> {
         this.pageControll.afterPage(url);

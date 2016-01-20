@@ -69,7 +69,6 @@ class helperControll {
         case 'msgboard':
           if (typeof FB === 'undefined') {
             this.utils.initFb();
-
             let fbCheck = setInterval(()=>{
                 if (typeof FB !== 'undefined' && !$('.fb-like').is(':empty') && !$('.fb-comments').is(':empty')) {
                   this.showMsgBoard();

@@ -99,7 +99,7 @@ $msg-board-bkg-color: ghostwhite;
   margin: 85px 0 0 -150px;
   text-align: center;
   color: white;
-  opacity: 0;
+  display: none;
 }
 
 .head-boy {
@@ -165,7 +165,7 @@ $msg-board-bkg-color: ghostwhite;
     right: 10%;
   }
   .help-desc {
-    opacity: 1;
+    display: block;
   }
   .head-boy {
     position: fixed;
@@ -198,13 +198,23 @@ $msg-board-bkg-color: ghostwhite;
   //   cursor: default;
   //   @include animation(show-helper 2s linear);
   // }
-  .head-boy, .help-desc {
+  .head-boy {
     opacity: 0;
+  }
+  .help-desc {
+    display: none;
   }
   .like-section, .close-section {
     display: block;
   }
 }
+
+// #loading-state {
+//   position: fixed;
+//   height: 1px;
+//   bottom: 85px;
+//   background-color: blue;
+// }
 
 @include keyframes(head) {
    0% { top: 3px;}

@@ -61,11 +61,6 @@ if ('development' == env) {
     app.use(errorhandler());
 }
 
-app.get('/robots.txt', function(req, res){
-    res.sendfile('public/assets/robots.txt');
-});
-// -- end robots.txt
-
 
 // ******************************************************************************************************
 

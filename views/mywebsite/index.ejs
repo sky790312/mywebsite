@@ -41,8 +41,10 @@
     // js loaded check
     window.app = {};
     var checkState = setInterval(function() {
+      // document.getElementById("loading-state").style.width = window.app.loading + '%';
       if (window.app.loading === 100) {
-        document.getElementById("helper-background").className += "hide";
+        // document.getElementById("loading-state").style.display = 'none';
+        document.getElementById("helper-background").className += 'hide';
         clearInterval(checkState);
       }
     }, 10);
