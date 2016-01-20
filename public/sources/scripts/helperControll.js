@@ -68,11 +68,19 @@ class helperControll {
           break;
         case 'msgboard':
           if (typeof FB === 'undefined') {
+            // loading
+            //
             this.utils.initFb();
             let fbCheck = setInterval(()=>{
-                if (typeof FB !== 'undefined' && !$('.fb-like').is(':empty') && !$('.fb-comments').is(':empty')) {
-                  this.showMsgBoard();
-                  clearInterval(fbCheck);
+                if (typeof FB !== 'undefined' && !this.$app.find('.fb-like').is(':empty') && !this.$app.find('.fb-comments').is(':empty')) {
+                  let $commentsContent = this.$app.find('.fb-comments iframe');
+                  console.log($commentsContent.contents().find('._5nz1').length)
+                  // if(this.$app.find('._5nz1').length){
+                    this.showMsgBoard();
+                    clearInterval(fbCheck);
+                    // cancel loading
+                    //
+                  // }
                 }
             }, 100);
           } else {
