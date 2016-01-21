@@ -51,8 +51,8 @@ class helperControll {
   bindHelper() {
     let $helper = this.$app.find('#helper');
     $helper.find('.head-boy').off('click').on('click', ()=>{
-      // if($helper.hasClass('show-board'))
-        // return;
+      if($helper.hasClass('loading'))
+        return;
       if(!this.clicked) {
         this.clicked = 1;
         this.utils.setCookie('clicked', this.clicked);
@@ -63,7 +63,8 @@ class helperControll {
   }
   // bind helper menu
   bindHelperMenu() {
-    this.$app.find('.helper-menu').off('click').on('click', '.menu-item', (e)=>{
+    let $helper = this.$app.find('#helper');
+    $helper.find('.helper-menu').off('click').on('click', '.menu-item', (e)=>{
       let $ele = (e.target.classList.contains('lg')) ? $(e.target.parentNode) : $(e.target);
 
       if($ele.hasClass('padding') || $ele.hasClass('disabled'))
@@ -79,20 +80,29 @@ class helperControll {
         case 'msgboard':
           if (typeof FB === 'undefined') {
             // loading
-            //
+            let percentage = 0;
+            $helper.addClass('loading');
+            $helper.find('.menu-item').addClass('disabled');
+
             this.utils.initFb();
-            let fbCheck = setInterval(()=>{
-                if (typeof FB !== 'undefined' && !this.$app.find('.fb-like').is(':empty') && !this.$app.find('.fb-comments').is(':empty')) {
-                  let $commentsContent = this.$app.find('.fb-comments iframe');
-                  console.log($commentsContent.contents().find('._5nz1').length)
-                  // if(this.$app.find('._5nz1').length){
-                    this.showMsgBoard();
-                    clearInterval(fbCheck);
+
+            let loadingCheck = setInterval(()=>{
+              if(percentage < 100){
+                percentage += 20;
+              }
+              if (percentage === 100 && typeof FB !== 'undefined' &&
+                  !$helper.find('.fb-like').is(':empty') && !$helper.find('.fb-comments').is(':empty')) {
+                  setTimeout(()=>{
                     // cancel loading
-                    //
-                  // }
-                }
-            }, 100);
+                    this.showMsgBoard();
+                    this.$app.find("#loading-state").addClass('hide');
+                    $helper.removeClass('loading');
+                    $helper.find('.menu-item').removeClass('disabled');
+                    clearInterval(loadingCheck);
+                  }, 1000);
+              }
+              this.$app.find("#loading-state").css('width', percentage + '%');
+            }, 50);
           } else {
             this.showMsgBoard();
           }

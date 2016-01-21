@@ -168,7 +168,9 @@ $msg-board-bkg-color: ghostwhite;
   }
 }
 
-
+#helper.loading .head-boy {
+  cursor: default;
+}
 
 // show helper
 .show-helper {
@@ -223,12 +225,14 @@ $msg-board-bkg-color: ghostwhite;
   }
 }
 
-// #loading-state {
-//   position: fixed;
-//   height: 1px;
-//   bottom: 85px;
-//   background-color: blue;
-// }
+#loading-state {
+  position: fixed;
+  height: 1px;
+  bottom: 85px;
+  z-index: 12;
+  background-color: $white;
+  @include transition(width .5s linear);
+}
 
 @include keyframes(remind) {
    0% { margin-bottom: 3px;}
