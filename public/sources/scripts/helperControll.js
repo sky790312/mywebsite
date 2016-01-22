@@ -1,6 +1,7 @@
 'use strict';
 
 import utilsJs from '../scripts/utils.js';
+import keyboardsJs from '../scripts/keyControll.js';
 
 // show page => after page => start page
 class helperControll {
@@ -8,6 +9,8 @@ class helperControll {
     this.$app = $app;
     this.utils = new utilsJs(window);
     this.clicked = this.utils.getCookie('clicked') || 0;
+
+    new keyboardsJs();
 
     if(this.clicked) {
       this.$app.find('.remind-click').addClass('hide');
@@ -19,33 +22,6 @@ class helperControll {
 
     window.app.loading = 75;
     // console.log(window.app.loading)
-  }
-
-  // show helper
-  showHelper() {
-    this.$app.find('#helper-background').removeClass('hide');
-    this.$app.find('#helper').addClass('show-helper');
-  }
-  // hide helper
-  hideHelper() {
-    this.$app.find('#helper-background').addClass('hide');
-    this.$app.find('#helper').removeClass('show-helper');
-  }
-  // show board
-  showMsgBoard() {
-    this.$app.addClass('hide-scroll');
-    this.$app.find('#helper').addClass('show-board');
-  }
-  // hide board
-  hideMsgBoard() {
-    this.$app.removeClass('hide-scroll');
-    this.$app.find('#helper').removeClass('show-board');
-  }
-  // bind board close
-  bindMsgBoard() {
-    this.$app.find('.fb-close').off('click').on('click', ()=>{
-      this.hideMsgBoard();
-    });
   }
   // bind helper
   bindHelper() {
@@ -113,13 +89,46 @@ class helperControll {
       }
     });
   }
-
+  // bind msg board close
+  bindMsgBoard() {
+    this.$app.find('.fb-close').off('click').on('click', ()=>{
+      this.hideMsgBoard();
+    });
+  }
+  // bind key press
+  bindKeypress() {
+    // if(!this.$app.find('#helper').hasClass('show-helper'))
+  }
+  // show helper
+  showHelper() {
+    this.$app.find('#helper-background').removeClass('hide');
+    this.$app.find('#helper').addClass('show-helper');
+  }
+  // hide helper
+  hideHelper() {
+    this.$app.find('#helper-background').addClass('hide');
+    this.$app.find('#helper').removeClass('show-helper');
+  }
+  // show board
+  showMsgBoard() {
+    this.$app.addClass('hide-scroll');
+    this.$app.find('#helper').addClass('show-board');
+  }
+  // hide board
+  hideMsgBoard() {
+    this.$app.removeClass('hide-scroll');
+    this.$app.find('#helper').removeClass('show-board');
+  }
   // helper menu - set language
   setLanguage(lang) {
     this.$app.find('.lg').each((i, e) =>{
       let $ele = $(e);
       (lang === 'en') ? $ele.html($ele.data('en')) : $ele.html($ele.data('tw'));
     });
+  }
+  // keypress checking
+  keypressCheck() {
+
   }
 }
 

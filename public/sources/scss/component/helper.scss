@@ -234,6 +234,55 @@ $msg-board-bkg-color: ghostwhite;
   @include transition(width .5s linear);
 }
 
+
+/**
+ * Mario CSS - external
+ * https://cdn.rawgit.com/elzii/3a471d1863167c1fce69/raw/53e93e1a757b612bbffb084ba688c8730704968f/mario.css
+ */ 
+
+/**
+ * Centering
+ */
+.translate-center {
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0); 
+}
+.text-center {
+  text-align: center;
+}
+
+
+/**
+ * Key
+ * Unicode + css to look like keyboard key
+ */
+.key {
+  display: inline-block;
+  width:44px;height:40px;
+  background-color: #f5f5f5;
+  padding: 5px 9px 7px 9px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  font-size: 18px;
+  color:#1c1c1c;
+  text-align: center;
+  margin-right:5px;
+}
+.key.alt {
+  width:auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.key.active {
+  background-color: #444;
+  color:white;
+  border-color: #1c1c1c;
+}
+
+
 @include keyframes(remind) {
    0% { margin-bottom: 3px;}
    50% { margin-bottom: -3px;}
