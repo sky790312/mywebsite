@@ -5,7 +5,7 @@ class keyboards {
 
     var keyControll = {
 
-      secret : '3840373932', //success code
+      secret : [38, 40, 37, 39, 32],
       input  : '',
       keys    : document.querySelectorAll('.key'),
       keyIndex  : 0,
@@ -17,12 +17,14 @@ class keyboards {
 
       // key checking
       keyCheck : function() {
-        var _this = this;
+        let _this = this;
 
         document.addEventListener('keyup', function (event) {
-          _this.input += event.which;
+          if(event.which !== _this.secret[_this.keyIndex])
+            return;
+          // _this.input += event.which;
 
-          _this.showkeyOutput(event)
+          _this.showkeyOutput()
           clearTimeout(_this.timer);
 
           _this.timer = setTimeout(function() {
@@ -30,28 +32,24 @@ class keyboards {
             _this.keyIndex = 0;
             _this.clearActiveKeys()
           }, 500);
-
-          if ( _this.input == _this.secret ) {
-            _this.keySuccess()
-          }
         })
       },
       // show keycode ouput
-      showkeyOutput : function(e) {
-        // var activeKey, activeKeyCode;
-        if(this.keyIndex >= 5)
-          return;
+      showkeyOutput : function() {
+        let _this = this;
+        let activeKey = _this.keys[_this.keyIndex];
+        let activeKeyCode = _this.keys[_this.keyIndex].dataset['keycode'];
 
-        var activeKey = this.keys[this.keyIndex],
-        activeKeyCode = this.keys[this.keyIndex].dataset['keycode'];
-        if ( e.which.toString() == activeKeyCode ) {
-          this.keys[this.keyIndex].classList.add('active')
-        }
-        this.keyIndex++;
+        _this.keys[_this.keyIndex].classList.add('active');
+
+        _this.keyIndex++;
+          if (_this.keyIndex === 5 ) {
+            _this.keySuccess()
+          }
       },
       // clear all key active classes
       clearActiveKeys : function() {
-        var _this = this;
+        let _this = this;
 
         [].forEach.call(_this.keys, function (div) {
           div.classList.remove('active')
@@ -61,7 +59,7 @@ class keyboards {
       // key all success
       keySuccess : function() {
 
-        console.log('Konami Code!')
+        console.log('success!')
 
         // var mario = document.createElement('div')
         //     mario.className = 'mario'
