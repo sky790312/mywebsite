@@ -1,0 +1,101 @@
+/* component - key button */
+
+$key-bkg: $light-gray;
+$key-color: $dark-black;
+$key-border-color: $dark-gray;
+$key-hover-bkg: $light-gray2;
+$key-hover-color: $white;
+
+.show-helper {
+	.keys {
+		display: block;
+	}
+}
+
+.keys {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: 120px 0 0 -150px;
+}
+.key {
+  display: inline-block;
+  width: 40px;
+  height:35px;
+  margin-right:5px;
+  line-height: 32px;
+  background-color: $key-bkg;
+  border-radius: 5px;
+  font-size: 18px;
+  color: $key-color;
+  border: 1px solid $key-border-color;
+  text-align: center;
+  cursor: pointer;
+  &.active {
+	  cursor: default;
+	  background-color: $key-hover-bkg;
+	  color: $key-hover-color;
+	}
+}
+.key.alt {
+  width:auto;
+  padding: 0 12px;
+}
+
+
+// key success showing
+
+#key-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+  height: calc(100% - 85px);
+  z-index: -1;
+  display: none;
+  &.success {
+  	display: block;
+  	z-index: 1;
+  }
+	.head-boy {
+		position: relative;
+		float: left;
+	}
+}
+
+.row {
+  width: 100%;
+}
+
+.boys {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  border-radius: 50%;
+  background-color: #bbb;
+  float: left;
+  @include transform(scale(0));
+  // transform: scale(0);
+}
+
+@for $i from 1 through 100 {
+  #key-background {
+	  .boys:nth-of-type(#{$i}), .head-boy:nth-of-type(#{$i}) {
+    	@include animation(raise 3s 0s linear 1);
+    	@include animation-delay($i / 2.72 + s);
+	  }
+	}
+}
+
+@keyframes raise {
+  0% {
+    @include transform(scale(0) translateY(0px));
+  }
+  50% {
+    @include transform(scale(1) translateY(600px));
+  }
+  100% {
+    @include transform(scale(0) translateY(0px));
+  }
+}

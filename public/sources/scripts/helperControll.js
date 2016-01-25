@@ -1,16 +1,16 @@
 'use strict';
 
 import utilsJs from '../scripts/utils.js';
-import keyboardsJs from '../scripts/keyControll.js';
+import keyControllJs from '../scripts/keyControll.js';
 
 // show page => after page => start page
 class helperControll {
   constructor($app, window) {
     this.$app = $app;
     this.utils = new utilsJs(window);
-    this.clicked = this.utils.getCookie('clicked') || 0;
+    this.keyControll = new keyControllJs();
 
-    new keyboardsJs();
+    this.clicked = this.utils.getCookie('clicked') || 0;
 
     if(this.clicked) {
       this.$app.find('.remind-click').addClass('hide');
@@ -29,6 +29,7 @@ class helperControll {
     $helper.find('.head-boy').off('click').on('click', ()=>{
       if($helper.hasClass('loading'))
         return;
+
       if(!this.clicked) {
         this.clicked = 1;
         this.utils.setCookie('clicked', this.clicked);
