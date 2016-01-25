@@ -19,13 +19,13 @@ class keyboards {
 
     document.addEventListener('keyup', function (event) {
       let helperShow = document.getElementsByClassName('show-helper').length;
-      // let boysShowing = document.getElementById('key-background').length;
+      let boys = document.getElementById('key-background').childNodes.length;
 
-      if(!helperShow || event.which !== _this.setting.secret[_this.setting.keyIndex])
+      if(!helperShow || boys > 0 || event.which !== _this.setting.secret[_this.setting.keyIndex])
         return;
 
       _this.showkeyOutput();
-      _this.resetTimer();
+      // _this.resetTimer();
     });
   }
   // bind click key
@@ -38,7 +38,7 @@ class keyboards {
           return;
 
         _this.showkeyOutput();
-        _this.resetTimer();
+        // _this.resetTimer();
       });
     }
   }
@@ -47,10 +47,14 @@ class keyboards {
     let _this = this;
 
     _this.setting.keys[_this.setting.keyIndex].classList.add('active');
-    _this.setting.keyIndex++;
+    _this.setting.keyIndex += 1;
 
     if (_this.setting.keyIndex === 5 ) {
-      _this.keySuccess()
+      // _this.setting.timer = null;
+      clearTimeout(_this.setting.timer);
+      _this.keySuccess();
+    } else {
+      _this.resetTimer();
     }
   }
   // clear timer
@@ -61,7 +65,7 @@ class keyboards {
 
     _this.setting.timer = setTimeout(function() {
       _this.setting.keyIndex = 0;
-      _this.clearActiveKeys()
+      _this.clearActiveKeys();
     }, 800);
   }
   // clear all key active classes
@@ -71,12 +75,11 @@ class keyboards {
     [].forEach.call(_this.setting.keys, function (div) {
       div.classList.remove('active')
     })
-
   }
   // key all success
   keySuccess() {
+    let _this = this;
     let keyBackground = document.getElementById('key-background');
-    // let boys = document.createElement('div');
     let str = '';
     let singleBoy = '<div class="boys"><div class="head"><div class="eyes"></div></div><div class="feets"></div></div>';
 
@@ -88,14 +91,16 @@ class keyboards {
       str += '</div>';
     }
     keyBackground.innerHTML = str;
-    // keyBackground.appendChild(boys);
     keyBackground.classList.add('success');
 
     setTimeout(function() {
-    // keyBackground.removeChild(boys);
-    keyBackground.innerHTML = '';
+      clearTimeout(_this.setting.timer);
+      _this.setting.keyIndex = 0;
+      _this.clearActiveKeys();
+
+      keyBackground.innerHTML = '';
       keyBackground.classList.remove('success');
-    }, 6000)
+    }, 5000)
   }
 };
 
