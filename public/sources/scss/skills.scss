@@ -1,14 +1,12 @@
-// @import "utils/fonts";
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
+/* skills page */
 
 $skill-level: $white;
 $skill-desc: $white;
-$skill-background-linear-gradient: 'linear-gradient(90deg, #033c58 , #05182d , #033c58)';
 $skill-background-unfill: $light-gray;
+$skill-background-linear-gradient: 'linear-gradient(90deg, #033c58 , #05182d , #033c58)';
 
 #skills {
 	padding: 135px 0;
-	// background-color: #05182d;
 	@include background ($skill-background-linear-gradient);
 }
 
@@ -78,9 +76,3 @@ $skill-background-unfill: $light-gray;
 	  left: 75%;
 	}
 }
-
-/* skills page component */
-@import "skills/skill-wall";
-@import "skills/skill-level";
-@import "skills/background-bubble";
-// @import "skills/background-cloud";

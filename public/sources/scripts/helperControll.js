@@ -1,14 +1,14 @@
 'use strict';
 
 import utilsJs from '../scripts/utils.js';
-import keyControllJs from '../scripts/keyControll.js';
+// import keyControllJs from '../scripts/keyControll.js';
 
 // show page => after page => start page
 class helperControll {
   constructor($app, window) {
     this.$app = $app;
     this.utils = new utilsJs(window);
-    this.keyControll = new keyControllJs();
+    // this.keyControll = new keyControllJs();
 
     this.clicked = this.utils.getCookie('clicked') || 0;
 
@@ -102,22 +102,22 @@ class helperControll {
   }
   // show helper
   showHelper() {
+    this.$app.addClass('hide-scroll');
     this.$app.find('#helper-background').removeClass('hide');
     this.$app.find('#helper').addClass('show-helper');
   }
   // hide helper
   hideHelper() {
+    this.$app.removeClass('hide-scroll');
     this.$app.find('#helper-background').addClass('hide');
     this.$app.find('#helper').removeClass('show-helper');
   }
   // show board
   showMsgBoard() {
-    this.$app.addClass('hide-scroll');
     this.$app.find('#helper').addClass('show-board');
   }
   // hide board
   hideMsgBoard() {
-    this.$app.removeClass('hide-scroll');
     this.$app.find('#helper').removeClass('show-board');
   }
   // helper menu - set language
@@ -126,10 +126,6 @@ class helperControll {
       let $ele = $(e);
       (lang === 'en') ? $ele.html($ele.data('en')) : $ele.html($ele.data('tw'));
     });
-  }
-  // keypress checking
-  keypressCheck() {
-
   }
 }
 

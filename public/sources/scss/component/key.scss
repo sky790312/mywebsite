@@ -14,7 +14,16 @@ $key-hover-color: $white;
 
 .show-board {
 	.keys {
-		display: none;
+    top: inherit;
+    bottom: 125px;
+    @include mediaQuires(S) {
+      left: 20px;
+      margin-left: 0;
+    }
+    @include mediaQuires(M) {
+      left: 20px;
+      margin-left: 0;
+    }
 	}
 }
 

@@ -17,26 +17,23 @@ $tag-text-color: $white;
 }
 .tags .tags-skill {
 	> .tags-left {
-		// @include mediaQuires(M) {
-			top: 8.5em;
-			left: 2em;
-		// }
+		top: 8.5em;
+		left: 2em;
 	  @include mediaQuires(L) {
 			top: 7em;
 			left: 7.2em;
 		}
 	}
 	> .tags-right {
-		// @include mediaQuires(M) {
-			top: 8.5em;
-			right: 3.5em;
-		// }
+		top: 8.5em;
+		right: 3.5em;
 	  @include mediaQuires(L) {
 			top: 7em;
 			right: 10.5em;
 		}
 	}
 }
+// remove tags-brief now..
 // .tags .tags-brief {
 // 	> .tags-left {
 // 	  @include mediaQuires(M) {

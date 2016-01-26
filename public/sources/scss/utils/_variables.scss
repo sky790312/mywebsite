@@ -1,16 +1,16 @@
-// @import 'compass/css3';
+/* all variables and setting */
 
 // colors
-
 $white: #fff;
 $black: #000;
 
 $black-opacity: rgba(0, 0, 0, 0.85);
 $blue-opacity: rgba(27, 139, 255, 0.8);
 
+$orange: #f80;
 $blue: #00f;
-$light-blue: #4380BE;
-$light-blue2: #47A1FF;
+$light-blue: #4380Be;
+$light-blue2: #47a1ff;
 $dark-blue: #0055C1;
 $dark-blue-black: #081129;
 $green: #006b6c;
@@ -19,7 +19,7 @@ $light-gray2: #444;
 $dark-gray: #bbb;
 $dark-gray2: #777;
 $dark-black : #101524;
-$orange: #F80;
+$ghost-white: #f8f8ff;
 
 $main-color: $white;
 $main-bg-color: $black-opacity;
@@ -29,5 +29,3 @@ $main-bg-color: $black-opacity;
 
 // commons
 $imgsrc: '/images/mywebsite/';
-// $circleSize: 20px;
-// $smallCircleSize: 14px;

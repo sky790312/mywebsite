@@ -1,4 +1,4 @@
-/* component - menu */
+/* component - menu & mobile menu */
 
 $menu-hover-color: $light-blue;
 $menu-active-color: $light-blue2;
@@ -243,31 +243,3 @@ $animate-duration: .3s;
     }
   }
 }
-
-// .link a {
-//   padding: 5px;
-//   display: inline-block;
-//   position: relative; // 給偽元素計算位置用
-//   font-size: 3em;
-//   color: white;
-//   text-decoration: none;
-
-//   &:after {
-//     content: '';
-//     position: absolute; // 指定位置
-//     bottom: 0; // 指定位置
-//     left: 50%; // 指定位置，置中用
-//     transform: translateX(-50%); //置中用
-//     width: 100%; // 先設定寬度 100%，這樣 Link 有多長線就會有多長
-//     max-width: 0px; // 再強制 max-width 為 0px
-//     height: 3px;
-//     background-color: yellow;
-//     transition: all 0.5s ease; // 動態效果
-//   }
-
-//   &:hover {
-//     &:after {
-//       max-width: 100%; // 解放 max-width！
-//     }
-//   }
-// }

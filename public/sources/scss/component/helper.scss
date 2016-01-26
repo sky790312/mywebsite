@@ -5,8 +5,6 @@ $head-boy-color: $dark-gray;
 $head-boy-eyes-color: $light-gray2;
 $head-boy-feets-color: $light-gray2;
 
-$msg-board-bkg-color: ghostwhite;
-
 #helper-background {
   position: fixed;
   top: 0;
@@ -24,74 +22,33 @@ $msg-board-bkg-color: ghostwhite;
   z-index: 10;
 }
 
-.msg-board {
-  position: fixed;
-  top: -100%;
-  width: 100%;
-  height: calc(100% - 85px);
-  overflow-y: scroll;
-  background-color: $msg-board-bkg-color;
-  @include transition(top .25s linear);
-  > .fb-comments {
-    width: 100%;
-  }
-  .like-section, .close-section {
-    position: fixed;
-    left: 50%;
-    z-index: 1;
-    display: none;
-    @include transform(translateX(-50%));
-    > div {
-      float: right;
-    }
-  }
-  > .like-section {
-    bottom: 105px;
-  }
-  > .close-section {
-    bottom: 220px;
-  }
-  .fb-like {
-    padding: 20px 0;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-  }
-  .fb-close {
-    > a {
-      cursor: pointer;
-      color: $light-blue;
-      &:hover {
-        color: $light-blue2;
-      }
-    }
-  }
-}
+// equip section - padding
+// .equip-section, .padding-section {
+//   position: fixed;
+//   width: 10%;
+//   top: 50%;
+//   @include transition(all .2s linear);
+//   @include transform(translateY(-50%));
+// }
+// .equip-section {
+//   left: -10%;
+// }
+// .padding-section {
+//   right: -10%;
+// }
 
-.equip-section, .padding-section {
-  position: fixed;
-  width: 10%;
-  top: 50%;
-  @include transition(all .2s linear);
-  @include transform(translateY(-50%));
-}
-.equip-section {
-  left: -10%;
-}
-.padding-section {
-  right: -10%;
-}
+// .equip {
+//   padding: 6px;
+//   margin: 10px;
+//   overflow: hidden;
+//   color: cornflowerblue;
+//   cursor: pointer;
+//   border: 2px solid #964514;
+//   border-radius: 20px;
+//   text-align: center;
+// }
 
-.equip {
-  padding: 6px;
-  margin: 10px;
-  overflow: hidden;
-  color: cornflowerblue;
-  cursor: pointer;
-  border: 2px solid #964514;
-  border-radius: 20px;
-  text-align: center;
-}
-
+// helper desc
 .help-desc {
   position: fixed;
   top: 50%;
@@ -103,6 +60,7 @@ $msg-board-bkg-color: ghostwhite;
   display: none;
 }
 
+// helper
 .head-boy {
   float: right;
   margin-bottom: 5px;
@@ -175,12 +133,12 @@ $msg-board-bkg-color: ghostwhite;
 
 // show helper
 .show-helper {
-  .equip-section {
-    left: 10%;
-  }
-  .padding-section {
-    right: 10%;
-  }
+  // .equip-section {
+  //   left: 10%;
+  // }
+  // .padding-section {
+  //   right: 10%;
+  // }
   .help-desc {
     display: block;
   }
@@ -205,27 +163,17 @@ $msg-board-bkg-color: ghostwhite;
   }
 }
 
+// show board
 .show-board {
-  .msg-board {
-    top: 0;
-  }
-  // .head-boy {
-  //   top: 80%;
-  //   left: 80%;
-  //   cursor: default;
-  //   @include animation(show-helper 2s linear);
-  // }
   .head-boy {
     opacity: 0;
   }
   .help-desc {
     display: none;
   }
-  .like-section, .close-section {
-    display: block;
-  }
 }
 
+// fb loading state
 #loading-state {
   position: fixed;
   height: 1px;
@@ -235,6 +183,7 @@ $msg-board-bkg-color: ghostwhite;
   @include transition(width .5s linear);
 }
 
+// keyframes
 @include keyframes(remind) {
    0% { margin-bottom: 3px;}
    50% { margin-bottom: -3px;}

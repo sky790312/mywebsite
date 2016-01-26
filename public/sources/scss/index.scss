@@ -1,9 +1,8 @@
 @import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
 
 @import "compass/css3";
-// @import '_animate';
 @import "animation/core";
-// @import "animation/animate";
 
 /* utils */
 @import "utils/_variables";
@@ -12,13 +11,14 @@
 @import "utils/main";
 
 /* component */
-@import "component/social";
-@import "component/menu";
-@import "component/helper";
-@import "component/circle-helper";
-@import "component/key";
-@import "component/tag";
-@import "component/dash-text";
+@import "component/social"; 				// social icon
+@import "component/menu";						// menu & mobile menu
+@import "component/helper";					// helper
+@import "component/circle-helper";	// helper circle menu
+@import "component/msg-board";			// fb msg board
+@import "component/key";						// key press
+@import "component/tag";						// tag icon
+@import "component/dash-text";			// kevinhu dash text
 
 /* pages  */
 @import "kevinhu";
@@ -26,3 +26,15 @@
 @import "aboutme";
 @import "background";
 @import "skills";
+
+/* aboutme page inside */
+@import "aboutme/page-family";
+@import "aboutme/page-extroverted";
+@import "aboutme/page-working";
+@import "aboutme/page-introverted";
+@import "aboutme/page-collections";
+
+/* skills page inside */
+@import "skills/skill-wall";
+@import "skills/skill-level";
+@import "skills/background-bubble";

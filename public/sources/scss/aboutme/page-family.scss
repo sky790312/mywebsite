@@ -1,8 +1,8 @@
-/* family section */
+/* about page inside - family  */
 
 .page-family {
-	left: -100%;
-	top: -100%;
+		left: -100%;
+		top: -100%;
 	.family-img1 {
 		left: 17%;
 		bottom: 60px;
@@ -23,7 +23,6 @@
 	}
 	@include mediaQuires(ML) {
 		.family-img1, .family-img2{
-			// top: 46%;
 			height: 41%;
 		}
 	}

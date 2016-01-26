@@ -1,3 +1,5 @@
+/* background page */
+
 $saying-border-color: $light-blue2;
 $saying-sign-color: $black;
 $saying-color: $green;
@@ -24,7 +26,6 @@ $years-height: 200px;
 }
 
 // background title
-
 .background-title {
 	position: relative;
 	> .cover-img {
@@ -70,7 +71,6 @@ $years-height: 200px;
 }
 
 // background years parallax
-
 .years {
   height: $years-height;
   background-position: 50% 50%;

@@ -1,3 +1,5 @@
+/* projects page */
+
 $project-default-bg-color: $dark-black;
 $project-outside-desc-color: $main-color;
 
@@ -52,12 +54,6 @@ $items: 3; // profolio numbers
 			background-size: cover;
 			@include transition(opacity 0.5s, height 0.4s);
     }
-
-   //  &::before {
-   //  	/* if use like plugin, use to check img loaded  */
-			// content: 'images/img-1-small.jpg';
-			// display: none;
-   //  }
 
 		&:nth-of-type(2) {
 			top: 100vh / $items;
@@ -206,9 +202,6 @@ $items: 3; // profolio numbers
 	  		margin-top: -85px;
 	  	}
 		}
-		// font-size: 2.5rem;
-		// line-height: 1.5;
-		// font-weight: 700;
 	}
 
 	.profolio-brief {
@@ -313,34 +306,16 @@ $items: 3; // profolio numbers
 	padding: 40px 0 20px 0;
 	z-index: 11;
 	text-align: center;
-  // text-transform: uppercase;
 }
 .profolios-section .close {
 	position: relative;
-    margin-left: 25px;
+  margin-left: 25px;
   color: $project-close-color;
   cursor: pointer;
   opacity: .8;
   &:hover {
   	opacity: 1;
   }
-	// &:before, &:after {
-	// 	top: 2px;
- //    border-right: 2px solid;
- //    border-bottom: 2px solid;
- //    content: '';
- //    position: absolute;
- //    width: 10px;
- //    height: 10px
-	// }
-	// &:before{
- //    left: -12px;
- //    transform: rotate(135deg)
-	// }
-	// &:after{
- //    right: -12px;
- //    transform: rotate(-45deg)
-	// }
 }
 
 @include keyframes(remind-down) {

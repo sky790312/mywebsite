@@ -1,18 +1,16 @@
-/* working section */
+/* about page inside - working  */
 
 .page-working {
 	left: 100%;
 	top: 100%;
 	.working-img1 {
 		left: 30%;
-    // top: 72%;
     width: 20%;
     height: 8%;
 	  background-image: url($imgsrc + 'aboutme/working-img1.jpg');
 	}
 	.working-img2 {
     left: 52%;
-    // top: 70%;
     bottom: 10px;
     width: 20%;
     height: 15%;
@@ -25,7 +23,6 @@
 	@include mediaQuires(ML) {
 		.working-title {
 			left: 62%;
-	    // top: 15%;
 	    width: auto;
 		}
 		.working-desc {
@@ -41,7 +38,7 @@
 		}
 		.working-img2 {
 			left: 57.5%;
-	    	top: 200px;
+	    top: 200px;
 			width: 25%;
 			height: 54%;
 		}
