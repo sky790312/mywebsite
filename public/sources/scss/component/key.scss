@@ -12,6 +12,12 @@ $key-hover-color: $white;
 	}
 }
 
+.show-board {
+	.keys {
+		display: none;
+	}
+}
+
 .keys {
   display: none;
   position: fixed;

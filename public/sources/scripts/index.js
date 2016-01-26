@@ -5,6 +5,7 @@
 import utilsJs from '../scripts/utils.js';
 import pageJs from '../scripts/pageControll.js';
 import helperJs from '../scripts/helperControll.js';
+import keyControllJs from '../scripts/keyControll.js';
 
 // window.app = {};
 
@@ -21,6 +22,7 @@ class index {
     this.utils = new utilsJs(window);
     this.pageControll = new pageJs(this.$app, window);
     this.helperControll = new helperJs(this.$app, window);
+    this.keyControll = new keyControllJs();
 
     this.init();
     this.eventListener();
@@ -64,9 +66,6 @@ class index {
    */
 
   eventListener() {
-    // const $indexSection = this.$app.find('#kevinhu');
-    // const $goIndex = this.$app.find('.kevinhu');
-
     // history listen
     $(window).on('popstate', ()=>{
       let url = history.state ?
@@ -90,6 +89,10 @@ class index {
     this.helperControll.bindHelperMenu();
     // bind helper msg board - helperControll
     this.helperControll.bindMsgBoard();
+    // bind key press event - keyControll
+    this.keyControll.bindKeypress();
+    // bind key click event - keyControll
+    this.keyControll.bindClickKeys();
 
     // change photo title
     // $indexSection.off('click').on('click','.photo', (e)=> {

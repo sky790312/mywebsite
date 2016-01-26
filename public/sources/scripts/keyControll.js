@@ -5,13 +5,13 @@ class keyboards {
 
     // const keyControll = {
     this.setting = {
-      keys      : document.querySelectorAll('.key'),
+      keys      : document.getElementsByClassName('key'),
       secret    : [38, 37, 40, 39, 32],
       keyIndex  : 0,
       timer     : null
     }
-    this.bindKeypress();
-    this.bindClickKeys();
+    // this.bindKeypress();
+    // this.bindClickKeys();
   }
   // bind key press
   bindKeypress() {
@@ -50,7 +50,6 @@ class keyboards {
     _this.setting.keyIndex += 1;
 
     if (_this.setting.keyIndex === 5 ) {
-      // _this.setting.timer = null;
       clearTimeout(_this.setting.timer);
       _this.keySuccess();
     } else {
