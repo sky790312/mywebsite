@@ -89,9 +89,7 @@ class helperControll {
         case 'aboutme':
           // exception: move aboutme inside helper, but still use page controll now..
           this.pageControll.bindAbout(()=>{
-            if(window.app.aboutme){
-              this.hideHelper();
-            }
+            this.hideHelper();
           });
           break;
         case 'cv':

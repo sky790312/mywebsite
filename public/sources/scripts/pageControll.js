@@ -59,9 +59,7 @@ class pageControll {
       history.pushState({ 'page': aboutme }, '', aboutme);
 
     if(window.app.aboutme) {
-      if(insidePage !== "#who-i-am") {
-        window.location.hash = "#who-i-am";
-      }
+      window.location.hash = "#who-i-am";
     } else {
       this.afterPage(aboutme);
     }

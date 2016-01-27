@@ -294,7 +294,7 @@ $items: 3; // profolio numbers
 .opening .profolio-down {
 	opacity: 1;
     @include animation(remind-down .8s linear infinite);
-    @include animation-iteration-count(2);
+    @include animation-iteration-count(5);
     @include animation-fill-mode(forwards);
 }
 

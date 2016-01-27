@@ -19,7 +19,7 @@ $head-boy-feets-color: $light-gray2;
   position: fixed;
   bottom: 60px;
   // width: 100%;
-  right: 20%;
+  right: 10%;
   z-index: 10;
 }
 
@@ -63,13 +63,13 @@ $head-boy-feets-color: $light-gray2;
 
 // helper
 .head-boy {
-  float: right;
-  margin-bottom: 5px;
+  // float: right;
+  // margin-bottom: 5px;
   z-index: 1;
   cursor: pointer;
   @include transition(margin-bottom .2s linear);
   &:hover {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   > .remind-click {
     width: 85px;
