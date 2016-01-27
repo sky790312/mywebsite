@@ -11,6 +11,8 @@ class pageControll {
     // bind event - all move to index.js controll
     // this.bindPage();
 
+    this.$app.find('.main-menu.aboutme').parent().addClass('hide');
+
     window.app.loading = 50;
     // console.log(window.app.loading)
   }
@@ -38,6 +40,31 @@ class pageControll {
       //   callback();
       // }
     });
+  }
+
+  // exception: move about outside page..
+  bindAbout(callback) {
+    let aboutme = 'aboutme';
+    let insidePage = window.location.hash;
+
+    if(insidePage === '#who-i-am' && typeof callback === 'function'){
+      callback();
+      return;
+    }
+
+    this.showPage(this.$app.find('#aboutme'));
+
+    // history push
+    if(!history.state || history.state.page !== aboutme)
+      history.pushState({ 'page': aboutme }, '', aboutme);
+
+    if(window.app.aboutme) {
+      if(insidePage !== "#who-i-am") {
+        window.location.hash = "#who-i-am";
+      }
+    } else {
+      this.afterPage(aboutme);
+    }
   }
 
   // show page..need to be first

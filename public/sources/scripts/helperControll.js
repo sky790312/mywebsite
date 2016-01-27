@@ -1,6 +1,7 @@
 'use strict';
 
 import utilsJs from '../scripts/utils.js';
+import pageJs from '../scripts/pageControll.js';
 // import keyControllJs from '../scripts/keyControll.js';
 
 // show page => after page => start page
@@ -8,6 +9,7 @@ class helperControll {
   constructor($app, window) {
     this.$app = $app;
     this.utils = new utilsJs(window);
+    this.pageControll = new pageJs(this.$app, window);
     // this.keyControll = new keyControllJs();
 
     this.clicked = this.utils.getCookie('clicked') || 0;
@@ -83,6 +85,14 @@ class helperControll {
           } else {
             this.showMsgBoard();
           }
+          break;
+        case 'aboutme':
+          // exception: move aboutme inside helper, but still use page controll now..
+          this.pageControll.bindAbout(()=>{
+            if(window.app.aboutme){
+              this.hideHelper();
+            }
+          });
           break;
         case 'cv':
           window.open('cv-english.pdf');

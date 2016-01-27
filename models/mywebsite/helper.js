@@ -27,10 +27,10 @@ module.exports = {
         showEN: "message board",
         showTW: "留言板"
       }, {
-        title:  "blog",
-        state:  "padding",
-        showEN: "blog",
-        showTW: "部落格"
+        title:  "aboutme",
+        state:  "completed",
+        showEN: "about me",
+        showTW: "認識<br>更多的我"
       }, {
         title:  "cv",
         state:  "completed",

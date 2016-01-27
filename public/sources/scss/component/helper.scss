@@ -18,7 +18,8 @@ $head-boy-feets-color: $light-gray2;
 #helper {
   position: fixed;
   bottom: 60px;
-  width: 100%;
+  // width: 100%;
+  right: 20%;
   z-index: 10;
 }
 
@@ -54,7 +55,7 @@ $head-boy-feets-color: $light-gray2;
   top: 50%;
   left: 50%;
   width: 300px;
-  margin: 85px 0 0 -150px;
+  margin: 100px 0 0 -150px;
   text-align: center;
   color: white;
   display: none;
@@ -91,6 +92,14 @@ $head-boy-feets-color: $light-gray2;
   height: 85px;
   border-radius: 50%;
   background-color: $head-boy-color;
+  &:after {
+    content: 'back';
+    position: absolute;
+    top: 105px;
+    left: 27px;
+    color: $head-boy-color;
+    font-size: 18px;
+  }
 }
 .feets {
   position: relative;

@@ -8,6 +8,7 @@ $fb-close-hover-color: $light-blue2;
 .msg-board {
   position: fixed;
   top: -100%;
+  left: 0;
   width: 100%;
   height: calc(100% - 85px);
   overflow-y: scroll;
