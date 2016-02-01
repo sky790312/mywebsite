@@ -35,8 +35,8 @@ module.exports = {
         titleEN: "working",
         titleTW: "工作上的我",
         descEN:  "I always be enthusiastic and stay competitive to keep in touch the latest FrondEnd world. Face the challenge in my field, both positive and diligent attitude are necessary. \
-                  So its what i always do and loving to explore the new things.<br> I have sufficient experences to teach begineer, Teaching others teaches myself. I believe i can be a good teacher and give some advise to others. \
-                  For me, colleagues just like friends no doubt. I always put friendship on my top priority, friends from school, club, work had completed my life.<br> Working is a attitude, same as life. \
+                  So its what i always do and loving to explore the new things. I have sufficient experences to teach begineer, Teaching others teaches myself. I believe i can be a good teacher and give some advise to others. \
+                  For me, colleagues just like friends no doubt. I always put friendship on my top priority, friends from school, club, work had completed my life. Working is a attitude, same as life. \
                   no matter how hard i face, i will try to find the way out and do my best.",
         descTW:  "工作上, 有著一個正確的心態很重要! 我每天都保持著學習的熱誠來面對每天的挑戰. 身為一個前端工程師, 必須要不斷的學習與接觸新的東西, 才不會被時代的潮流淘汰, 這對我來說反而是一種吸引! 反而讓我更是喜歡自己的工作. \
                   我想這是很重要的一件事! 我也很熱於教導他人, 有著以前社團的經驗, 我非常善於循循善誘引導並給予建議! 畢竟教學相長, 教別人的同時也能讓我自己更加清楚, 何樂而不為呢. 我覺得工作上的同事與私底下的朋友並沒有什麼不同, \

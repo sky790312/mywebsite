@@ -178,7 +178,7 @@
 	  font-weight: 700;
 		@include transform(scale(1.5) translate(1.55em, 10.6em));
 	}
-	> .tools {
+	> .jenkins {
 		@include transform(scale(1) translate(1.55em, 17.5em));
 	}
 }

@@ -1,6 +1,94 @@
 'use strict';
 
 module.exports = {
+  backend: function() {
+    return [
+      {
+        title: "awsec2",
+        show: "awsec2"
+      }, {
+        title: "nginx",
+        show: "nginx"
+      }, {
+        title: "mysql",
+        show: "mysql"
+      }, {
+        title: "nodejs",
+        show: "nodejs"
+      }, {
+        title: "ror",
+        show: "ruby on rails"
+      }, {
+        title: "play",
+        show: "play"
+      }, {
+        title: "wordpress",
+        show: "wordpress"
+      }, {
+        title: "joomla",
+        show: "joomla"
+      }, {
+        title: "version-controll",
+        show: "git/svn"
+      }, {
+        title: "jenkins",
+        show: "jenkins"
+      }
+    ]
+  },
+  frontend: function() {
+    return [
+      {
+        title: "html5",
+        show: "html5"
+      }, {
+        title: "webpack",
+        show: "webpack"
+      }, {
+        title: "rwd",
+        show: "rwd"
+      }, {
+        title: "bootstrap",
+        show: "bootatrap"
+      }, {
+        title: "css3",
+        show: "css3"
+      }, {
+        title: "ga",
+        show: "ga"
+      }, {
+        title: "es6",
+        show: "es6"
+      }, {
+        title: "css-framework",
+        show: "sass/scss/less"
+      }, {
+        title: "reactjs",
+        show: "reactjs"
+      }, {
+        title: "object-oriented",
+        show: "object oriented"
+      }, {
+        title: "ajax",
+        show: "ajax"
+      }, {
+        title: "jquery",
+        show: "jquery"
+      }, {
+        title: "open-third-api",
+        show: "open third api"
+      }, {
+        title: "cross-browser",
+        show: "cross browser"
+      }, {
+        title: "javascript",
+        show: "javascript"
+      }, {
+        title: "angularjs",
+        show: "angularjs"
+      }
+    ]
+  },
   desc: function() {
     return [
       {
@@ -21,7 +109,7 @@ module.exports = {
       }
     ];
   },
-  level: function() {
+  levelBlock: function() {
     return [
       {
         briefEN: "Begineer",
@@ -35,6 +123,44 @@ module.exports = {
       }, {
         briefEN: "Expert",
         briefTW: "大師"
+      }
+    ];
+  },
+  levelSkill: function() {
+    return [
+      {
+        percent: "70",
+        title: "HTML5"
+      }, {
+        percent: "70",
+        title: "pure JS"
+      }, {
+        percent: "80",
+        title: "jQuery"
+      }, {
+        percent: "65",
+        title: "AngularJS"
+      }, {
+        percent: "35",
+        title: "React"
+      }, {
+        percent: "65",
+        title: "CSS3"
+      }, {
+        percent: "65",
+        title: "Sass / Less"
+      }, {
+        percent: "70",
+        title: "Bootstrap"
+      }, {
+        percent: "70",
+        title: "CMS"
+      }, {
+        percent: "45",
+        title: "backend skill"
+      }, {
+        percent: "70",
+        title: "relative tools"
       }
     ];
   }

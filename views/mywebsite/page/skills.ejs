@@ -26,35 +26,14 @@
   </div> -->
   <div id="skill-wall">
     <ul class="skill-backend">
-      <li class="awsec2">awsec2</li>
-      <li class="nginx">nginx</li>
-      <li class="mysql">mysql</li>
-      <li class="nodejs">nodejs</li>
-      <li class="ror">ruby on rails</li>
-      <li class="play">play</li>
-      <li class="wordpress">wordpress</li>
-      <li class="joomla">joomla</li>
-      <li class="version-controll">git/svn</li>
-      <li class="tools">webpack/gulp</li>
+      <% for( var i = 0; i < skillsObj.backend().length; i++) { %>
+        <li class="<%= skillsObj.backend()[i].title %>"><%= skillsObj.backend()[i].show %></li>
+      <% } %>
     </ul>
     <ul class="skill-frontend">
-      <li class="html5">html5</li>
-      <li class="webpack">webpack</li>
-      <li class="rwd">rwd</li>
-      <li class="bootstrap">bootstrap</li>
-      <li class="css3">css3</li>
-      <li class="ga">ga</li>
-      <li class="es6">es6</li>
-      <li class="css-framework">sass/scss/less</li>
-      <li class="reactjs">reactjs</li>
-      <li class="object-oriented">object oriented</li>
-      <li class="ajax">ajax</li>
-      <li class="jquery">jquery</li>
-      <li class="open-third-api">open third api</li>
-      <!-- <li class="wordpress">wordpress</li> -->
-      <li class="cross-browser">cross browser</li>
-      <li class="javascript">javascript</li>
-      <li class="angularjs">angularjs</li>
+      <% for( var i = 0; i < skillsObj.frontend().length; i++) { %>
+        <li class="<%= skillsObj.frontend()[i].title %>"><%= skillsObj.frontend()[i].show %></li>
+      <% } %>
     </ul>
   </div>
   <div id="skills-desc" class="container">
@@ -66,75 +45,17 @@
   </div>
   <div id="skills-detail">
     <div class="levels clearfix">
-      <% for( var i = 0; i < skillsObj.level().length; i++) { %>
-        <div class="lg" data-en="<%= skillsObj.level()[i].briefEN %>" data-tw="<%= skillsObj.level()[i].briefTW %>"></div>
+      <% for( var i = 0; i < skillsObj.levelBlock().length; i++) { %>
+        <div class="lg" data-en="<%= skillsObj.levelBlock()[i].briefEN %>" data-tw="<%= skillsObj.levelBlock()[i].briefTW %>"></div>
       <% } %>
     </div>
-    <div class="skill-level">
-      <div class="junior"></div>
-      <div class="middle"></div>
-      <div class="senior"></div>
-      <div class="bar" data-percent="70" data-skill="HTML5"></div>
-    </div>
-    <div class="skill-level">
-      <div class="junior"></div>
-      <div class="middle"></div>
-      <div class="senior"></div>
-      <div class="bar" data-percent="70" data-skill="pure JS"></div>
-    </div>
-    <div class="skill-level">
-      <div class="junior"></div>
-      <div class="middle"></div>
-      <div class="senior"></div>
-      <div class="bar" data-percent="80" data-skill="jQuery"></div>
-    </div>
-    <div class="skill-level">
-      <div class="junior"></div>
-      <div class="middle"></div>
-      <div class="senior"></div>
-      <div class="bar" data-percent="65" data-skill="AngularJS"></div>
-    </div>
-    <div class="skill-level">
-      <div class="junior"></div>
-      <div class="middle"></div>
-      <div class="senior"></div>
-      <div class="bar" data-percent="35" data-skill="React"></div>
-    </div>
-    <div class="skill-level">
-      <div class="junior"></div>
-      <div class="middle"></div>
-      <div class="senior"></div>
-      <div class="bar" data-percent="65" data-skill="CSS3"></div>
-    </div>
-    <div class="skill-level">
-      <div class="junior"></div>
-      <div class="middle"></div>
-      <div class="senior"></div>
-      <div class="bar" data-percent="65" data-skill="Sass / Less"></div>
-    </div>
-    <div class="skill-level">
-      <div class="junior"></div>
-      <div class="middle"></div>
-      <div class="senior"></div>
-      <div class="bar" data-percent="70" data-skill="Bootstrap"></div>
-    </div>
-    <div class="skill-level">
-      <div class="junior"></div>
-      <div class="middle"></div>
-      <div class="senior"></div>
-      <div class="bar" data-percent="70" data-skill="CMS"></div>
-    </div>
-    <div class="skill-level">
-      <div class="junior"></div>
-      <div class="middle"></div>
-      <div class="senior"></div>
-      <div class="bar" data-percent="45" data-skill="backend skill"></div>
-    </div>
-    <div class="skill-level">
-      <div class="junior"></div>
-      <div class="middle"></div>
-      <div class="senior"></div>
-      <div class="bar" data-percent="70" data-skill="relative tools"></div>
-    </div>
+    <% for( var i = 0; i < skillsObj.levelSkill().length; i++) { %>
+      <div class="skill-level">
+        <div class="junior"></div>
+        <div class="middle"></div>
+        <div class="senior"></div>
+        <div class="bar" data-percent="<%= skillsObj.levelSkill()[i].percent %>" data-skill="<%= skillsObj.levelSkill()[i].title %>"></div>
+      </div>
+    <% } %>
   </div>
 </section>
