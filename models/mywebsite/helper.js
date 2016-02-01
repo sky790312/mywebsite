@@ -4,8 +4,8 @@ module.exports = {
   brief: function() {
     return [
       {
-        showEN: "hello, try something interesting !?",
-        showTW: "您好, 要不要試試看有趣的東西 !?"
+        showEN: "hello, have fun with keying or clicking down !",
+        showTW: "您好, 依序輸入或點擊下方文字將會有有趣事情發生唷 !"
       }
     ]
   },
