@@ -29,7 +29,7 @@ module.exports = {
       }, {
         title:  "aboutme",
         state:  "completed",
-        showEN: "about me",
+        showEN: "more me",
         showTW: "認識<br>更多的我"
       }, {
         title:  "cv",

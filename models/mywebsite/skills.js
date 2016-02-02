@@ -104,7 +104,7 @@ module.exports = {
         briefEN: "Soft communication to works closely with designers, backend developers and product owners.",
         briefTW: "有效的與設計, 後端, 產品端溝通給予建立並不失立場"
       }, {
-        briefEN: "Knowledge of relative buildng tools to make strong front end development.",
+        briefEN: "Knowledge of relative buildng tools to make strong frontend development.",
         briefTW: "work flow & 開發上相關的工具與能力"
       }
     ];
