@@ -22,8 +22,8 @@ module.exports = {
                     title: "179",
                     src:   "/images/mywebsite/projects/179.jpg"
                   }, {
-                    title: "cpc",
-                    src:   "/images/mywebsite/projects/cpc.jpg"
+                    title: "spotme-backstage1",
+                    src:   "/images/mywebsite/projects/spotme-backstage1.jpg"
                   }, {
                     title: "lejetbc",
                     src:   "/images/mywebsite/projects/lejetbc.jpg"
@@ -34,14 +34,23 @@ module.exports = {
                     title: "spotrainer-landingpage",
                     src:   "/images/mywebsite/projects/spotrainer-landingpage.jpg"
                   }, {
-                    title: "spotme-backstage1",
-                    src:   "/images/mywebsite/projects/spotme-backstage1.jpg"
+                    title: "cpc",
+                    src:   "/images/mywebsite/projects/cpc.jpg"
+                  }, {
+                    title: "spotme-profolio",
+                    src:   "/images/mywebsite/projects/spotme-profolio.jpg"
+                  }, {
+                    title: "spotme-backstage2",
+                    src:   "/images/mywebsite/projects/spotme-backstage2.jpg"
+                  }, {
+                    title: "spotme-setting",
+                    src:   "/images/mywebsite/projects/spotme-setting.jpg"
                   }, {
                     title: "spotrainer",
                     src:   "/images/mywebsite/projects/spotrainer.jpg"
                   }, {
-                    title: "spotme-backstage2",
-                    src:   "/images/mywebsite/projects/spotme-backstage2.jpg"
+                    title: "spotme-biztank",
+                    src:   "/images/mywebsite/projects/spotme-biztank.jpg"
                   }
                 ]
       }, {
@@ -64,6 +73,21 @@ module.exports = {
           }, {
             title: "updownleftright-practice",
             src:   "/images/mywebsite/projects/updownleftright-practice.jpg"
+          }, {
+            title: "menu-practice",
+            src:   "/images/mywebsite/projects/menu-practice.jpg"
+          }, {
+            title: "phpmyadmin",
+            src:   "/images/mywebsite/projects/phpmyadmin.jpg"
+          }, {
+            title: "things-practice",
+            src:   "/images/mywebsite/projects/things-practice.jpg"
+          }, {
+            title: "scroll-practice",
+            src:   "/images/mywebsite/projects/scroll-practice.jpg"
+          }, {
+            title: "css-practice.jpg",
+            src:   "/images/mywebsite/projects/css-practice.jpg"
           }
         ]
       }, {
@@ -76,14 +100,17 @@ module.exports = {
         					有時我也得幫忙play端的應用層, 了解一些關於java的知識. 不時的與PM端開會開發新的專案像是<a href='http://trip.eztravel.com.tw/hsrucar' target='_blank'>Ucar</a>.. 與一些改版中的專案等等..",
         images: [
           {
-            title: "ez-ucar",
-            src:   "/images/mywebsite/projects/ez-ucar2.jpg"
+            title: "ez-ucar1",
+            src:   "/images/mywebsite/projects/ez-ucar1.jpg"
           }, {
-            title: "ez-mucar",
-            src:   "/images/mywebsite/projects/ez-mucar.jpg"
+            title: "ez-ucar2",
+            src:   "/images/mywebsite/projects/ez-ucar2.jpg"
           }, {
             title: "ez-coupon",
             src:   "/images/mywebsite/projects/ez-coupon.jpg"
+          }, {
+            title: "ez-mucar",
+            src:   "/images/mywebsite/projects/ez-mucar.jpg"
           }
         ]
       }
