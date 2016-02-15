@@ -13,7 +13,37 @@ module.exports = {
 		              use Wordpress to build <a href='http://trainer.spotme.com.tw' target='_blank'>Spotrainer</a> website by myself.",
         descTW:  "前端主要使用 angularjs, 後端使用 nodeJs 開發各個專案, 獨自處理前端大小事, 並從其他資深工程師身上學習 web 相關技能＆知識 ex: LAMP, amazon EC2, MYSQL.. 使用 SVN 版控 ＆ agle 步調, 在co-space 與其他 startup 互相交流學習,\
         					公司主要專注於 <a href='http://spotme.com.tw/kevin' target='_blank'>spotme</a> 商務社交平台的開發, 期望每位使用者都能在平台上建立自己的專業形象頁與活絡供需平台.\
-        					另一主要專案 <a href='http://trainer.spotme.com.tw' target='_blank'>spotrainer</a> 為獨自開發的CMS wordpress專案, 與實體活動結合, 期望建立一個較為公正的講師網站."
+        					另一主要專案 <a href='http://trainer.spotme.com.tw' target='_blank'>spotrainer</a> 為獨自開發的CMS wordpress專案, 與實體活動結合, 期望建立一個較為公正的講師網站.",
+        images: [
+                  {
+                    title: "lejetbc-official",
+                    src:   "/images/mywebsite/projects/lejetbc-official.jpg"
+                  }, {
+                    title: "179",
+                    src:   "/images/mywebsite/projects/179.jpg"
+                  }, {
+                    title: "cpc",
+                    src:   "/images/mywebsite/projects/cpc.jpg"
+                  }, {
+                    title: "lejetbc",
+                    src:   "/images/mywebsite/projects/lejetbc.jpg"
+                  }, {
+                    title: "aite",
+                    src:   "/images/mywebsite/projects/aite.jpg"
+                  }, {
+                    title: "spotrainer-landingpage",
+                    src:   "/images/mywebsite/projects/spotrainer-landingpage.jpg"
+                  }, {
+                    title: "spotme-backstage1",
+                    src:   "/images/mywebsite/projects/spotme-backstage1.jpg"
+                  }, {
+                    title: "spotrainer",
+                    src:   "/images/mywebsite/projects/spotrainer.jpg"
+                  }, {
+                    title: "spotme-backstage2",
+                    src:   "/images/mywebsite/projects/spotme-backstage2.jpg"
+                  }
+                ]
       }, {
       	title:   "side-project",
         briefEN: "learning, practicing to implement all web and frontend skills",
@@ -23,7 +53,19 @@ module.exports = {
                   I'm trying to carry out my know how to build my personal website, in order to share my knowleadge and professional skills to who is interested in my work. <a href='https://github.com/sky790312/' target='_blank'>my github</a>",
         descTW:  "web 領域變化快速, 唯有不斷的學習才能跟上腳步! 一開始, 我只是試著實作各種 plugin 像是 carousel, slider, parallax, one page scroll, animation, css3 等等.. 並切確了解 javascript 實作 <a href='https://github.com/sky790312/pure-javascript-jquery-implementation' target='_blank'>jquery implementation</a>\
         					後來, 我開始將一些有趣的東西跟我自身結合像是 <a href='https://github.com/sky790312/full-screen-presentation-website' target='_blank'>full-screen-presentation-website</a>. 現在, 我持續追一些外面很紅但自身在公司並未用到的技術像是 react, webpack, es6, gulp..等等, 並試著結合自身所學來架自己的站 <a href='https://github.com/sky790312/mywebsite' target='_blank'>mywebsite</a>.\
-        					我所認為的前端是個無私分享, 過程大於成果的世界, 所以所有的一切都能在我的<a href='https://github.com/sky790312' target='_blank'>GitHub</a>尋找, 並記錄自己開發這個網站的過程."
+        					我所認為的前端是個無私分享, 過程大於成果的世界, 所以所有的一切都能在我的<a href='https://github.com/sky790312' target='_blank'>GitHub</a>尋找, 並記錄自己開發這個網站的過程.",
+        images: [
+          {
+            title: "requestanimation-practice",
+            src:   "/images/mywebsite/projects/requestanimation-practice.jpg"
+          }, {
+            title: "ror-practice",
+            src:   "/images/mywebsite/projects/ror-practice.jpg"
+          }, {
+            title: "updownleftright-practice",
+            src:   "/images/mywebsite/projects/updownleftright-practice.jpg"
+          }
+        ]
       }, {
       	title:   "eztravel",
         briefEN: "involve in Coupon, Homepage revision, new Ucar projects",
@@ -31,7 +73,19 @@ module.exports = {
         descEN:  "Projects in here all base on Java Play MVC framework. Use jQuery and less css to build all the new website. Collaborate with others by git version and correct work flow to production.\
         					Learn knowledge about nginx, jboss and jenkins. Sometimes I should even focus on Play application side. Had develop the new <a href='http://trip.eztravel.com.tw/hsrucar' target='_blank'>Ucar</a> project and others.",
         descTW:  "前端主要使用 jquery less, 後端使用 Java Play MVC framework 並使用git進行多人共同開發各個線別的改版與新專案. 並從其他資深工程師身上學習 web 相關技能＆知識 ex: nginx, jboss jenkins ..等等,\
-        					有時我也得幫忙play端的應用層, 了解一些關於java的知識. 不時的與PM端開會開發新的專案像是<a href='http://trip.eztravel.com.tw/hsrucar' target='_blank'>Ucar</a>.. 與一些改版中的專案等等.."
+        					有時我也得幫忙play端的應用層, 了解一些關於java的知識. 不時的與PM端開會開發新的專案像是<a href='http://trip.eztravel.com.tw/hsrucar' target='_blank'>Ucar</a>.. 與一些改版中的專案等等..",
+        images: [
+          {
+            title: "ez-ucar",
+            src:   "/images/mywebsite/projects/ez-ucar2.jpg"
+          }, {
+            title: "ez-mucar",
+            src:   "/images/mywebsite/projects/ez-mucar.jpg"
+          }, {
+            title: "ez-coupon",
+            src:   "/images/mywebsite/projects/ez-coupon.jpg"
+          }
+        ]
       }
     ];
   }

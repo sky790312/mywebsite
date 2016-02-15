@@ -11,6 +11,11 @@
 
           <div class="profolio-inside">
             <p class="profolio-desc lg" data-en="<%= projectsObj.projects()[i].descEN %>" data-tw="<%= projectsObj.projects()[i].descTW %>"></p>
+            <div class="img-section clearfix">
+              <% for( var j = 0; j < projectsObj.projects()[i].images.length; j++) { %>
+                <div class="profolio-img" data-imgsrc="<%= projectsObj.projects()[i].images[j].src %>"></div>
+              <% } %>
+            </div>
             <div class="close-section"><a class="fa fa-home close"> back to projects</a></div>
           </div> <!-- .profolio-inside -->
         </li>

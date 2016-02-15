@@ -10,6 +10,10 @@ $project-close-color: $light-blue;
 
 $items: 3; // profolio numbers
 
+@mixin src($title) {
+	// background-image: url($before + $title + $after);
+}
+
 /*
  * main profolios section
  */
@@ -271,6 +275,18 @@ $items: 3; // profolio numbers
 				opacity: 1;
 			}
 		}
+	}
+
+	.img-section {
+    width: 800px;
+    margin: 40px auto;
+	}
+
+	.profolio-img {
+		float: left;
+		width: 200px;
+		height: 150px;
+		background-size: 100% 100%;
 	}
 
 	@include mediaQuires(ML) {

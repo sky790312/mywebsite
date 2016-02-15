@@ -23,7 +23,6 @@ class projects {
 		      openProfolio: function(thisProfolio) {
 						profolio.$section.addClass('opening');
 						thisProfolio.addClass('inside').siblings('li').removeClass('loaded');
-
 		    	},
 		      closeProfolio: function(thisProfolio) {
 						const mq = window.getComputedStyle(document.querySelector('.profolios-section'), '::before').getPropertyValue('content').replace(/"/g, "").replace(/'/g, ""),
@@ -98,6 +97,10 @@ class projects {
 		      profolio.bind.close();
 		      // profolio.bind.down();
 		      profolio.bind.scroll();
+	      	profolio.$section.find('.profolio-img').each(function() {
+						let $this = $(this);
+	      		$this.css('background-image', 'url(' + $this.data('imgsrc') + ')');
+	      	});
 					profolio.method.showProfolios(profolio.$section.find('li').eq(0));
 		    },
 		    start: function() {
