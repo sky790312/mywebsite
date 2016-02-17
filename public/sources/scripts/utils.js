@@ -2,8 +2,8 @@
 
 // show page => after page => start page
 class utils {
-  constructor(window) {
-    window.app.loading = 25;
+  constructor($app, window) {
+    window.app.loading = 20;
     // console.log(window.app.loading)
   }
 

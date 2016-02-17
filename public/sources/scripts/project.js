@@ -1,7 +1,7 @@
 'use strict';
 
 class projects {
-  constructor(window) {
+  constructor($app, window) {
 
 		// for mywebsite, 暫時先改成這樣.. 未來import export
 		(function($){

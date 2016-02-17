@@ -1,7 +1,7 @@
 'use strict';
 
 class keyboards {
-  constructor() {
+  constructor($app, window) {
 
     // const keyControll = {
     this.setting = {
@@ -12,6 +12,9 @@ class keyboards {
     }
     // this.bindKeypress();
     // this.bindClickKeys();
+
+    window.app.loading = 80;
+    // console.log(window.app.loading)
   }
   // bind key press
   bindKeypress() {

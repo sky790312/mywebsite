@@ -6,6 +6,7 @@ import utilsJs from '../scripts/utils.js';
 import pageJs from '../scripts/pageControll.js';
 import helperJs from '../scripts/helperControll.js';
 import keyControllJs from '../scripts/keyControll.js';
+import mobileControllJs from '../scripts/mobileControll.js';
 
 // window.app = {};
 
@@ -19,10 +20,11 @@ class index {
 
     this.$app = $ele;
 
-    this.utils = new utilsJs(window);
-    this.pageControll = new pageJs(this.$app, window);
+    this.utils          = new utilsJs(this.$app, window);
+    this.pageControll   = new pageJs(this.$app, window);
     this.helperControll = new helperJs(this.$app, window);
-    this.keyControll = new keyControllJs();
+    this.keyControll    = new keyControllJs(this.$app, window);
+    this.mobileControll = new mobileControllJs(this.$app, window);
 
     this.init();
     this.eventListener();

@@ -13,7 +13,7 @@ class pageControll {
 
     this.$app.find('.main-menu.aboutme').parent().addClass('hide');
 
-    window.app.loading = 50;
+    window.app.loading = 40;
     // console.log(window.app.loading)
   }
 
@@ -105,7 +105,7 @@ class pageControll {
         if(window.app.projects) {
           window.app.projects.start();
         } else {
-          new projectJs(window);
+          new projectJs(this.$app, window);
           // dynamicLoading('projects');
         }
         break;
@@ -115,7 +115,7 @@ class pageControll {
           window.app.aboutme.method.run();
           window.app.aboutme.bind.onhashchange();
         } else {
-          new aboutmeJs(window);
+          new aboutmeJs(this.$app, window);
           // dynamicLoading('aboutme');
         }
         break;

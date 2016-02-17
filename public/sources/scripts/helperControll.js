@@ -8,9 +8,9 @@ import pageJs from '../scripts/pageControll.js';
 class helperControll {
   constructor($app, window) {
     this.$app = $app;
-    this.utils = new utilsJs(window);
+    this.utils = new utilsJs(this.$app, window);
     this.pageControll = new pageJs(this.$app, window);
-    // this.keyControll = new keyControllJs();
+    // this.keyControll = new keyControllJs(this.$app, window);
 
     this.clicked = this.utils.getCookie('clicked') || 0;
     this.firstClick = 0;
@@ -23,7 +23,7 @@ class helperControll {
     // this.bindBoard();
     // this.bindHelperMenu();
 
-    window.app.loading = 75;
+    window.app.loading = 60;
     // console.log(window.app.loading)
   }
   // bind helper

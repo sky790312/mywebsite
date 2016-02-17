@@ -2,7 +2,7 @@
 
 // not use now..
 // @import "../../images/icons/*.png";
-// @include all-icons-sprites;  //all-後面接著的「icons」代表著是資料夾名稱
+// @include all-icons-sprites;
 // .icons-sprite,
 // .icons-facebook,
 // .icons-twitter,
@@ -92,18 +92,14 @@ body {
         text-decoration: underline;
       }
     }
-  }
-  iframe {
-    margin: 6px 5px 0 5px;
-    width: 80px;
-    height: 20px;
-  }
-  @include mediaQuires(ML) {
-    .contact-info {
+    @include mediaQuires(ML) {
       float: left;
       text-align: left;
     }
-    .social-info {
+  }
+  .social-info {
+    display: none;
+    @include mediaQuires(ML) {
       float: right;
       display: flex;
       align-items: center;
@@ -113,5 +109,10 @@ body {
         padding: 0 10px;
       }
     }
+  }
+  iframe {
+    margin: 6px 5px 0 5px;
+    width: 80px;
+    height: 20px;
   }
 }

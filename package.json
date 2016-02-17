@@ -38,6 +38,7 @@
     "url-loader" : "~0.5.6",
     "file-loader": "^0.8.4",
     "compass-loader": "~0.0.3",
+    "fastclick": "~1.0.6",
     "webpack": "~1.12.2"
   }
 }

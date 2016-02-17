@@ -1,5 +1,7 @@
 'use strict';
 
+// not use now..
+
 export default function dynamicLoading(page, callback) {
   switch (page) {
     default:
