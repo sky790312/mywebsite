@@ -13,6 +13,7 @@ class helperControll {
     // this.keyControll = new keyControllJs();
 
     this.clicked = this.utils.getCookie('clicked') || 0;
+    this.firstClick = 0;
 
     if(this.clicked) {
       this.$app.find('.remind-click').addClass('hide');
@@ -36,6 +37,10 @@ class helperControll {
         this.clicked = 1;
         this.utils.setCookie('clicked', this.clicked);
         $helper.find('.remind-click').addClass('hide');
+      }
+      if(!this.firstClick) {
+        this.firstClick = 1;
+        this.utils.initFb();
       }
       ($helper.hasClass('show-helper') ? this.hideHelper() : this.showHelper());
     });
@@ -63,22 +68,20 @@ class helperControll {
             $helper.addClass('loading');
             $helper.find('.menu-item').addClass('disabled');
 
-            this.utils.initFb();
-
+            // this.utils.initFb();
             let loadingCheck = setInterval(()=>{
               if(percentage < 100){
-                percentage += 20;
+                percentage += 10;
               }
-              if (percentage === 100 && typeof FB !== 'undefined' &&
-                  !$helper.find('.fb-like').is(':empty') && !$helper.find('.fb-comments').is(':empty')) {
-                  setTimeout(()=>{
-                    // cancel loading
-                    this.showMsgBoard();
-                    this.$app.find("#loading-state").addClass('hide');
-                    $helper.removeClass('loading');
-                    $helper.find('.menu-item').removeClass('disabled');
-                    clearInterval(loadingCheck);
-                  }, 1000);
+              if (typeof FB !== 'undefined') {
+                FB.Event.subscribe('xfbml.render', ()=>{
+                  percentage = 100;
+                  clearInterval(loadingCheck);
+                  this.showMsgBoard();
+                  this.$app.find("#loading-state").addClass('hide');
+                  $helper.removeClass('loading');
+                  $helper.find('.menu-item').removeClass('disabled');
+                });
               }
               this.$app.find("#loading-state").css('width', percentage + '%');
             }, 50);

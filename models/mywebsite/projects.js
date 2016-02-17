@@ -9,11 +9,11 @@ module.exports = {
         briefTW: "startup 專注於自己的產品與額外的專案",
         descEN:  "Handling all of things about frontend. Basic version controll use SVN. Learning about Web relative skill from seniors. Had bulid api to use and build CMS website projects by wordpress, joomla.\
         					Learn about Amazon EC2, NodeJs MySQL relative backend skill. Runing Agile, eye-opener in startup and others startup in co-working space.\
-		              use Angularjs to build <a href='http://spotme.com.tw/kevin' target='_blank'>Spotme</a> business social network website.\
-		              use Wordpress to build <a href='http://trainer.spotme.com.tw' target='_blank'>Spotrainer</a> website by myself.",
+		              use Angularjs to build <a href='http://spotme.com.tw/kevin' target='_blank'>spotme</a> business social network website.\
+		              use Wordpress to build spotrainer website by myself.",
         descTW:  "前端主要使用 angularjs, 後端使用 nodeJs 開發各個專案, 獨自處理前端大小事, 並從其他資深工程師身上學習 web 相關技能＆知識 ex: LAMP, amazon EC2, MYSQL.. 使用 SVN 版控 ＆ agle 步調, 在co-space 與其他 startup 互相交流學習,\
         					公司主要專注於 <a href='http://spotme.com.tw/kevin' target='_blank'>spotme</a> 商務社交平台的開發, 期望每位使用者都能在平台上建立自己的專業形象頁與活絡供需平台.\
-        					另一主要專案 <a href='http://trainer.spotme.com.tw' target='_blank'>spotrainer</a> 為獨自開發的CMS wordpress專案, 與實體活動結合, 期望建立一個較為公正的講師網站.",
+        					另一主要專案 spotrainer 為獨自開發的CMS wordpress專案, 與實體活動結合, 期望建立一個較為公正的講師網站.",
         images: [
                   {
                     title: "lejetbc-official",
