@@ -189,7 +189,7 @@ $head-boy-feets-color: $light-gray2;
   bottom: 85px;
   z-index: 12;
   background-color: $white;
-  @include transition(width .5s linear);
+  @include transition(width .2s linear);
 }
 
 // keyframes

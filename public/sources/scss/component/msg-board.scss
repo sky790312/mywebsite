@@ -12,6 +12,7 @@ $fb-close-hover-color: $light-blue2;
   width: 100%;
   height: calc(100% - 85px);
   overflow-y: scroll;
+  z-index: 1;
   background-color: $msg-board-bkg-color;
   @include transition(top .25s linear);
   > .fb-comments {

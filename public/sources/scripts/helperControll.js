@@ -33,11 +33,13 @@ class helperControll {
       if($helper.hasClass('loading'))
         return;
 
+      // check cookie remind click
       if(!this.clicked) {
         this.clicked = 1;
         this.utils.setCookie('clicked', this.clicked);
         $helper.find('.remind-click').addClass('hide');
       }
+      // website helper first click
       if(!this.firstClick) {
         this.firstClick = 1;
         this.utils.initFb();
@@ -62,29 +64,32 @@ class helperControll {
           this.hideHelper();
           break;
         case 'msgboard':
-          if (typeof FB === 'undefined') {
+          if (typeof FB === 'undefined' || $helper.find('.fb-like').is(':empty') || $helper.find('.fb-comments').is(':empty') || this.$app.find('.fb_iframe_widget_loader').length) {
             // loading
             let percentage = 0;
             $helper.addClass('loading');
             $helper.find('.menu-item').addClass('disabled');
 
-            // this.utils.initFb();
             let loadingCheck = setInterval(()=>{
               if(percentage < 100){
-                percentage += 10;
+                percentage += 20;
               }
-              if (typeof FB !== 'undefined') {
-                FB.Event.subscribe('xfbml.render', ()=>{
-                  percentage = 100;
-                  clearInterval(loadingCheck);
-                  this.showMsgBoard();
+              if (typeof FB !== 'undefined' && !$helper.find('.fb-like').is(':empty') && !$helper.find('.fb-comments').is(':empty') && !this.$app.find('.fb_iframe_widget_loader').length) {
+                this.commentsLoad = 1;
+                percentage = 100;
+
+                clearInterval(loadingCheck);
+
+                this.$app.find("#loading-state").css('width', percentage + '%');
+                this.showMsgBoard();
+                $helper.removeClass('loading');
+                $helper.find('.menu-item').removeClass('disabled');
+                setTimeout(()=>{
                   this.$app.find("#loading-state").addClass('hide');
-                  $helper.removeClass('loading');
-                  $helper.find('.menu-item').removeClass('disabled');
-                });
-              }
+                }, 1000);
+              };
               this.$app.find("#loading-state").css('width', percentage + '%');
-            }, 50);
+            }, 200);
           } else {
             this.showMsgBoard();
           }

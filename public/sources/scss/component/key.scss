@@ -9,6 +9,7 @@ $key-hover-color: $white;
 .show-helper {
 	.keys {
 		display: block;
+    z-index: 1;
 	}
 }
 
