@@ -16,7 +16,7 @@ module.exports = {
   saying: function() {
     return [
       {
-        descTW: "我深信要做為一個資深的前端工程師, 應該要熟悉了解web領域, 擁有web從底而外相關的domain knowhow, 並專精於前端領域. 能夠了解後端＆設計的世界與其緊密結合, 瞭解他們在想什麼與為什麼這麼做",
+        descTW: "我深信要做為一個資深的前端工程師, 除了要專精於前端領域以外, 應該要熟悉了解web領域, 擁有web從內而外相關的domain knowhow. 並且了解後端＆設計的世界與其緊密結合, 瞭解他們在想什麼與為什麼這麼做",
         descEN: "I believe that being a senior rontend developer, not only have to focus on how deep frontend world is, but alse need to have relevant field domain. Knowing what backend＆Design thinking and why.",
         signTW: "By 胡哲維",
         signEN: "By KevinHu"
@@ -46,10 +46,12 @@ module.exports = {
         briefTW:  "變化快速的網創圈與新創公司",
         descEN:   "When I was a freshman, I seek only startup to join. I think it's a way to get on the track. The first day on the job also the first day to the compnay. \
                    It's very interesting to discuss and bulid all the things a company need with colleagues and co-founder. Like logo, product, what we wanna to do and ideas. \
+                   Once to participate the hackathon and idea show. Its' very special experience for me. Giving me some different perspective. \
                    At that time, i'm a junior freshman and co-work with all seniors. It's tough at first, but I just survive and win the trust. There are many kinds of trouble my startup face, no body know what will happen. \
                    It's a short time the company have only my boss and me. No matter what, I never regret going to Aite. As it turned out, it's very helpful experience to me.",
         descTW:   "我大學畢業找尋第一份工作時, 當時心中就已鎖定要找新創公司, 我認為那是一個能讓我快速成長的環境. 事實證明, 我的選擇沒有錯! 我也很感激在這裡的一切! 艾特網路很特別, 上班的第一天就是公司正式開始的第一天, \
-                   公司的一點一滴, 從logo, 活動到產品的發想, 幾乎都是大家一起努力出來的結果. 在那時候, 公司裡只有我是junior, 對我來說是個莫大的挑戰! 但漸漸的, 我步上軌道, 成為能獨當一面的一份子! 每天, 對於一間新創公司都是一個挑戰, \
+                   公司的一點一滴, 從logo, 活動到產品的發想, 幾乎都是大家一起努力出來的結果. 公司也積極參與hackthon & 新北idea show, 對我來說那段時間真的成長很多, 擴展不同的眼界. \
+                   一開始公司只有我是junior, 什麼都不太行, 吃了不少苦頭, 但漸漸的我步上軌道, 成為能獨當一面的一份子! 每天, 對於一間新創公司都是一個挑戰, \
                    沒有人知道下一秒會發生什麼事, 遇到什麼困難. 曾經, 公司就剩下老闆與我, 那又是另一個故事了. 不論如何, 我從不後悔進入艾特網路, 在這裡所學到的東西, 都讓我在未來打下基礎."
       }, {
         identity: "student",
