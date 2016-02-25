@@ -95,9 +95,11 @@ module.exports = {
         briefEN: "involve in Coupon, Homepage revision, new Ucar projects",
         briefTW: "逐步汰舊換新 eztravel 各個線別大小專案",
         descEN:  "Projects in here all base on Java Play MVC framework. Use jQuery and less css to build all the new website. Collaborate with others by git version and correct work flow to production.\
-        					Learn knowledge about nginx, jboss and jenkins. Sometimes I should even focus on Play application side. Had develop the new <a href='http://trip.eztravel.com.tw/hsrucar' target='_blank'>Ucar</a> project and others.",
+        					Learn knowledge about nginx, jboss and jenkins. Sometimes I should even focus on Play application side. Had develop the new <a href='http://trip.eztravel.com.tw/hsrucar' target='_blank'>Ucar</a> project \
+                  and others like homepage, vacation projects, etc. check this all on <a href='http://www.eztravel.com.tw' target='_blank'>ezTravel</a>",
         descTW:  "前端主要使用 jquery less, 後端使用 Java Play MVC framework 並使用git進行多人共同開發各個線別的改版與新專案. 並從其他資深工程師身上學習 web 相關技能＆知識 ex: nginx, jboss jenkins ..等等,\
-        					有時我也得幫忙play端的應用層, 了解一些關於java的知識. 不時的與PM端開會開發新的專案像是<a href='http://trip.eztravel.com.tw/hsrucar' target='_blank'>Ucar</a>.. 與一些改版中的專案等等..",
+        					有時我也得幫忙play端的應用層, 了解一些關於java的知識. 不時的與PM端開會開發新的專案像是<a href='http://trip.eztravel.com.tw/hsrucar' target='_blank'>Ucar</a>.. support一些改版中的專案(首頁改版, 國內旅遊)等等.. \
+                  <a href='http://trip.eztravel.com.tw' target='_blank'>易遊網</a>",
         images: [
           {
             title: "ez-ucar1",

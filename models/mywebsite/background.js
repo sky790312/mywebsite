@@ -4,7 +4,7 @@ module.exports = {
   main: function() {
     return [
       {
-        titleEN: "I'm a creative frontend developer with 2-3 years of professional experience, based in Taiwan now.",
+        titleEN: "I'm a creative frontend developer with about 2 half years of professional experience, based in Taiwan now.",
       	titleTW: "我是一個前端工程師, 專注於前端與web領域約2-3年並持續精進自己, 目前居住在台灣",
         briefEN: "I develop modern, interactive, responsive <strong>websites</strong>. keep in touch to cutting edge technologies such as <strong>AngularJS</strong>, <strong>React</strong> and other tools.\
                   <br><br>My <strong>backend background</strong> allows me to take care of a project through to execution and delivery.",
