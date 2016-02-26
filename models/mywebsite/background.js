@@ -5,7 +5,7 @@ module.exports = {
     return [
       {
         titleEN: "I'm a creative frontend developer with about 3 years of professional experience, based in Taiwan now.",
-      	titleTW: "我是一個前端工程師, 專注於前端與web領域約3年並持續精進自己, 目前居住在台灣",
+      	titleTW: "我是一個前端工程師, 專注於前端與web領域3年左右並持續精進自己, 目前居住在台灣",
         briefEN: "I develop modern, interactive, responsive <strong>websites</strong>. keep in touch to cutting edge technologies such as <strong>AngularJS</strong>, <strong>React</strong> and other tools.\
                   <br><br>My <strong>backend background</strong> allows me to take care of a project through to execution and delivery.",
         briefTW: "web的變化快速, 現在的網站與以前有大大的不同, 需求也不同了. 我每天都關注著前端世界的變化如 AngularJS, React 與開發工具. 後端, web甚至是電腦的相關知識讓我清楚地瞭解專案背後看不到的東西, \
